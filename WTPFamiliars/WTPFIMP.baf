@@ -1,0 +1,6342 @@
+////////////////////////////////////////////
+///IMP					 ///
+////////////////////////////////////////////
+
+/////////////////
+///Summoned   ///
+/////////////////
+
+IF
+	Global("WTPFAMLE","GLOBAL",2)
+	Global("#GSUMMON","LOCALS",1)
+THEN
+    RESPONSE #100
+	Wait(3)
+	DisplayStringHead(Myself,@536)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("SPRITE_IS_DEADWTPIMP","GLOBAL",0)
+	SetGlobal("#GSUMMON","LOCALS",2)
+END
+
+IF
+	Global("#GSUMMON","LOCALS",2)
+	Delay(2)
+THEN
+    RESPONSE #20
+	SetGlobal("#GSUMMON","LOCALS",3)
+	ActionOverride(Player1,FaceObject("WTPImp"))
+	Wait(1)
+	DisplayStringHead(Player1,@539)
+    RESPONSE #20
+	SetGlobal("#GSUMMON","LOCALS",3)
+	ActionOverride(Player1,FaceObject("WTPImp"))
+	Wait(1)
+	DisplayStringHead(Player1,@540)
+    RESPONSE #20
+	SetGlobal("#GSUMMON","LOCALS",3)
+	ActionOverride(Player1,FaceObject("WTPImp"))
+	Wait(1)
+	DisplayStringHead(Player1,@541)
+    RESPONSE #20
+	SetGlobal("#GSUMMON","LOCALS",3)
+	ActionOverride(Player1,FaceObject("WTPImp"))
+	Wait(1)
+	DisplayStringHead(Player1,@542)
+    RESPONSE #20
+	SetGlobal("#GSUMMON","LOCALS",3)
+	ActionOverride(Player1,FaceObject("WTPImp"))
+	Wait(1)
+	DisplayStringHead(Player1,@543)
+END
+
+///////////////
+///Status   ///
+///////////////
+
+IF
+        Global("WTPSTAT","LOCALS",0)
+	OR(15)
+	 StateCheck(Myself,STATE_PANIC)		 
+	 StateCheck(Myself,STATE_HELPLESS)
+	 StateCheck(Myself,STATE_SLEEPING)
+	 StateCheck(Myself,STATE_BERSERK)
+	 StateCheck(Myself,STATE_CHARMED)
+	 StateCheck(Myself,STATE_FEEBLEMINDED)
+	 StateCheck(Myself,STATE_CONFUSED)
+	 StateCheck(Myself,STATE_STONE_DEATH)
+	 StateCheck(Player1,STATE_PANIC)		 
+	 StateCheck(Player1,STATE_HELPLESS)
+	 StateCheck(Player1,STATE_SLEEPING)
+	 StateCheck(Player1,STATE_BERSERK)
+	 StateCheck(Player1,STATE_CHARMED)
+	 StateCheck(Player1,STATE_FEEBLEMINDED)
+	 StateCheck(Player1,STATE_CONFUSED)
+THEN
+    RESPONSE #100
+	SetGlobal("WTPSTAT","LOCALS",1)
+END
+
+IF
+        Global("WTPSTAT","LOCALS",1)	
+	!StateCheck(Myself,STATE_PANIC)
+	!StateCheck(Myself,STATE_HELPLESS)
+	!StateCheck(Myself,STATE_SLEEPING)
+	!StateCheck(Myself,STATE_BERSERK)
+	!StateCheck(Myself,STATE_CHARMED)
+	!StateCheck(Myself,STATE_FEEBLEMINDED)
+	!StateCheck(Myself,STATE_CONFUSED)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+	!StateCheck(Player1,STATE_PANIC)		 
+	!StateCheck(Player1,STATE_HELPLESS)
+	!StateCheck(Player1,STATE_SLEEPING)
+	!StateCheck(Player1,STATE_BERSERK)
+	!StateCheck(Player1,STATE_CHARMED)
+	!StateCheck(Player1,STATE_FEEBLEMINDED)
+	!StateCheck(Player1,STATE_CONFUSED)
+THEN
+    RESPONSE #100
+	SetGlobal("WTPSTAT","LOCALS",0)
+END
+
+///////////////////////
+///Mage Class       ///
+///////////////////////
+
+IF
+	Global("#GMAGECLASS","LOCALS",0)
+	!FallenRanger(Player1)
+	OR(4)
+	 Class(Player1,MAGE_ALL)
+	 Class(Player1,BARD)
+	 Kit(Player1,BEASTMASTER)
+	 CheckStat(Player1,1,191)
+THEN
+    RESPONSE #100
+	SetGlobal("#GMAGECLASS","LOCALS",1)
+END
+
+IF
+	Global("#GMAGECLASS","LOCALS",1)
+	OR(6) 
+	 Class(Player1,CLERIC_MAGE)  // first 4 ORs cover multiclasses and dual classes M->F and M->C 
+	 Class(Player1,FIGHTER_MAGE)
+	 Class(Player1,CLERIC_THIEF)
+	 Class(Player1,FIGHTER_THIEF)
+	 Class(Player1,FIGHTER_MAGE_THIEF)
+	 Class(Player1,FIGHTER_MAGE_CLERIC)
+	 OriginalClass(Player1,FIGHTER) // this covers dual class F->M and F->T
+	 OriginalClass(Player1,CLERIC) // this covers dual class C->M and C->T
+THEN
+    RESPONSE #100
+	SetGlobal("#GMAGECLASS","LOCALS",2)
+END
+
+IF
+	Global("#GMAGECLASS","LOCALS",1)
+	TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))	// this covers the unique case where a dual M/T with UAI uses the Find Familiar scroll
+	CheckStat(Player1,1,191)
+THEN
+    RESPONSE #100
+	SetGlobal("#GMAGECLASS","LOCALS",2)
+	ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+END
+
+//////////////////////
+///Acquire mage Lv ///
+//////////////////////
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,2,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",1)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,2,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",1)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,3,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",2)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,3,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",2)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,4,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",3)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",3)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,4,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",3)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",3)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,5,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",4)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",4)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,5,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",4)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",4)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,6,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",5)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",5)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,6,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",5)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",5)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,7,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",6)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",6)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,7,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",6)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",6)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,8,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",7)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",7)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,8,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",7)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",7)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,9,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",8)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",8)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,9,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",8)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",8)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,10,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",9)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",9)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,10,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",9)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",9)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,11,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",10)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",10)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,11,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",10)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",10)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,12,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",11)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",11)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,12,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",11)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",11)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,13,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",12)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",12)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,13,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",12)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",12)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,14,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",13)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",13)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,14,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",13)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",13)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,15,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",14)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",14)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,15,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",14)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",14)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,16,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",15)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",15)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,16,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",15)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",15)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,17,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",16)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",16)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,17,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",16)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",16)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,18,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",17)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",17)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,18,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",17)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",17)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,19,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",18)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",18)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,19,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",18)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",18)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,20,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",19)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",19)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,20,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",19)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",19)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,21,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",20)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",20)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,21,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",20)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",20)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,22,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",21)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",21)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,22,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",21)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",21)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,23,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",22)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",22)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,23,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",22)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",22)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,24,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",23)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",23)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,24,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",23)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",23)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,25,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",24)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",24)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,25,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",24)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",24)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,26,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",25)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",25)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,26,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",25)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",25)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,27,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",26)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",26)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,27,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",26)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",26)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,28,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",27)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",27)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,28,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",27)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",27)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,29,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",28)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",28)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,29,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",28)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",28)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,30,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",29)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",29)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,30,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",29)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",29)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,31,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",30)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",30)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,31,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",30)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",30)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,32,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",31)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",31)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,32,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",31)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",31)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,33,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",32)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",32)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,33,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",32)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",32)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,34,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",33)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",33)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,34,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",33)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",33)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,35,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",34)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",34)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,35,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",34)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",34)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,36,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",35)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",35)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,36,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",35)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",35)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,37,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",36)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",36)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,37,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",36)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",36)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,38,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",37)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",37)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,38,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",37)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",37)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,39,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",38)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",38)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,39,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",38)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",38)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,40,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",39)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",39)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,40,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",39)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",39)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,41,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",40)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",40)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,41,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",40)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",40)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,42,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",41)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",41)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,42,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",41)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",41)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,43,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",42)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",42)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,43,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",42)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",42)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,44,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",43)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",43)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,44,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",43)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",43)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,45,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",44)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",44)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,45,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",44)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",44)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,46,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",45)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",45)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,46,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",45)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",45)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,47,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",46)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",46)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,47,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",46)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",46)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,48,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",47)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",47)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,48,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",47)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",47)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,49,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",48)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",48)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,49,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",48)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",48)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,50,LEVEL)
+	GlobalLT("#GPLALVL","GLOBAL",49)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",49)
+END
+
+IF 
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,50,LEVEL2)
+	GlobalLT("#GPLALVL","GLOBAL",49)
+THEN
+    RESPONSE #100
+	SetGlobal("#GPLALVL","GLOBAL",49)
+END
+
+//////////////////////
+///Summon resets   ///
+//////////////////////
+
+IF
+	Global("#GSUMMON","LOCALS",3)
+	GlobalsEqual("#GFAMLVL","#GPLALVL")
+THEN
+    RESPONSE #100
+	Wait(4)
+	MakeGlobal()
+	AddFamiliar()
+	ChangeEnemyAlly(Myself,FAMILIAR)
+	EquipMostDamagingMelee()
+	SetGlobal("#GSUMMON","LOCALS",0)
+END
+
+///////////////////////
+///Breaking point   ///
+///////////////////////
+
+IF
+	Global("#GMIRPEN","GLOBAL",2)
+	GlobalTimerExpired("#GFAMHAR","GLOBAL")
+THEN
+    RESPONSE #100
+	IncrementGlobal("#GMIRPEN","GLOBAL",-1)
+	SetGlobalTimer("#GFAMHAR","GLOBAL",7200)
+END
+
+IF
+	Global("#GMIRPEN","GLOBAL",1)
+	GlobalTimerExpired("#GFAMHAR","GLOBAL")
+THEN
+    RESPONSE #100
+	IncrementGlobal("#GMIRPEN","GLOBAL",-1)
+END
+
+IF
+	Global("#GHARAS","GLOBAL",1)
+	Global("#GINPACK", "GLOBAL", 0)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	IncrementGlobal("#GHARAS","GLOBAL",1)
+	Wait(2)
+	Dialogue(Player1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("#GHARAS","GLOBAL",4)
+	Global("#GINPACK", "GLOBAL", 0)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	IncrementGlobal("#GHARAS","GLOBAL",1)
+	Wait(2)
+	Dialogue(Player1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("#GHARAS","GLOBAL",7)
+	Global("#GINPACK", "GLOBAL", 0)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	IncrementGlobal("#GHARAS","GLOBAL",1)
+	Wait(2)
+	Dialogue(Player1)
+	SetInterrupt(TRUE)
+END
+
+////////////////////////////////////////////
+///LEVEL DRAIN				 ///
+////////////////////////////////////////////
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStatGT(Player1,4,LEVEL)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStatGT(Player1,4,LEVEL2)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,4,LEVEL)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,4,LEVEL2)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,3,LEVEL)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",3)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,3,LEVEL2)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",3)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",1)
+	CheckStat(Player1,2,LEVEL)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",4)
+		Continue()
+END
+
+IF
+	Die()
+	Global("#GMAGECLASS","LOCALS",2)
+	CheckStat(Player1,2,LEVEL2)
+THEN
+	RESPONSE #100
+		SetGlobal("#GIMP","GLOBAL",4)
+		Continue()
+END
+
+////////////////////////////////////////////
+///MR Bonus off				 ///
+////////////////////////////////////////////
+
+IF
+	OR(2)
+	 Die()
+	 Global("#GFAMGO","GLOBAL",2)
+	Global("#GMR_Active", "LOCALS", 1)
+	CheckStatLT(Player1,3,RESISTMAGIC)
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCO10",Myself))
+	Continue()
+END
+
+IF
+	OR(2)
+	 Die()
+	 Global("#GFAMGO","GLOBAL",2)
+	Global("#GMR_Active", "LOCALS", 1)
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCON9",Myself))
+	SetGlobal("#GMR_Active", "LOCALS", 0)
+	Continue()
+END
+
+///////////////////////
+///Death Script     ///
+///////////////////////
+
+IF
+	Die()
+	Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check	
+	Global("#GMR_Active", "LOCALS", 1)
+	CheckStatLT(Player1,3,RESISTMAGIC)
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCO10",Myself))
+	Continue()
+END
+
+IF
+	Die()
+	Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check	
+	Global("#GMR_Active", "LOCALS", 1)
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCON9",Myself))
+	SetGlobal("#GMR_Active", "LOCALS", 0)
+	Continue()
+END
+
+IF
+	OR(2)
+	 Global("#GStartSpl","GLOBAL",0)
+	 HPGT(Player1,3)
+	Die()
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,Recoil())
+	ActionOverride(Player1,VerbalConstant(Myself,DAMAGE))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon4",Myself))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon6",Myself))
+	ActionOverride(Player1,MakeUnselectable(4))
+	DisplayString(Player1,8536)
+	DisplayString(Player1,21004)
+	CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
+	SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+	SetGlobal("WTPFAMLE","GLOBAL",0)
+	SetGlobal("#GAFTER","GLOBAL",0)
+	SetGlobal("#GFLVUP","GLOBAL",0)
+	SetGlobal("#GHARAS","GLOBAL",0)
+	SetGlobal("#GPLALVL","GLOBAL",0)
+	SetGlobal("#GSHOCK","GLOBAL",1)
+	SetGlobal("#GHPOFF","GLOBAL",1)
+	SetGlobal("#GMIRPEN","GLOBAL",0)
+	SetInterrupt(TRUE)
+END
+
+IF
+	OR(2)
+	 Global("#GStartSpl","GLOBAL",0)
+	 HPGT(Player1,3)
+	Global("#GFAMGO","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,Recoil())
+	ActionOverride(Player1,VerbalConstant(Myself,DAMAGE))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon6",Myself))
+	ActionOverride(Player1,ApplySpellRES("WTPDESP1",Myself))
+	ActionOverride(Player1,MakeUnselectable(4))
+	DisplayString(Player1,@522)
+	SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+	SetGlobal("WTPFAMLE","GLOBAL",0)
+	SetGlobal("#GAFTER","GLOBAL",0)
+	SetGlobal("#GFLVUP","GLOBAL",0)
+	SetGlobal("#GHARAS","GLOBAL",0)
+	SetGlobal("#GPLALVL","GLOBAL",0)
+	SetGlobal("#GFAMGO","GLOBAL",2)
+	SetGlobal("#GMIRPEN","GLOBAL",0)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("#GStartSpl","GLOBAL",1)
+	OR(2)
+	 HP(Player1,2)
+	 HP(Player1,3)
+	Die()
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,Recoil())
+	ActionOverride(Player1,VerbalConstant(Myself,DAMAGE))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFConA",Myself))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCOND",Myself))
+	ActionOverride(Player1,MakeUnselectable(4))
+	DisplayString(Player1,8536)
+	DisplayString(Player1,21004)
+	CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
+	SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+	SetGlobal("WTPFAMLE","GLOBAL",0)
+	SetGlobal("#GAFTER","GLOBAL",0)
+	SetGlobal("#GFLVUP","GLOBAL",0)
+	SetGlobal("#GHARAS","GLOBAL",0)
+	SetGlobal("#GPLALVL","GLOBAL",0)
+	SetGlobal("#GSHOCK","GLOBAL",1)
+	SetGlobal("#GHPOFF","GLOBAL",1)
+	SetGlobal("#GMIRPEN","GLOBAL",0)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("#GStartSpl","GLOBAL",1)
+	OR(2)
+	 HP(Player1,2)
+	 HP(Player1,3)
+	Global("#GFAMGO","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,Recoil())
+	ActionOverride(Player1,VerbalConstant(Myself,DAMAGE))
+	ActionOverride(Player1,ApplySpellRES("WTPDESP1",Myself))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFConA",Myself))
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCOND",Myself))
+	ActionOverride(Player1,MakeUnselectable(4))
+	DisplayString(Player1,@522)
+	SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+	SetGlobal("WTPFAMLE","GLOBAL",0)
+	SetGlobal("#GAFTER","GLOBAL",0)
+	SetGlobal("#GFLVUP","GLOBAL",0)
+	SetGlobal("#GHARAS","GLOBAL",0)
+	SetGlobal("#GPLALVL","GLOBAL",0)
+	SetGlobal("#GFAMGO","GLOBAL",2)
+	SetGlobal("#GMIRPEN","GLOBAL",0)
+	SetInterrupt(TRUE)
+END
+
+IF
+	Global("#GBhaalHP1","GLOBAL",2)
+	Die()
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFConA",Myself))
+	DisplayString(Player1,8536)
+	DisplayString(Player1,21004)
+	CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
+	SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+	SetGlobal("WTPFAMLE","GLOBAL",0)
+	SetGlobal("#GAFTER","GLOBAL",0)
+	SetGlobal("#GFLVUP","GLOBAL",0)
+	SetGlobal("#GHARAS","GLOBAL",0)
+	SetGlobal("#GPLALVL","GLOBAL",0)
+	SetGlobal("#GSHOCK","GLOBAL",1)
+	SetGlobal("#GHPOFF","GLOBAL",1)
+	SetGlobal("#GMIRPEN","GLOBAL",0)
+	SetInterrupt(TRUE)
+END
+
+//////////////////////////////////////
+///Keep the Familiar close         ///
+//////////////////////////////////////
+
+IF
+	Exists(Myself)
+	ActionListEmpty()
+	!Detect([ENEMY])
+	CombatCounterLT(1)
+	!TriggerOverride(Player1,Detect([ENEMY]))
+	Global("#GAFTER","GLOBAL",1)
+THEN
+	RESPONSE #80
+		MoveToObjectFollow(Player1)
+		Continue()
+	RESPONSE #20
+		NoAction()
+		Continue()
+END
+
+////////////////////////////
+///To backpack if damaged///
+////////////////////////////
+
+IF
+	Global("#GBhaalHP1","GLOBAL",0) // GOooPD compatibility check	
+	Allegiance(Myself,FAMILIAR)
+	!Dead("WTPImp")
+	Global("WTPSTAT","LOCALS",0)
+	!StateCheck(Myself,STATE_BLIND)
+	HPPercentLT(Myself,25)
+	See(LastAttackerOf())
+	!InventoryFull(Player1)
+	Range(Player1,25)
+THEN
+    RESPONSE #100
+	MoveToObject(Player1)
+	GiveItemCreate("wtpfmimp",Player1,0,0,0)
+	DisplayStringHead(Myself,@524)
+	SetGlobalTimer("#GWANOUT","GLOBAL",300)
+	SetGlobalTimer("#GSTAOUT","GLOBAL",1200)
+	DestroySelf()
+END
+
+////////////////////////////////////////////////////////////
+///Leaves if attacked/wrong alignment/reputation too high///
+////////////////////////////////////////////////////////////
+
+IF
+	!Alignment(Player1,LAWFUL_EVIL)
+	!Alignment(Player1,LAWFUL_NEUTRAL)
+	!Alignment(Player1,NEUTRAL_EVIL)
+	CombatCounterLT(1)
+	!Detect([ENEMY])
+	!TriggerOverride(Player1,Detect([ENEMY]))
+	Allegiance(Myself,FAMILIAR)
+THEN
+    RESPONSE #100
+	DisplayStringHead(Player1,@527)
+	ApplySpellRES("WTPFCon3",Myself)
+	ChangeEnemyAlly(Myself,NEUTRAL)
+	RemoveFamiliar()
+	CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
+	SetGlobal("#GFAMGO","GLOBAL",1)
+END
+
+IF
+	ReputationGT(Player1,18)
+	CombatCounterLT(1)
+	!Detect([ENEMY])
+	!TriggerOverride(Player1,Detect([ENEMY]))
+	Allegiance(Myself,FAMILIAR)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	Wait(2)
+	Dialogue(Player1)
+	SetInterrupt(TRUE)
+END
+
+IF
+	AttackedBy(Player1,DEFAULT)
+	!StateCheck(Player1,STATE_BERSERK)
+	!StateCheck(Player1,STATE_CONFUSED)
+	!TriggerOverride(Player1, Detect([ENEMY]))
+	Allegiance(Myself,FAMILIAR)
+THEN
+    RESPONSE #100
+	ApplySpellRES("WTPFCon3",Myself)
+	ChangeEnemyAlly(Myself,NEUTRAL)
+	RemoveFamiliar()
+	CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
+	SetGlobal("#GFAMGO","GLOBAL",1)
+END
+
+IF
+	Global("#GSUMMON","LOCALS",0)
+	!Dead("wtpimp")
+	Allegiance(Myself,NEUTRAL)
+	!Global("#GFAMGO","GLOBAL",1)
+THEN
+    RESPONSE #100
+	DisplayStringNoName(Myself,@521)
+	SetGlobal("#GFAMGO","GLOBAL",3)
+	EscapeArea()
+END
+
+IF
+	Global("#GFAMGO","GLOBAL",0)
+	Exists("wtpnag7")
+THEN
+    RESPONSE #100
+	ActionOverride("wtpnag7",DestroySelf())
+END
+
+/////////////////////////////////////////
+///Pdragon/Imp magic resistance bonus ///
+/////////////////////////////////////////
+
+IF
+	Global("#GSUMMON","LOCALS",0)
+	OR(2)
+	 ObjectActionListEmpty(Player1)
+	 TriggerOverride(Player1,Detect([ENEMY]))
+	Global("#GMR_Active", "LOCALS", 0)
+	!Global("#GFAMGO","GLOBAL",2)
+	Range(Player1,15)
+	Global("#GBhaalHP1","GLOBAL",0) // GOooPD compatibility check
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCON8",Myself))
+        SetGlobal("#GMR_Active", "LOCALS", 1)
+END
+
+IF
+	CheckStatLT(Player1,3,RESISTMAGIC)
+	OR(2)
+	 ObjectActionListEmpty(Player1)
+	 TriggerOverride(Player1,Detect([ENEMY]))
+	Global("#GMR_Active", "LOCALS", 1)
+	!Global("#GFAMGO","GLOBAL",2)
+	OR(2)
+	 !Range(Player1,15)
+	 Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCON9",Myself))
+	ActionOverride(Player1,ApplySpellRES("WTPFCO10",Myself))
+	SetGlobal("#GMR_Active", "LOCALS", 0)
+END
+
+IF
+	CheckStatGT(Player1,2,RESISTMAGIC)
+	OR(2)
+	 ObjectActionListEmpty(Player1)
+	 TriggerOverride(Player1,Detect([ENEMY]))
+	Global("#GMR_Active", "LOCALS", 1)
+	!Global("#GFAMGO","GLOBAL",2)
+	OR(2)
+	 !Range(Player1,15)
+	 Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check
+THEN
+    RESPONSE #100
+	ActionOverride(Player1,ApplySpellRES("WTPFCON9",Myself))
+	SetGlobal("#GMR_Active", "LOCALS", 0)
+END
+
+//////////////////////////////
+/// No negative HP allowed ///
+//////////////////////////////
+
+IF
+	HPLT(Myself,1)
+THEN
+    RESPONSE #100
+	Kill(Myself)
+END
+
+///////////////////////
+///Spell Mirroring  ///
+///////////////////////
+
+/* Rep/Mirpen check 
+
+#GREPUT 1: MIRPEN 1,2 REP 17+
+#GREPUT 17: MIRPEN 2 REP 15-16
+#GREPUT 5: MIRPEN 2 REP 12-14
+#GREPUT 8: MIRPEN 2 REP 9-11
+#GREPUT 11: MIRPEN 2 REP 6-8
+#GREPUT 14: MIRPEN 2 REP 1-5
+
+#GREPUT 1: MIRPEN 1,2 REP 17+
+#GREPUT 3: MIRPEN 1 REP 15-16
+#GREPUT 6: MIRPEN 1 REP 12-14
+#GREPUT 9: MIRPEN 1 REP 9-11
+#GREPUT 12: MIRPEN 1 REP 6-8
+#GREPUT 15: MIRPEN 1 REP 17
+
+#GREPUT 2: MIRPEN 0 REP 17+
+#GREPUT 4: MIRPEN 0 REP 15-16
+#GREPUT 7: MIRPEN 0 REP 12-14
+#GREPUT 10: MIRPEN 0 REP 9-11
+#GREPUT 13: MIRPEN 0 REP 6-8
+#GREPUT 16: MIRPEN 0 REP 17
+
+*/
+
+IF
+	ReputationGT(Player1,16)
+	!Global("#GREPUT","LOCALS",1)
+	GlobalGT("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",1)
+END
+
+IF
+	ReputationGT(Player1,16)
+	!Global("#GREPUT","LOCALS",2)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",2)
+END
+
+IF
+	ReputationLT(Player1,17)
+	ReputationGT(Player1,14)
+	!Global("#GREPUT","LOCALS",17)
+	Global("#GMIRPEN","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",17)
+END
+
+IF
+	ReputationLT(Player1,17)
+	ReputationGT(Player1,14)
+	!Global("#GREPUT","LOCALS",3)
+	Global("#GMIRPEN","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",3)
+END
+
+IF
+	ReputationLT(Player1,17)
+	ReputationGT(Player1,14)
+	!Global("#GREPUT","LOCALS",4)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",4)
+END
+
+IF
+	ReputationLT(Player1,15)
+	ReputationGT(Player1,11)
+	!Global("#GREPUT","LOCALS",5)
+	Global("#GMIRPEN","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",5)
+END
+
+IF
+	ReputationLT(Player1,15)
+	ReputationGT(Player1,11)
+	!Global("#GREPUT","LOCALS",6)
+	Global("#GMIRPEN","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",6)
+END
+
+IF
+	ReputationLT(Player1,15)
+	ReputationGT(Player1,11)
+	!Global("#GREPUT","LOCALS",7)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",7)
+END
+
+IF
+	ReputationLT(Player1,12)
+	ReputationGT(Player1,8)
+	!Global("#GREPUT","LOCALS",8)
+	Global("#GMIRPEN","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",8)
+END
+
+IF
+	ReputationLT(Player1,12)
+	ReputationGT(Player1,8)
+	!Global("#GREPUT","LOCALS",9)
+	Global("#GMIRPEN","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",9)
+END
+
+IF
+	ReputationLT(Player1,12)
+	ReputationGT(Player1,8)
+	!Global("#GREPUT","LOCALS",10)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",10)
+END
+
+IF
+	ReputationLT(Player1,9)
+	ReputationGT(Player1,5)
+	!Global("#GREPUT","LOCALS",11)
+	Global("#GMIRPEN","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",11)
+END
+
+IF
+	ReputationLT(Player1,9)
+	ReputationGT(Player1,5)
+	!Global("#GREPUT","LOCALS",12)
+	Global("#GMIRPEN","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",12)
+END
+
+IF
+	ReputationLT(Player1,9)
+	ReputationGT(Player1,5)
+	!Global("#GREPUT","LOCALS",13)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",13)
+END
+
+IF
+	ReputationLT(Player1,6)
+	!Global("#GREPUT","LOCALS",14)
+	Global("#GMIRPEN","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",14)
+END
+
+IF
+	ReputationLT(Player1,6)
+	!Global("#GREPUT","LOCALS",15)
+	Global("#GMIRPEN","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",15)
+END
+
+IF
+	ReputationLT(Player1,6)
+	!Global("#GREPUT","LOCALS",16)
+	Global("#GMIRPEN","GLOBAL",0)
+THEN
+    RESPONSE #100
+	SetGlobal("#GREPUT","LOCALS",16)
+END
+
+// SPELLS
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_REFLECTED_IMAGE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_REFLECTED_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_ARMOR)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_ARMOR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SHIELD)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_BLUR)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_BLUR)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MIRROR_IMAGE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_VOCALIZE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_VOCALIZE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_CLAIRVOYANCE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_CLAIRVOYANCE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_DEFLECTION)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_STONE_SKIN)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_STONE_SKIN)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_BLUE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_FIRE_SHIELD_RED)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_POLYMORPH_SELF)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_POLYMORPH_SELF)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SPELL_SHIELD)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SPELL_SHIELD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MINOR_SPELL_TURNING)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_GLOBE_OF_INVULNERABILITY)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_TENSERS_TRANSFORMATION)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MISLEAD)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MISLEAD)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SPELL_DEFLECTION)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SPELL_DEFLECTION)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SPELL_TURNING)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_PROJECT_IMAGE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_PROJECT_IMAGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_MANTLE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_DELETED)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_DELETED)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SIMULACRUM)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SIMULACRUM)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_IMPROVED_MANTLE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SPELL_TRAP)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+ 	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_ABSOLUTE_IMMUNITY)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_ABSOLUTE_IMMUNITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_SHAPECHANGE)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_SHAPECHANGE)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	Global("#GREPUT","LOCALS",16)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #90
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #10
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",15)
+	 Global("#GREPUT","LOCALS",13)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #75
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #25
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",14)
+	 Global("#GREPUT","LOCALS",12)
+	 Global("#GREPUT","LOCALS",10)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #60
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #40
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",11)
+	 Global("#GREPUT","LOCALS",9)
+	 Global("#GREPUT","LOCALS",7)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #45
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #55
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",8)
+	 Global("#GREPUT","LOCALS",6)
+	 Global("#GREPUT","LOCALS",4)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #30
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #70
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(3)
+	 Global("#GREPUT","LOCALS",5)
+	 Global("#GREPUT","LOCALS",3)
+	 Global("#GREPUT","LOCALS",2)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #15
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #85
+	DisplayStringHead(Myself,@529)
+END
+
+IF
+	Range(Player1,15)
+	Allegiance(Myself,FAMILIAR)
+	Global("WTPSTAT","LOCALS",0)
+	OR(2)
+	 Global("#GREPUT","LOCALS",1)
+	 Global("#GREPUT","LOCALS",17)
+	SpellCast(Player1,WIZARD_IMPROVED_ALUCRITY)
+THEN
+    RESPONSE #10
+	ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)
+	DisplayStringHead(Myself,@528)
+    RESPONSE #90
+	DisplayStringHead(Myself,@529)
+END
+
+///////////////////////
+///Level up with PC ///
+///////////////////////
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	Global("#GFLVUP","GLOBAL",1)
+	Global("WTPFAMLE","GLOBAL",2)
+THEN 
+    RESPONSE #100
+	MoveViewObject(Myself,INSTANT)
+	LockScroll()
+	SetGlobal("#GFLVUP","GLOBAL",2)
+END
+
+IF
+	GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalGT("#GFLVUP","GLOBAL",2)
+THEN 
+    RESPONSE #100
+	UnlockScroll()
+	SetGlobal("#GFLVUP","GLOBAL",0)
+END
+
+IF
+	GlobalsEqual("#GFAMLVL","#GPLALVL")
+	Global("#GFLVUP","GLOBAL",1)
+THEN 
+    RESPONSE #100
+	SetGlobal("#GFLVUP","GLOBAL",0)
+END
+
+//////////////////////
+///Level up script ///
+//////////////////////
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",1)
+	Global("#GFLVUP","GLOBAL",2)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@217)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",1)
+	SetGlobal("#GFLVUP","GLOBAL",3)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",2)
+	Global("#GFLVUP","GLOBAL",3)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@218)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	AddSpecialAbility("WTPIN07")  // Suggestion
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",2)
+	SetGlobal("#GFLVUP","GLOBAL",4)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",3)
+	Global("#GFLVUP","GLOBAL",4)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@219)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	ApplySpellRES("WTPFMLV1",Myself)  // AC +1
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@33)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",3)
+	SetGlobal("#GFLVUP","GLOBAL",5)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",4)
+	Global("#GFLVUP","GLOBAL",5)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@220)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	ApplySpellRES("WTPFIMPA",Myself) // +1
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@25)
+	DisplayStringNoName(Myself,@47)
+	EquipMostDamagingMelee()
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",4)
+	SetGlobal("#GFLVUP","GLOBAL",6)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",5)
+	Global("#GFLVUP","GLOBAL",6)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@221)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	AddSpecialAbility("WTPIN16")  // Invisibility
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@38) // ST UP
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",5)
+	SetGlobal("#GFLVUP","GLOBAL",7)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",6)
+	Global("#GFLVUP","GLOBAL",7)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@222)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@35)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",6)
+	SetGlobal("#GFLVUP","GLOBAL",8)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",7)
+	Global("#GFLVUP","GLOBAL",8)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@223)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",7)
+	SetGlobal("#GFLVUP","GLOBAL",9)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",8)
+	Global("#GFLVUP","GLOBAL",9)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@224)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLVL",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	ApplySpellRES("WTPFMLV8",Myself) // Also immune to non magical weapons
+	AddSpecialAbility("WTPIN01")  // Polymorph Spider
+	Wait(1)
+	DisplayStringNoName(Myself,@40)
+	DisplayStringNoName(Myself,@28)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon2",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",8)
+	SetGlobal("#GFLVUP","GLOBAL",10)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",9)
+	Global("#GFLVUP","GLOBAL",10)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@225)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@35)
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",9)
+	SetGlobal("#GFLVUP","GLOBAL",11)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",10)
+	Global("#GFLVUP","GLOBAL",11)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@226)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVE",Myself)
+	ApplySpellRES("WTPFMLV1",Myself)  // AC +1
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@33)
+	DisplayStringNoName(Myself,@38) // ST UP
+	DisplayStringNoName(Myself,@47)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",10)
+	SetGlobal("#GFLVUP","GLOBAL",12)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",11)
+	Global("#GFLVUP","GLOBAL",12)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@227)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFIMPB",Myself) // +2
+	AddSpecialAbility("WTPIN11")  // Detect Magic
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@26)
+	EquipMostDamagingMelee()
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",11)
+	SetGlobal("#GFLVUP","GLOBAL",13)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",12)
+	Global("#GFLVUP","GLOBAL",13)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@228)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@35)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",12)
+	SetGlobal("#GFLVUP","GLOBAL",14)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",13)
+	Global("#GFLVUP","GLOBAL",14)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@229)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",13)
+	SetGlobal("#GFLVUP","GLOBAL",15)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",14)
+	Global("#GFLVUP","GLOBAL",15)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@230)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",14)
+	SetGlobal("#GFLVUP","GLOBAL",16)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",15)
+	Global("#GFLVUP","GLOBAL",16)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@231)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@35)
+	DisplayStringNoName(Myself,@38) // ST UP
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",15)
+	SetGlobal("#GFLVUP","GLOBAL",17)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",16)
+	Global("#GFLVUP","GLOBAL",17)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@232)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",16)
+	SetGlobal("#GFLVUP","GLOBAL",18)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",17)
+	Global("#GFLVUP","GLOBAL",18)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@233)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",17)
+	SetGlobal("#GFLVUP","GLOBAL",19)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",18)
+	Global("#GFLVUP","GLOBAL",19)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@234)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV2",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	ApplySpellRES("WTPFMLV1",Myself)  // AC +1
+	Wait(1)
+	DisplayStringNoName(Myself,@41)
+	DisplayStringNoName(Myself,@33)
+	DisplayStringNoName(Myself,@35)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",18)
+	SetGlobal("#GFLVUP","GLOBAL",20)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",19)
+	Global("#GFLVUP","GLOBAL",20)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@235)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	ApplySpellRES("WTPFIMPC",Myself) // +3
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	DisplayStringNoName(Myself,@27)
+	EquipMostDamagingMelee()
+	SetGlobal("#GFAMLVL","GLOBAL",19)
+	SetGlobal("#GFLVUP","GLOBAL",21)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",20)
+	Global("#GFLVUP","GLOBAL",21)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@236)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLV9",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVA",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVB",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVC",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	ApplySpellRES("WTPFMLVD",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	DisplayStringNoName(Myself,@38) // ST UP
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",20)
+	SetGlobal("#GFLVUP","GLOBAL",22)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",21)
+	Global("#GFLVUP","GLOBAL",22)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@237)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	ApplySpellRES("WTPFMLV4",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	DisplayStringNoName(Myself,@35)
+	SetGlobal("#GFAMLVL","GLOBAL",21)
+	SetGlobal("#GFLVUP","GLOBAL",23)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",22)
+	Global("#GFLVUP","GLOBAL",23)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@238)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",22)
+	SetGlobal("#GFLVUP","GLOBAL",24)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",23)
+	Global("#GFLVUP","GLOBAL",24)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@239)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",23)
+	SetGlobal("#GFLVUP","GLOBAL",25)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",24)
+	Global("#GFLVUP","GLOBAL",25)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@240)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",24)
+	SetGlobal("#GFLVUP","GLOBAL",26)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",25)
+	Global("#GFLVUP","GLOBAL",26)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@241)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",25)
+	SetGlobal("#GFLVUP","GLOBAL",27)
+	SetInterrupt(TRUE)
+	Continue()
+	END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",26)
+	Global("#GFLVUP","GLOBAL",27)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@242)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",26)
+	SetGlobal("#GFLVUP","GLOBAL",28)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",27)
+	Global("#GFLVUP","GLOBAL",28)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@243)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",27)
+	SetGlobal("#GFLVUP","GLOBAL",29)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",28)
+	Global("#GFLVUP","GLOBAL",29)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@244)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",28)
+	SetGlobal("#GFLVUP","GLOBAL",30)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",29)
+	Global("#GFLVUP","GLOBAL",30)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@245)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",29)
+	SetGlobal("#GFLVUP","GLOBAL",31)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",30)
+	Global("#GFLVUP","GLOBAL",31)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@246)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",30)
+	SetGlobal("#GFLVUP","GLOBAL",32)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",31)
+	Global("#GFLVUP","GLOBAL",32)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@247)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	ApplySpellRES("WTPFMLV1",Myself)  // AC +1
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	DisplayStringNoName(Myself,@33)
+	SetGlobal("#GFAMLVL","GLOBAL",31)
+	SetGlobal("#GFLVUP","GLOBAL",33)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",32)
+	Global("#GFLVUP","GLOBAL",33)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@248)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",32)
+	SetGlobal("#GFLVUP","GLOBAL",34)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",33)
+	Global("#GFLVUP","GLOBAL",34)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@249)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",33)
+	SetGlobal("#GFLVUP","GLOBAL",35)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",34)
+	Global("#GFLVUP","GLOBAL",35)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@250)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",34)
+	SetGlobal("#GFLVUP","GLOBAL",36)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",35)
+	Global("#GFLVUP","GLOBAL",36)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@251)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",35)
+	SetGlobal("#GFLVUP","GLOBAL",37)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",36)
+	Global("#GFLVUP","GLOBAL",37)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@252)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",36)
+	SetGlobal("#GFLVUP","GLOBAL",38)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",37)
+	Global("#GFLVUP","GLOBAL",38)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@253)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",37)
+	SetGlobal("#GFLVUP","GLOBAL",39)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",38)
+	Global("#GFLVUP","GLOBAL",39)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@254)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",38)
+	SetGlobal("#GFLVUP","GLOBAL",40)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",39)
+	Global("#GFLVUP","GLOBAL",40)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@255)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",39)
+	SetGlobal("#GFLVUP","GLOBAL",41)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",40)
+	Global("#GFLVUP","GLOBAL",41)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@256)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",40)
+	SetGlobal("#GFLVUP","GLOBAL",42)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",41)
+	Global("#GFLVUP","GLOBAL",42)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@257)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",41)
+	SetGlobal("#GFLVUP","GLOBAL",43)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",42)
+	Global("#GFLVUP","GLOBAL",43)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@258)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",42)
+	SetGlobal("#GFLVUP","GLOBAL",44)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",43)
+	Global("#GFLVUP","GLOBAL",44)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@259)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",43)
+	SetGlobal("#GFLVUP","GLOBAL",45)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",44)
+	Global("#GFLVUP","GLOBAL",45)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@260)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",44)
+	SetGlobal("#GFLVUP","GLOBAL",46)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",45)
+	Global("#GFLVUP","GLOBAL",46)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@261)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",45)
+	SetGlobal("#GFLVUP","GLOBAL",47)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",46)
+	Global("#GFLVUP","GLOBAL",47)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@262)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",46)
+	SetGlobal("#GFLVUP","GLOBAL",48)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",47)
+	Global("#GFLVUP","GLOBAL",48)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@263)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",47)
+	SetGlobal("#GFLVUP","GLOBAL",49)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",48)
+	Global("#GFLVUP","GLOBAL",49)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@264)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	ActionOverride(Player1,ReallyForceSpellRES("WTPFCon5",Myself))
+	SetGlobal("#GFAMLVL","GLOBAL",48)
+	SetGlobal("#GFLVUP","GLOBAL",50)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalLT("#GFAMLVL","GLOBAL",49)
+	Global("#GFLVUP","GLOBAL",50)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	SetName(@265)
+	ApplySpellRES("WTPFMLV0",Myself)
+	ApplySpellRES("WTPFMLV3",Myself)
+	Wait(1)
+	DisplayStringNoName(Myself,@42)
+	SetGlobal("#GFAMLVL","GLOBAL",49)
+	SetGlobal("#GFLVUP","GLOBAL",100)
+	SetInterrupt(TRUE)
+	Continue()
+END
+
+IF
+	!GlobalsEqual("#GFAMLVL","#GPLALVL")
+	GlobalGT("#GFLVUP","GLOBAL",1)
+THEN
+    RESPONSE #100
+	SetInterrupt(FALSE)
+	ActionOverride(Player1,MakeUnselectable(6))
+	ActionOverride(Player2,MakeUnselectable(6))
+	ActionOverride(Player3,MakeUnselectable(6))
+	ActionOverride(Player4,MakeUnselectable(6))
+	ActionOverride(Player5,MakeUnselectable(6))
+	ActionOverride(Player6,MakeUnselectable(6))
+	SetInterrupt(TRUE)
+END

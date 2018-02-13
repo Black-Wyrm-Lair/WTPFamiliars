@@ -1,0 +1,81 @@
+IF
+	Global("WTPfamps","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPfamps","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPseudo",Player1)
+END
+
+IF
+	Global("WTPFMFER","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMFER","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPFerre",Player1)  
+END
+
+IF
+	Global("WTPFMIMP","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMIMP","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPImp",Player1)
+END
+
+IF
+	Global("WTPFMRAB","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMRAB","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPRabbi",Player1)
+END
+
+IF
+	Global("WTPFMMEP","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMMEP","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPDMeph",Player1) 
+END
+
+IF
+	Global("WTPFMFAE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMFAE","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPFairy",Player1) 
+END
+
+IF
+	Global("WTPFMCAT","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMCAT","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPCat",Player1) 
+END
+
+IF
+	Global("WTPFMSPD","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMSPD","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPSpide",Player1) 
+END
+
+
+IF
+	Global("WTPFMQUA","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("WTPFMQUA","GLOBAL",0)
+		SetGlobal("#GINPACK", "GLOBAL", 0)
+		MoveGlobalObject("WTPQuasi",Player1) 
+END

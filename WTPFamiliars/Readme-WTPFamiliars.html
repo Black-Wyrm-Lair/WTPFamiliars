@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>WTP Familiars</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="backup/BKBG2CPMreadme.css" type="text/css" />
+<link href="backup/BK.ico" rel="icon" type="image/bmp" />
+</head>
+<body>
+<h1>WTP Familiars v2.1</h1>
+<div class="section">
+    <p><strong>Authors: Rabain & <a href="mailto:crimes73@fastmail.fm">Salk</a><br />
+  <p>(originally intended to be part of the now discontinued World Transition Project)
+</div>
+<h2>Overview</h2>
+<div class="section">
+  <p>This mod introduces an alternative version of the standard Find Familiar
+  spell, opting for a more PnP faithful representation of it.&nbsp; The player will also be able to choose from a pool of three or four creatures (exception: True Neutral mages are restricted to the True Neutral Familiar) instead of being assigned a Familiar based upon 
+  alignment.</p>
+  <p>When the spell is cast you will be able to select the Familiar 
+  matching your own alignment or one of the Familiars whose alignment is closest to your own. For example, if your alignment is Lawful Evil you 
+  would have a choice between the Imp (LE), the Dust Mephit (NE) and the Ferret (LN).</p>
+  <p>The Familiars have now extended dialogue and new icon colors. They will make themselves heard when they feel they've spent too much time in the backpack and their dead has now different consequences for the player: failing the constitution based system shock check (see table under) will render the mage temporarily vulnerable to enemy attacks. Afterwards, a 3 days period of mourning will prevent the summon of a new Familiar. During this period, the mage suffers a -1 penalty to their constitution. When the mourning is over, the mage will regain the lost constitution point and will be able to summon a new Familiar.</p>
+  <p>The mod also introduces a new Familiar (spider) in order to have each alignment 
+  represented by a different creature.&nbsp; The spider has been placed in the True Neutral slot and as such minimum bumping has occurred with regard to which Familiar 
+  is assigned to which alignment.&nbsp; The new breakdown is as follows:</p>
+  <p>Familiar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Filename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Alignment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selectable by<br>
+Rabbit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  WTPFLGRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Lawful Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - was True Neutral&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lawful Good, Neutral Good and Lawful Neutral mages<br>
+  Pseudodragon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WTPFNGPD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Neutral Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - no change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lawful Good, Neutral Good and Chaotic Good mages<br>
+  Faerie Dragon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  WTPFCGFD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Chaotic Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - no change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Neutral Good, Chaotic Good and Chaotic Neutral mages<br>
+    Ferret&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  WTPFLNFE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Lawful Neutral&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp - 
+  no change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lawful Good, Lawful Neutral and Lawful Evil mages<br>
+  
+Spider&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  WTPFTNSP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+  True Neutral&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - new addition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Neutral Good, True Neutral and Neutral Evil mages<br>
+
+Cat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  WTPFCNCT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Chaotic Neutral&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  - no change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaotic Good, Chaotic Neutral and Chaotic Evil mages<br>
+  Imp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  WTPFLEIM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Lawful Evil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - no change&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lawful Evil, Neutral Evil and Lawful Neutral mages<br>
+  Dust Mephit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  WTPFNEME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Neutral Evil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - no change&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lawful Evil, Neutral Evil and Chaotic Evil mages<br>
+  Quasit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  WTPFCEQU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Chaotic Evil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  - no change&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Neutral Evil, Chaotic Evil and Chaotic Neutral mages</p>
+  <p>The Familiar also levels up with the mage, acquiring betters statistics and abilities at different stages</p>
+  <ul>
+    <li>Hit points will increase</li>
+    <li>Saving Throws will improve</li>
+    <li>Armor Class will improve</li>
+    <li>Special abilities will be gained</li>
+    <li>...and more</li>
+  </ul>
+  <p>Detailed information about the Familiar is provided in the Inventory page, by right clicking on the Familiar icon.&nbsp; All Familiars have now a portrait and also a soundset assigned to them.&nbsp; The individual 
+  sounds vary for each Familiar.&nbsp; The following sounds are installed:</p>
+  <p>BORED <br>
+  BATTLE_CRY1 <br>
+  BATTLE_CRY2 <br>
+  BATTLE_CRY3<br>
+  BATTLE_CRY4 <br>
+  BATTLE_CRY5 <br>
+  DAMAGE<br>
+  DYING <br>
+  HURT <br>
+  SELECT_COMMON1 <br>
+  SELECT_COMMON2 <br>
+  SELECT_ACTION1 <br>
+  SELECT_ACTION2 <br>
+  SELECT_RARE1 <br>
+  SELECT_RARE2 </p>
+  <p>The Familiar behaves in the same fashion as the standard BG2 Familiars and 
+  will follow you from area to area. Each Familiar has a reference class (warrior, thief, mage or druid/mage) 
+  that serves as generic guideline for THAC0, skills and saving throws advancement.
+  Familiars have a sense of self preservation and are therefore scripted to jump into the backpack when their health is critically compromised and an ongoing battle is threatening their life.&nbsp; 
+  Providing you rest before taking them out again they will heal and memorise 
+  their known spells.&nbsp;</p> <p>The system shock table:</p>
+  <p>CON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  System Shock<br>
+
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  25%<br>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  30%<br>
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  35%<br>
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  40%<br>
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  45%<br>
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  50%<br>
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  55%<br>
+8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  60%<br>
+9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  65%<br>
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  70%<br>
+11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  75%<br>
+12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  80%<br>
+13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  85%<br>
+14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  88%<br>
+15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  90%<br>
+16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  95%<br>
+17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  97%<br>
+18+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  99%<br>
+
+</p>
+</div>
+
+<h2>Compatibility</h2>
+<div class="section">
+  <p>This mod is designed
+      to work with Baldur's Gate II: Shadows of Amn with the Throne
+      of Bhaal expansion pack and has been completely overhauled with full Baldur's Gate Trilogy compatibility in mind.</p>
+  <p> Install this modification after Spell Revisions or any other modification that changes the Find Familiar spell in any way.
+  </p>
+</div>
+<h2>Known Bugs</h2>
+<div class="section">
+  <p>There are a few minor visual glitches (unpolished level up process, spider's green circle's being a bit off, spells' visual effects showing for a brief moment when the familiar leaves the backpack) that I am unable to fix.</p>
+</div>
+<h2>Installation</h2>
+<div class="section">
+    <p>WTPFamiliars  is packaged and installed with <acronym title="Weimer Dialogue Utility">WeiDU</acronym> and
+    distributed as  a zip 
+	archive. To install, simply double-click the archive and extract the 
+  contents to your BG2 game folder. </p>
+  <p>You should
+  then have a WTPFamiliar&nbsp; folder and Setup-WTPFamiliar.exe in your <acronym title="Baldur's Gate II">BG2</acronym> folder.
+  To install, simply double-click Setup-WTPFamiliar.exe and follow the instructions
+  on screen. </p>
+  <p>Please run Setup-WTPFamiliar.exe in your <acronym title="Baldur's Gate II">BG2</acronym> folder to reinstall or uninstall this modification. </p>
+</div>
+<h2>Contact Information</h2>
+<div class="section">
+  <p>Rabain created
+    this mod.</p>
+  <p><a href="mailto:crimes73@gmail.com">Salk</a> expanded and bugfixed it (hopefully).</p>
+</div>
+<h2>Thanks and Acknowledgements</h2>
+<div class="section">
+  <ul>
+      <li>Thanks go to Sir-Kill and Dragonlord for accepting me into the WTP and 
+      to Sir-Kill for the new bams/portraits in use in this mod.</li>
+      <li>igi for pointing me in the right direction with spells and some tp2
+      user friendliness!</li>
+      <li>Blackwyrmlair Staff and Members for their support and patience.</li>
+      <li>The various mod site members and regulars who provide invaluable 
+      expertise to everyone who asks.</li>
+      <li>(Salk) My wife for her invaluable contribution in creating new portraits,bams and additional dialogue.</li>
+      <li>(Salk) Everyone at Gibberlings3, Pocketplane and SHS that helped me try putting all this together.</li>
+    </ul>
+  <p><strong>Tools Used in Creation</strong><br>
+    <a href="http://www.context.cx/">ConTEXT</a> <br>
+    <a href="http://www.dragonlancetc.com/forums/?board=9"> <acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> by
+    Avenger <br>
+    <a href="http://iesdp.gibberlings3.net/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a> 
+	maintained by igi<br>
+	<a href="http://www.idi.ntnu.no/%7Ejoh/ni/">Near Infinity</a> by
+	Jon Olav Hauglid<br>
+    <a href="http://www.mud-master.com/shadowkeeper/">Shadowkeeper</a> by Mud-Master <br>
+    <a href="http://www.gimp.org/">GIMP</a><br>
+<acronym title="Weimer Dialogue Utility"><a href="http://www.weidu.org/">WeiDU</a></acronym> by
+Wes Weimer / The Bigg</p>
+</p>
+</div>
+<h2>Credits and Copyright Information</h2>
+<div class="section">
+<p><strong>The original WTPFamiliars is ©2007 Rabain. Version 1.0 and later are released and made public under the Creative Commons BY-NC-SA 3.0 licence.
+  <p>Images used courtesy of:</p>
+<a href="http://www.amazon.com/Monstrous-Manual-Fantasy-Roleplaying-Accessory/dp/1560766190/ref=sr_1_1?s=books&ie=UTF8&qid=1418470655&sr=1-1&keywords=monstrous+manual"> Monstrous Manual 1993</a> <br>
+<a href="http://www.amazon.com/Monstrous-Compendium-Appendix-Planescape-Accessory/dp/1560768622/ref=sr_1_4?s=books&ie=UTF8&qid=1418470688&sr=1-4&keywords=Monstrous+Compendium+Appendix"> Monstrous Compendium Appendix (Planescape)</a> <br>
+<a href="https://colvillevalleyanimalsanctuary.wordpress.com/2012/03/05/top-10-reasons-to-adopt-a-black-cat/"> colvillevalleyanimalsanctuary</a> <br>
+<a href="http://vegasmike.deviantart.com/art/Imp-129907124"> VegasMike</a> <br>
+<a href="http://www.brucepearson.net/artist%20profile.html"> Bruce Pearson</a> <br>
+<a href="http://grouchywolfpup.deviantart.com/art/Rabbit-Realism-148816910"> grouchywolfpup</a> <br>
+<a href="http://www.myrmecos.net/about-alex-wild-2/"> Alex Wild</a> <br>
+  <p>Partial incluson of material from:</p>
+<a href="http://www.spellholdstudios.net/ie/atweaks"> aTweaks</a> <br>
+<a href="http://www.gibberlings3.net/kit_rev/"> Kit Revision</a> <br>
+</div>
+<h2>Version History</h2>
+<div class="section">
+  <p><strong>Beta Version 0.5 </strong></p>
+  <ul>
+    <li>Initial Beta release (Rabain)</li>
+  </ul>
+  <p><strong>Version 1.0 Beta 1</strong></p>
+  <ul>
+    <li>Complete overhaul of the original modification by Rabain</li>
+    <li>Fixed a number of bugs present in the 0.5 version</li>
+    <li>Expanded dialogue, script and level up dynamic</li>
+  </ul>
+  <p><strong>Version 1.1 Beta 2</strong></p>
+  <ul>
+    <li>Fixed CTD occurance (thanks MadMate)</li>
+    <li>Fixed a dialogue error</li>
+  </ul>
+  <p><strong>Version 1.2 Beta 1</strong></p>
+  <ul>
+    <li>Fixed a bug that would cause a dead familiar to return to the backpack</li>
+  </ul>
+  <p><strong>Version 1.3</strong></p>
+  <ul>
+    <li>First non Beta version</li>
+    <li>The familiar levels up now via dialogue (except when summoned)</li>
+    <li>Fixed a bug that would cause a script to fire more than once (thanks Jarno)</li>
+    <li>Changed the familiars' allegiance from "CONTROLLED" to "FAMILIAR" (thanks Argent77)</li>
+    <li>Added dialogue option to have the familiar follow automatically</li>
+    <li>Additional special ability for ferret, cat and rabbit (thanks Galactycon)</li>
+    <li>The familiars will no longer accept to go into the backpack too soon</li>
+    <li>The familiars' nagging will not knock the player out of a store or inn screen (thanks AstroBryGuy)</li>
+    <li>Corrected a few typos</li>
+    <li>Numerous adjustments of various kind</li>
+    <li>Minor script changes</li>
+  </ul>
+  <p><strong>Version 1.4</strong></p>
+  <ul>
+    <li>Fixed a bug with the wrong use of chapter globals</li>
+  </ul>
+  <p><strong>Version 1.5</strong></p>
+  <ul>
+    <li>Fixed a bug with equipping weapon for a number of familiars</li>
+    <li>Now the familiar leaving after friendly fire will no longer prevent the summoning of a new familiar</li>
+    <li>Attempt to avoid disruption of the familiar's levelling up process</li>
+    <li>Corrected a few typos</li>
+  </ul>
+  <p><strong>Version 1.55</strong></p>
+  <ul>
+    <li>Corrected a typo that'd reset the wrong variable</li>
+    <li>Fixed spell description for the Find Familiar scroll</li>
+  </ul>
+  <p><strong>Version 1.6</strong></p>
+  <ul>
+    <li>Fixed incompatibility with BGT transition script</li> 
+    <li>Fixed incompatibility with Game Over Only on Party Dead modification</li>  
+    <li>Improved familiars' discontent mechanic</li>
+    <li>Minor tweaks to dialogue and scripts</li>   
+  </ul>
+  <p><strong>Version 1.65</strong></p>
+  <ul>
+    <li>Corrected a typo breaking level up dialogue option at level 12</li>  
+  </ul>
+  <p><strong>Version 1.7</strong></p>
+  <ul>
+    <li>The familiars will no longer stubbornly refuse to return to the backpack when their or the mage's health is seriously compromised in battle</li> 
+    <li>Attempt to avoid having the familiar's nagging ever interrupt the player during combat</li> 
+    <li>Fixed minor bug with evil familiars' TOB dialogue</li>  
+    <li>Additional dialogue for reputation shift (good aligned familiars will not stay with a villain!)</li>
+    <li>Fixed minor bug with the ferret's and the rabbit's Burrow ability</li>  
+  </ul>
+  <p><strong>Version 1.8</strong></p>
+  <ul>
+    <li>All familiars use now their innate abilities instantaneously</li> 
+    <li>Introduced new Special Ability for Thief/Warrior class familiars: Empowerment</li> 
+    <li>Introduced new Special Ability for Mage class familiars: Spell bounce</li> 
+    <li>Wraith Form and Phasing abilities added to Spider</li> 
+    <li>Warrior class familiars are now immune to Critical Hits</li> 
+    <li>Fixed a bug with the Spider's poison resistance</li> 
+    <li>Fixed minor incompatibility with Sword Coast Stratagems</li> 
+  </ul>
+  <p><strong>Version 2.0</strong></p>
+  <ul>
+    <li>Included missing Bard, Beast Master and Thief with UAI ability classes</li>
+    <li>Fixed minor issue with party members using the Find Familiar scroll in the quick slot</li>
+    <li>Fixed issue with Empowerment not switching on the fly when Reputation changes would affect it</li>
+    <li>Fixed issue with Empowerment not correctingly updating the hit points gain/loss</li>
+    <li>Fixed issue with Empowerment not removing old bonus before applying new ones</li>
+    <li>Changed Empowerment's visual cue to something less intrusive</li> 
+    <li>Alleviated stuttering when Empowerment is being applied to or removed from Thief/Warrior class familiars</li>
+    <li>Raised base thieving skills for cat, ferret and rabbit</li>
+    <li>Changed Burrow ability: the familiar stays hidden until the master recalls him</li>
+    <li>Paralyzed or Intoxicated should now no longer appear on Undead</li>
+    <li>Mage class familiars now cast mirrored spells at the right level (thanks kjeron)</li>
+    <li>Fixed bug with some thieving skill and poison resistance bonuses being erased when the familair moves to the backpack (thanks magus)</li>
+    <li>Small cosmetic changes to the summoning/level up of the familiars</li>
+    <li>The spider's poisonous/paralyzing attack now scales with the enchantement of the weapon</li>
+    <li>The familiars no longer initiate any dialogue</li>
+    <li>Fixed compatibility problems with Game Over only on Party Dead (requires version 1.7 or higher)</li> 
+    <li>Updated WeiDU to version 241</li>
+  </ul>
+  <p><strong>Version 2.1</strong></p>
+  <ul>
+    <li>The Burrow ability is now exclusive to the rabbit</li>
+    <li>The Burrow ability is now restricted to Outdoor and Dungeon areas rather than just Outdoor</li>
+    <li>The ferret gains more instances of its War Dance ability to compensate the loss of the Burrow ability</li>
+    <li>A couple of text changes to provide basic information about the Dust Mephit's Glass Dust ability</li>
+    <li>Fixed a typo in the WTFAMPx.d files</li>
+    <li>Minor code changes</li>	
+  </ul>
+</div>
+</body>
+</html>

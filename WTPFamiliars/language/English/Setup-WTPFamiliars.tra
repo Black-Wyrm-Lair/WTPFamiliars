@@ -1,0 +1,1168 @@
+@0    = ~Find Familiar~
+@1    = ~Familiar~
+@2    = ~Find Familiar
+Level: 1
+School: Universal
+Range: n/a
+Duration: Permanent
+Casting Time: 12 hours
+Area of Effect: Special
+Saving Throw: None
+
+This spell enables the caster to summon a familiar to act as his aide and companion. Familiars are typically small creatures and convey their sensory powers to their master, converse with him, and serve as his guard, scout and spy. A wizard can have only one familiar at a time and has limited control over what sort of creature answers the summoning.
+
+The creature is always more intelligent than others of its type (typically by 2 or 3 intelligence points), and its bond with the wizard confers upon it an exceptionally long life. The master has an empathic link with the familiar and can issue it mental commands; as added bonus, he also receives half its total hit points. However, the violent death of the familiar is a traumatic event and has severe repercussions: the wizard may immediately faint and fall unconscious for a brief time, during which he'd be vulnerable to enemy attacks. Regardless, surviving the shock takes a definite toll: the bonus hit points are lost and a -1 penalty to constitution is inflicted. Hence a period of 3 days' mourning begins. During this time, the strong emotional attachment to the lost familiar will prevent any search for a replacement. When the mourning is over, the -1 penalty to constitution is lifted and the wizard may attempt the summoning of a new familiar. Note: the familiar can be summoned only outdoors by the protagonist and its level is always equal to its master's.
+
+Example: A mage has 4 hit points and casts Find Familiar. The imp summoned has 4 hit points as well so the caster gets a bonus of 2 hit points, for a total of 6 hit points. If the familiar dies, the caster will lose those additional 2 hit points (putting him back at 4) and 1 point of constitution (which may cause additional hit points loss).
+
+Here is a list of the familiars that the player can choose according to alignment:
+
+LAWFUL GOOD: Rabbit, Pseudodragon or Ferret
+NEUTRAL GOOD: Pseudodragon, Rabbit. Faerie Dragon or Spider
+CHAOTIC GOOD: Faerie Dragon, Pseudodragon or Cat
+
+LAWFUL NEUTRAL: Ferret, Rabbit or Imp
+NEUTRAL: Spider
+CHAOTIC NEUTRAL: Cat, Faerie Dragon or Quasit
+
+LAWFUL EVIL: Imp, Dust Mephit or Ferret
+NEUTRAL EVIL: Dust Mephit, Imp, Quasit or Spider
+CHAOTIC EVIL: Quasit, Dust Mephit or Cat
+
+You can view your familiar's statistics from the inventory screen.~
+@3    = ~This is your familiar, a spider, currently curled up and safe within your backpack. It has Low Intelligence (5-7) but can be trained to obey a master, not attack beings designated by the master, and to disable spellcasters. Their venom has an onset time of 1-2 rounds and causes paralysis for 2d4 turns, unless the victim makes a successful saving throw vs. poison (with a +1 on the roll). If starved for long periods, they often eat paralyzed prey.
+
+Abilities (Level 1):
+
+Armor Class: 6
+Hit Points: 4
+Attacks per Round: 1
+Special abilities: Has 50% resistance to poison
+Can cast Web once per day
+Immunity to critical hits
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Hit Points, THAC0 and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Warrior Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 3-21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 3, 5, 7, 9, 11, 13, 15, 17
+Attacks per Round: + 0,5 (Lv 4, 7, 10, 13)
+Poison Resistance: +5 (Lv 2-8)
+Special: Web (Lv 6, 12, 20, 30)
+Wraith Form (Lv 9)
+Phasing (Lv 12)
+Improved Phasing (Lv 15)~
+@4    = ~Quasit Familiar (Lv 1)~
+@5    = ~Cat Familiar (Lv 1)~
+@6    = ~Spider Familiar (Lv 1)~
+@7    = ~Imp Familiar (Lv 1)~
+@8    = ~Pseudodragon Familiar (Lv 1)~
+@9    = ~Ferret Familiar (Lv 1)~
+@10   = ~Dust Mephit Familiar (Lv 1)~
+@11   = ~Faerie Dragon Familiar (Lv 1)~
+@12   = ~Rabbit Familiar (Lv 1)~
+@13   = ~WTP Familiars (Requires ToB, BGT, BGEE, BG2EE, IWDEE, EET)~
+@14   = ~This modification is only compatible with Baldur's Gate 2: Throne of Bhaal and Baldur's Gate Trilogy.~
+@15   = ~~
+@16   = ~Detect Good~
+@17   = ~Detect Good (Divination)
+Level: 2
+Range: Visual range of caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: Sight
+Saving Throw: None
+
+This spell discovers emanations of good from any creature. Any good creature within the range of the spell will briefly glow red.~
+@18   = ~You're still mourning the loss of your familiar.~
+@19   = ~Spider Form
+Level: 4
+School: Alteration
+Range: 0
+Duration: 3 turns
+Casting Time: 4
+Area of Effect: self
+Saving Throw: None
+
+This spell allows the Imp familiar to assume the form of a large spider. While the mental attributes remain the same, all the physical ones are attained from the new form, including natural attacks and protections.
+
+When the spell is cast, for the duration of the spell the Imp may morph between his original and its acquired form at any time, and as many times as he wishes.~
+@20   = ~Wolf Form
+Level: 4
+School: Alteration
+Range: 0
+Duration: 3 turns
+Casting Time: 4
+Area of Effect: self
+Saving Throw: None
+
+This spell is allows the Quasit familiar to assume the form of a wolf. While the mental attributes remain the same, all the physical ones are attained from the new form, including natural attacks and protections.
+
+When the spell is cast, for the duration of the spell the Quasit may morph between his original and its acquired form at any time, and as many times as he wishes.~
+@21   = ~Spider Form~
+@22   = ~Wolf Form~
+@23   = ~Suggestion
+Level: 3
+School: Enchantment/Charm
+Range: Visual range of caster
+Duration: 1 hour
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+With this spell, the Familiar suggests an action he finds desirable in the recipient's mind. In order to have the creature comprehend and act the suggestion, it is necessary to use a common language.
+
+The suggestion must be worded in such a manner as to make the action sound reasonable; asking the creature to do some obviously harmful act automatically negates the effect of the spell.~
+@24   = ~Suggestion~
+@25   = ~Attack: +1 enchantment level~
+@26   = ~Attack: +2 enchantment level~
+@27   = ~Attack: +3 enchantment level~
+@28   = ~Gained immunity to non magical weapons~
+@29   = ~Attack: backstab multiplier x2~
+@30   = ~Attack: backstab multiplier x3~
+@31   = ~Attack: backstab multiplier x4~
+@32   = ~Attack: backstab multiplier x5~
+@33   = ~Armor Class (natural) improved with 1~
+@34   = ~Armor Class (natural) improved with 2~
+@35   = ~THAC0 improved with 1~
+@36   = ~Saving Throws improved (Warrior Table)~
+@37   = ~Saving Throws improved (Rogue Table)~
+@38   = ~Saving Throws improved (Wizard Table)~
+@39   = ~Saving Throws improved (Cleric/Wizard Table)~
+@40   = ~Total Hit Points increased with 4~
+@41   = ~Total Hit Points increased with 2~
+@42   = ~Total Hit Points increased with 1~
+@43   = ~Magic Resistance increased with 6~
+@44   = ~Magic Resistance increased with 8~
+@45   = ~Thieving skills increased (Thief Table)~
+@46   = ~Attack: +0.5 attacks per round~
+@47   = ~Fire, Cold and Electric Resistance increased with 5~
+@48   = ~Fire Resistance increased with 5~
+@49   = ~Gate Dust Mephit~
+@50   = ~Gate Dust Mephit
+Level: 2
+School: Conjuration/Summoning
+Range: 40
+Duration: 1 hour
+Casting Time: 1 round
+Area of Effect: Special
+Saving Throw: None
+
+A Dust Mephit can attempt to gate in another of his kind to share his tragic alienation. Since these ghoulish creatures find death morbidly fascinating, it is safe to believe the dust mephit will not hesitate to engage even in the most hopeless battle.~
+@51   = ~This is your familiar, a dust mephit, currently safe within your backpack. Dust mephits have dusky brown skin, eyes, and wings and pose as tragic yet fashionable victims of a gloomy fate, heroically holding out against utter insanity. They favor lines like 'A dust mephit I am, lest dust I become!'
+
+Abilities (Level 1):
+
+Armor Class: 6
+Hit Points: 4
+Attacks per Round: 2
+
+Special abilities: Has 50% resistance to fire and 50% resistance to slashing, piercing, and missile damage
+Can use 'Glass Dust' once per day (-4 AC and -2 THAC0 for 3 rounds to humanoids in a 15' radius)
+Regenerates 1 HP / turn
+Immunity to critical hits
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Hit Points, THAC0 and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Warrior Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 5-21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 3, 5, 7, 9, 11, 13, 15, 17
+Attacks per Round: + 0,5 (Lv 10, 13)
+Fire Resistance: +5 (Lv 2-11)
+Special: Glass Dust (Lv 3, 6)
+Gate Dust Mephit (Lv 12)~
+@52   = ~This is your familiar, a faerie dragon, currently curled up and safe within your backpack. Faerie dragons resemble miniature dragons with thin bodies, long, prehensile tails, gossamer butterfly wings, and huge smiles.  They live in peaceful, tangled forests and thrive on pranks, mischief, and practical jokes. A faerie dragon usually begins its attacks by turning invisible and using their bite and their breath, consisting in a 2-foot-diameter cloud of euphoria gas. A victim failing a saving throw vs. breath weapon will wander around aimlessly in a state of bliss for the next few minutes, during which time he is unable to attack and his Armor Class is decreased by 2.
+
+Abilities (Level 1):
+
+Armor Class: 5
+Hit Points: 4
+Attacks per Round: 1
+Magic Resistance: 10%
+Special abilities: Can cast Invisibility once per day
+Spell bounce: the familiar has an affinity-modified chance of mirroring the effects of personal protective spells cast by the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Mage/Druid Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 7, 10, 13, 16, 19, 22)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 4, 6, 7, 10, 11, 13, 16, 19, 21
+Magic Resistance: +6% (Lv 2) +8% (Lv 3-12)
+Special: Suggestion (Lv 3, 9)
+Invisibility (Lv 6)
+Limited Wish (Faerie Dragon) (Lv 15)~
+@53   = ~This is your familiar, a ferret, currently curled up and safe in your backpack. The ferret is an incredibly quick and agile animal and can be trained to perform simple tricks, retrieve objects or hunt small burrowing game. The ferret's uncanny ability to get into almost anything unseen makes it a handy pickpocket.
+
+Abilities (Level 1):
+
+Armor Class: 6
+Hit Points: 4
+Attacks per Round: 1
+Backstab multiplier: x2
+Special abilities: Rapid motions (always hasted)
+Can cast 'War Dance' once per day (taunts one enemy)
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Saving Throws and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Thief Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Thieving skills: +4 to Open Lock, Move Silently, Hide in Shadow, Detect Illusion, Find Traps, Pick Pocket (Lv 2-7, 9-14, 16-21, 23-28, 30-35, 37-42, 44-49), +5 (Lv 8, 15, 22, 29, 36, 43, 50)
+Armor Class: +2 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 3, 5, 7, 9, 11, 13, 15, 17, 19, 21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 5, 9, 13, 17, 21
+Backstab multiplier: +1 (Lv 5, 9, 13)
+Special: War Dance (Lv 6, 12, 20, 30)~
+@54   = ~This is your familiar, an imp, currently grumpy yet safe within your backpack. Imps are diminutive creatures of an evil nature who roam the world and act as familiars for lawful evil wizards and priests.  The average imp is a 2' humanoid with leathery, bat-like wings, a barbed tail, and sharp, twisted horns. Its skin is a dark red and its horns and jagged teeth are a gleaming white. The imp attacks with the wicked stinger on its tail. In addition to inflicting 1-4 points of damage, this stinger injects a powerful poison which might be fatal to those who fail their save against it. If the imp dies, the master instantly suffers up to 4 levels drain for one round (the level never drops to zero or lower).
+
+Abilities (Level 1):
+
+Armor Class: 2
+Hit Points: 4
+Attacks per Round: 1
+Magic Resistance: 25%
+Special abilities: Has 50% resistance to fire, cold, and electricity
+Regenerates 1 HP / round
+Can cast 'Detect Good' once per day
+Grants 2% magic resistance to the wizard provided no distance greater than 15 feet separates them
+Spell bounce: the familiar has an affinity-modified chance of mirroring the effects of personal protective spells cast by the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Mage Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 7, 10, 13, 16, 19, 22)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 6, 11, 16, 21
+Fire, Cold and Electric Resistance: +5 (Lv 2-11)
+Special: Horror (Lv 3)
+Invisibility (Lv 6)
+Spider Form (Lv 9)
+Immunity to Normal Weapon (Lv 9)
+Detect Magic (Lv 12)~
+@55   = ~This is your familiar, a quasit, currently grumpy yet safe within your backpack. Quasits are chaotic evil counterparts to imps, with superior combat skills. The quasit's claws are coated in a toxin which causes anyone struck by them to save versus poison or lose one point of dexterity for 6 rounds. The effects of multiple wounds are cumulative. If the quasit dies, the master instantly suffers up to 4 levels drain for one round (the level never drops to zero or lower).
+
+Abilities (Level 1):
+
+Armor Class: 2
+Hit Points: 4
+Attacks per Round: 3
+Magic Resistance: 25%
+Special abilities: Has 50% resistance to fire, cold, and electricity
+Regenerates 1 HP / round
+Can cast 'Detect Good' once per day
+Immunity to critical hits
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Hit Points, THAC0 and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Warrior Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 3, 5, 7, 9, 11, 13, 15, 17
+Fire, Cold and Electric Resistance: +5 (Lv 2-11)
+Special: Horror (Lv 3)
+Invisibility (Lv 6)
+Wolf Form (Lv 9)
+Immunity to Normal Weapon (Lv 9)
+Detect Magic (Lv 12)~
+@56   = ~This is your familiar, a pseudodragon, currently curled up and safe within your backpack. Pseudodragons are a species of small flying lizard that inhabits heavily forested wilderness areas. These playful, benign creatures have magical powers that they can share with others, so they are often sought as companions. Pseudodragons resemble miniature red dragons and have fine scales and sharp horns and teeth. A pseudodragon's coloration is red-brown as opposed to the deep red of red dragons. Its tail is about 2 feet long (longer than the pseudodragon itself), barbed, very flexible and may render those scratched by it unconscious. The creature can move it with flashing speed and strikes at +4 on attack rolls.
+
+Abilities (Level 1):
+
+Armor Class: 2
+Hit Points: 4
+Attacks per Round: 1
+Magic Resistance: 35%
+Special abilities: Can cast 'Camouflage' once per day
+It attacks with a +4 bonus
+Grants 2% magic resistance to the wizard provided no distance greater than 15 feet separates them
+Spell bounce: the familiar has an affinity-modified chance of mirroring the effects of personal protective spells cast by the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Mage Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Armor Class: +1 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 7, 10, 13, 16, 19, 22)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 6, 11, 16, 21
+Special: Camouflage (Lv 1, 6)
+Detect Invisibility (Lv 3, 9)
+Improved Camouflage (Lv 12, 15)~
+@57   = ~This is your familiar, a rabbit, currently curled up and safe within your backpack. The rabbit is difficult to surprise or catch due to its sensitive eyesight, hearing, nose and a keen sense of danger. The rabbit excels at sniffing out traps on behalf of its master.
+
+Abilities (Level 1):
+
+Armor Class: 6
+Hit Points:  4
+Attacks per Round: 1
+Backstab multiplier: x2
+Special abilities: Wary (immunity to backstab)
+'Burrow' once per day (hides from enemies)
+Lucky
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Saving Throws and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Thief Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Thieving skills: +4 to Open Lock, Move Silently, Hide in Shadow, Detect Illusion, Find Traps, Pick Pocket (Lv 2-7, 9-14, 16-21, 23-28, 30-35, 37-42, 44-49), +5 (Lv 8, 15, 22, 29, 36, 43, 50)
+Armor Class: +2 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 3, 5, 7, 9, 11, 13, 15, 17, 19, 21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 5, 9, 13, 17, 21
+Backstab multiplier: +1 (Lv 5, 9, 13)
+Special: Burrow (Lv 6, 12, 20, 30)~
+@58   = ~This is your familiar, a cat, currently curled up and safe within your backpack. Cats are classic familiars and have often been favored by witches and sorcerers, in particular the black ones like yours. The cat familiar is a master scout, able to move in the shadows with the ability of a veteran thief.
+
+Abilities (Level 1):
+
+Armor Class: 6
+Hit Points: 4
+Attacks per Round: 2
+Backstab multiplier: x2
+Special abilities: Keen Vision (dispels normal invisibility)
+Nine lives (+4 bonus to Save vs Death)
+Empowerment: the familiar receives a level-based, affinity-modified bonus to Saving Throws and Armor Class if in proximity of the master
+
+Note: your familiar improves and levels up too.
+
+Level Up (Thief Class):
+
+HPs: +4 (Lv 2-9), +2 (Lv 10-19), +1 (Lv 20-50)
+Thieving skills: +4 to Open Lock, Move Silently, Hide in Shadow, Detect Illusion, Find Traps, Pick Pocket (Lv 2-7, 9-14, 16-21, 23-28, 30-35, 37-42, 44-49), +5 (Lv 8, 15, 22, 29, 36, 43, 50)
+Armor Class: +2 (Lv 4, 11, 19, 32)
+THAC0: +1 (Lv 3, 5, 7, 9, 11, 13, 15, 17, 19, 21)
+Weapon enchantment: +1 (Lv 5, 12, 20)
+Saving Throws improvements at level 5, 9, 13, 17, 21
+Backstab multiplier: +1 (Lv 5, 9, 13)
+Special: Keen Sense (Lv 12) (dispels non-detection)~
+@59   = ~Poison Resistance increased with 2~
+@60   = ~War Dance~
+@61   = ~Keen Sense acquired (dispels non-detection)~
+@62   = ~Camouflage~
+@63   = ~Camouflage
+Level: 1
+School: Alteration
+Sphere: Combat
+Range: Personal
+Duration: Special
+Casting Time: 1
+Area of Effect: Caster
+Saving Throw: None
+
+This spell causes the caster to perfectly blend with the environment, and to effectively vanish from sight and be undetectable by normal vision or even infravision. Of course, the invisible creature is not magically silenced, and certain other conditions can render the creature detectable. The caster cannot perform any actions that manipulate the environment around him such as opening doors, disarming traps, or opening chests. An invisible creature can drink a potion, or cast non-attack spells centered on himself and remain invisible, but he cannot attack nor cast spells on other targets without ending the spell. The spell remains in effect until it is magically broken or dispelled, until the recipient attacks any creature, or until 4 rounds have passed.~
+@64   = ~Improved Camouflage~
+@65   = ~Improved Camouflage
+Level: 4
+School: Alteration
+Sphere: Combat
+Range: Personal
+Duration: Special
+Casting Time: 4
+Area of Effect: Caster
+Saving Throw: None
+
+This spell is similar to the Camouflage spell, but the recipient is able to attack, either by missile discharge, melee combat, or spellcasting, and remain unseen. Note, however, that there are sometimes telltale traces, a shimmering, that enable observant opponents to approximate the invisible character's whereabouts. These traces are only noticeable when specifically looked for, after the creature has made his presence known. Once the character has revealed himself, opponents can attempt to attack him with conventional weapons, though they do so with a -4 penalty to the attack roll, or they may cast area of effect spells near his position. Opponents remain unable to directly target the invisible creature with spells, scrolls, or abilities until the spell duration expires or the invisibility is dispelled.~
+@66   = ~Detect Magic~
+@67   = ~Burrow~
+@68   = ~Limited Wish (Faerie Dragon)~
+@69   = ~You cannot cast this spell while enemies are around.~
+@70   = ~Cat Familiar (Lv 2)~
+@71   = ~Cat Familiar (Lv 3)~
+@72   = ~Cat Familiar (Lv 4)~
+@73   = ~Cat Familiar (Lv 5)~
+@74   = ~Cat Familiar (Lv 6)~
+@75   = ~Cat Familiar (Lv 7)~
+@76   = ~Cat Familiar (Lv 8)~
+@77   = ~Cat Familiar (Lv 9)~
+@78   = ~Cat Familiar (Lv 10)~
+@79   = ~Cat Familiar (Lv 11)~
+@80   = ~Cat Familiar (Lv 12)~
+@81   = ~Cat Familiar (Lv 13)~
+@82   = ~Cat Familiar (Lv 14)~
+@83   = ~Cat Familiar (Lv 15)~
+@84   = ~Cat Familiar (Lv 16)~
+@85   = ~Cat Familiar (Lv 17)~
+@86   = ~Cat Familiar (Lv 18)~
+@87   = ~Cat Familiar (Lv 19)~
+@88   = ~Cat Familiar (Lv 20)~
+@89   = ~Cat Familiar (Lv 21)~
+@90   = ~Cat Familiar (Lv 22)~
+@91   = ~Cat Familiar (Lv 23)~
+@92   = ~Cat Familiar (Lv 24)~
+@93   = ~Cat Familiar (Lv 25)~
+@94   = ~Cat Familiar (Lv 26)~
+@95   = ~Cat Familiar (Lv 27)~
+@96   = ~Cat Familiar (Lv 28)~
+@97   = ~Cat Familiar (Lv 29)~
+@98   = ~Cat Familiar (Lv 30)~
+@99   = ~Cat Familiar (Lv 31)~
+@100  = ~Cat Familiar (Lv 32)~
+@101  = ~Cat Familiar (Lv 33)~
+@102  = ~Cat Familiar (Lv 34)~
+@103  = ~Cat Familiar (Lv 35)~
+@104  = ~Cat Familiar (Lv 36)~
+@105  = ~Cat Familiar (Lv 37)~
+@106  = ~Cat Familiar (Lv 38)~
+@107  = ~Cat Familiar (Lv 39)~
+@108  = ~Cat Familiar (Lv 40)~
+@109  = ~Cat Familiar (Lv 41)~
+@110  = ~Cat Familiar (Lv 42)~
+@111  = ~Cat Familiar (Lv 43)~
+@112  = ~Cat Familiar (Lv 44)~
+@113  = ~Cat Familiar (Lv 45)~
+@114  = ~Cat Familiar (Lv 46)~
+@115  = ~Cat Familiar (Lv 47)~
+@116  = ~Cat Familiar (Lv 48)~
+@117  = ~Cat Familiar (Lv 49)~
+@118  = ~Cat Familiar (Lv 50)~
+@119  = ~Quasit Familiar (Lv 2)~
+@120  = ~Quasit Familiar (Lv 3)~
+@121  = ~Quasit Familiar (Lv 4)~
+@122  = ~Quasit Familiar (Lv 5)~
+@123  = ~Quasit Familiar (Lv 6)~
+@124  = ~Quasit Familiar (Lv 7)~
+@125  = ~Quasit Familiar (Lv 8)~
+@126  = ~Quasit Familiar (Lv 9)~
+@127  = ~Quasit Familiar (Lv 10)~
+@128  = ~Quasit Familiar (Lv 11)~
+@129  = ~Quasit Familiar (Lv 12)~
+@130  = ~Quasit Familiar (Lv 13)~
+@131  = ~Quasit Familiar (Lv 14)~
+@132  = ~Quasit Familiar (Lv 15)~
+@133  = ~Quasit Familiar (Lv 16)~
+@134  = ~Quasit Familiar (Lv 17)~
+@135  = ~Quasit Familiar (Lv 18)~
+@136  = ~Quasit Familiar (Lv 19)~
+@137  = ~Quasit Familiar (Lv 20)~
+@138  = ~Quasit Familiar (Lv 21)~
+@139  = ~Quasit Familiar (Lv 22)~
+@140  = ~Quasit Familiar (Lv 23)~
+@141  = ~Quasit Familiar (Lv 24)~
+@142  = ~Quasit Familiar (Lv 25)~
+@143  = ~Quasit Familiar (Lv 26)~
+@144  = ~Quasit Familiar (Lv 27)~
+@145  = ~Quasit Familiar (Lv 28)~
+@146  = ~Quasit Familiar (Lv 29)~
+@147  = ~Quasit Familiar (Lv 30)~
+@148  = ~Quasit Familiar (Lv 31)~
+@149  = ~Quasit Familiar (Lv 32)~
+@150  = ~Quasit Familiar (Lv 33)~
+@151  = ~Quasit Familiar (Lv 34)~
+@152  = ~Quasit Familiar (Lv 35)~
+@153  = ~Quasit Familiar (Lv 36)~
+@154  = ~Quasit Familiar (Lv 37)~
+@155  = ~Quasit Familiar (Lv 38)~
+@156  = ~Quasit Familiar (Lv 39)~
+@157  = ~Quasit Familiar (Lv 40)~
+@158  = ~Quasit Familiar (Lv 41)~
+@159  = ~Quasit Familiar (Lv 42)~
+@160  = ~Quasit Familiar (Lv 43)~
+@161  = ~Quasit Familiar (Lv 44)~
+@162  = ~Quasit Familiar (Lv 45)~
+@163  = ~Quasit Familiar (Lv 46)~
+@164  = ~Quasit Familiar (Lv 47)~
+@165  = ~Quasit Familiar (Lv 48)~
+@166  = ~Quasit Familiar (Lv 49)~
+@167  = ~Quasit Familiar (Lv 50)~
+@168  = ~Pseudodragon Familiar (Lv 2)~
+@169  = ~Pseudodragon Familiar (Lv 3)~
+@170  = ~Pseudodragon Familiar (Lv 4)~
+@171  = ~Pseudodragon Familiar (Lv 5)~
+@172  = ~Pseudodragon Familiar (Lv 6)~
+@173  = ~Pseudodragon Familiar (Lv 7)~
+@174  = ~Pseudodragon Familiar (Lv 8)~
+@175  = ~Pseudodragon Familiar (Lv 9)~
+@176  = ~Pseudodragon Familiar (Lv 10)~
+@177  = ~Pseudodragon Familiar (Lv 11)~
+@178  = ~Pseudodragon Familiar (Lv 12)~
+@179  = ~Pseudodragon Familiar (Lv 13)~
+@180  = ~Pseudodragon Familiar (Lv 14)~
+@181  = ~Pseudodragon Familiar (Lv 15)~
+@182  = ~Pseudodragon Familiar (Lv 16)~
+@183  = ~Pseudodragon Familiar (Lv 17)~
+@184  = ~Pseudodragon Familiar (Lv 18)~
+@185  = ~Pseudodragon Familiar (Lv 19)~
+@186  = ~Pseudodragon Familiar (Lv 20)~
+@187  = ~Pseudodragon Familiar (Lv 21)~
+@188  = ~Pseudodragon Familiar (Lv 22)~
+@189  = ~Pseudodragon Familiar (Lv 23)~
+@190  = ~Pseudodragon Familiar (Lv 24)~
+@191  = ~Pseudodragon Familiar (Lv 25)~
+@192  = ~Pseudodragon Familiar (Lv 26)~
+@193  = ~Pseudodragon Familiar (Lv 27)~
+@194  = ~Pseudodragon Familiar (Lv 28)~
+@195  = ~Pseudodragon Familiar (Lv 29)~
+@196  = ~Pseudodragon Familiar (Lv 30)~
+@197  = ~Pseudodragon Familiar (Lv 31)~
+@198  = ~Pseudodragon Familiar (Lv 32)~
+@199  = ~Pseudodragon Familiar (Lv 33)~
+@200  = ~Pseudodragon Familiar (Lv 34)~
+@201  = ~Pseudodragon Familiar (Lv 35)~
+@202  = ~Pseudodragon Familiar (Lv 36)~
+@203  = ~Pseudodragon Familiar (Lv 37)~
+@204  = ~Pseudodragon Familiar (Lv 38)~
+@205  = ~Pseudodragon Familiar (Lv 39)~
+@206  = ~Pseudodragon Familiar (Lv 40)~
+@207  = ~Pseudodragon Familiar (Lv 41)~
+@208  = ~Pseudodragon Familiar (Lv 42)~
+@209  = ~Pseudodragon Familiar (Lv 43)~
+@210  = ~Pseudodragon Familiar (Lv 44)~
+@211  = ~Pseudodragon Familiar (Lv 45)~
+@212  = ~Pseudodragon Familiar (Lv 46)~
+@213  = ~Pseudodragon Familiar (Lv 47)~
+@214  = ~Pseudodragon Familiar (Lv 48)~
+@215  = ~Pseudodragon Familiar (Lv 49)~
+@216  = ~Pseudodragon Familiar (Lv 50)~
+@217  = ~Imp Familiar (Lv 2)~
+@218  = ~Imp Familiar (Lv 3)~
+@219  = ~Imp Familiar (Lv 4)~
+@220  = ~Imp Familiar (Lv 5)~
+@221  = ~Imp Familiar (Lv 6)~
+@222  = ~Imp Familiar (Lv 7)~
+@223  = ~Imp Familiar (Lv 8)~
+@224  = ~Imp Familiar (Lv 9)~
+@225  = ~Imp Familiar (Lv 10)~
+@226  = ~Imp Familiar (Lv 11)~
+@227  = ~Imp Familiar (Lv 12)~
+@228  = ~Imp Familiar (Lv 13)~
+@229  = ~Imp Familiar (Lv 14)~
+@230  = ~Imp Familiar (Lv 15)~
+@231  = ~Imp Familiar (Lv 16)~
+@232  = ~Imp Familiar (Lv 17)~
+@233  = ~Imp Familiar (Lv 18)~
+@234  = ~Imp Familiar (Lv 19)~
+@235  = ~Imp Familiar (Lv 20)~
+@236  = ~Imp Familiar (Lv 21)~
+@237  = ~Imp Familiar (Lv 22)~
+@238  = ~Imp Familiar (Lv 23)~
+@239  = ~Imp Familiar (Lv 24)~
+@240  = ~Imp Familiar (Lv 25)~
+@241  = ~Imp Familiar (Lv 26)~
+@242  = ~Imp Familiar (Lv 27)~
+@243  = ~Imp Familiar (Lv 28)~
+@244  = ~Imp Familiar (Lv 29)~
+@245  = ~Imp Familiar (Lv 30)~
+@246  = ~Imp Familiar (Lv 31)~
+@247  = ~Imp Familiar (Lv 32)~
+@248  = ~Imp Familiar (Lv 33)~
+@249  = ~Imp Familiar (Lv 34)~
+@250  = ~Imp Familiar (Lv 35)~
+@251  = ~Imp Familiar (Lv 36)~
+@252  = ~Imp Familiar (Lv 37)~
+@253  = ~Imp Familiar (Lv 38)~
+@254  = ~Imp Familiar (Lv 39)~
+@255  = ~Imp Familiar (Lv 40)~
+@256  = ~Imp Familiar (Lv 41)~
+@257  = ~Imp Familiar (Lv 42)~
+@258  = ~Imp Familiar (Lv 43)~
+@259  = ~Imp Familiar (Lv 44)~
+@260  = ~Imp Familiar (Lv 45)~
+@261  = ~Imp Familiar (Lv 46)~
+@262  = ~Imp Familiar (Lv 47)~
+@263  = ~Imp Familiar (Lv 48)~
+@264  = ~Imp Familiar (Lv 49)~
+@265  = ~Imp Familiar (Lv 50)~
+@266  = ~Faerie Dragon Familiar (Lv 2)~
+@267  = ~Faerie Dragon Familiar (Lv 3)~
+@268  = ~Faerie Dragon Familiar (Lv 4)~
+@269  = ~Faerie Dragon Familiar (Lv 5)~
+@270  = ~Faerie Dragon Familiar (Lv 6)~
+@271  = ~Faerie Dragon Familiar (Lv 7)~
+@272  = ~Faerie Dragon Familiar (Lv 8)~
+@273  = ~Faerie Dragon Familiar (Lv 9)~
+@274  = ~Faerie Dragon Familiar (Lv 10)~
+@275  = ~Faerie Dragon Familiar (Lv 11)~
+@276  = ~Faerie Dragon Familiar (Lv 12)~
+@277  = ~Faerie Dragon Familiar (Lv 13)~
+@278  = ~Faerie Dragon Familiar (Lv 14)~
+@279  = ~Faerie Dragon Familiar (Lv 15)~
+@280  = ~Faerie Dragon Familiar (Lv 16)~
+@281  = ~Faerie Dragon Familiar (Lv 17)~
+@282  = ~Faerie Dragon Familiar (Lv 18)~
+@283  = ~Faerie Dragon Familiar (Lv 19)~
+@284  = ~Faerie Dragon Familiar (Lv 20)~
+@285  = ~Faerie Dragon Familiar (Lv 21)~
+@286  = ~Faerie Dragon Familiar (Lv 22)~
+@287  = ~Faerie Dragon Familiar (Lv 23)~
+@288  = ~Faerie Dragon Familiar (Lv 24)~
+@289  = ~Faerie Dragon Familiar (Lv 25)~
+@290  = ~Faerie Dragon Familiar (Lv 26)~
+@291  = ~Faerie Dragon Familiar (Lv 27)~
+@292  = ~Faerie Dragon Familiar (Lv 28)~
+@293  = ~Faerie Dragon Familiar (Lv 29)~
+@294  = ~Faerie Dragon Familiar (Lv 30)~
+@295  = ~Faerie Dragon Familiar (Lv 31)~
+@296  = ~Faerie Dragon Familiar (Lv 32)~
+@297  = ~Faerie Dragon Familiar (Lv 33)~
+@298  = ~Faerie Dragon Familiar (Lv 34)~
+@299  = ~Faerie Dragon Familiar (Lv 35)~
+@300  = ~Faerie Dragon Familiar (Lv 36)~
+@301  = ~Faerie Dragon Familiar (Lv 37)~
+@302  = ~Faerie Dragon Familiar (Lv 38)~
+@303  = ~Faerie Dragon Familiar (Lv 39)~
+@304  = ~Faerie Dragon Familiar (Lv 40)~
+@305  = ~Faerie Dragon Familiar (Lv 41)~
+@306  = ~Faerie Dragon Familiar (Lv 42)~
+@307  = ~Faerie Dragon Familiar (Lv 43)~
+@308  = ~Faerie Dragon Familiar (Lv 44)~
+@309  = ~Faerie Dragon Familiar (Lv 45)~
+@310  = ~Faerie Dragon Familiar (Lv 46)~
+@311  = ~Faerie Dragon Familiar (Lv 47)~
+@312  = ~Faerie Dragon Familiar (Lv 48)~
+@313  = ~Faerie Dragon Familiar (Lv 49)~
+@314  = ~Faerie Dragon Familiar (Lv 50)~
+@315  = ~Spider Familiar (Lv 2)~
+@316  = ~Spider Familiar (Lv 3)~
+@317  = ~Spider Familiar (Lv 4)~
+@318  = ~Spider Familiar (Lv 5)~
+@319  = ~Spider Familiar (Lv 6)~
+@320  = ~Spider Familiar (Lv 7)~
+@321  = ~Spider Familiar (Lv 8)~
+@322  = ~Spider Familiar (Lv 9)~
+@323  = ~Spider Familiar (Lv 10)~
+@324  = ~Spider Familiar (Lv 11)~
+@325  = ~Spider Familiar (Lv 12)~
+@326  = ~Spider Familiar (Lv 13)~
+@327  = ~Spider Familiar (Lv 14)~
+@328  = ~Spider Familiar (Lv 15)~
+@329  = ~Spider Familiar (Lv 16)~
+@330  = ~Spider Familiar (Lv 17)~
+@331  = ~Spider Familiar (Lv 18)~
+@332  = ~Spider Familiar (Lv 19)~
+@333  = ~Spider Familiar (Lv 20)~
+@334  = ~Spider Familiar (Lv 21)~
+@335  = ~Spider Familiar (Lv 22)~
+@336  = ~Spider Familiar (Lv 23)~
+@337  = ~Spider Familiar (Lv 24)~
+@338  = ~Spider Familiar (Lv 25)~
+@339  = ~Spider Familiar (Lv 26)~
+@340  = ~Spider Familiar (Lv 27)~
+@341  = ~Spider Familiar (Lv 28)~
+@342  = ~Spider Familiar (Lv 29)~
+@343  = ~Spider Familiar (Lv 30)~
+@344  = ~Spider Familiar (Lv 31)~
+@345  = ~Spider Familiar (Lv 32)~
+@346  = ~Spider Familiar (Lv 33)~
+@347  = ~Spider Familiar (Lv 34)~
+@348  = ~Spider Familiar (Lv 35)~
+@349  = ~Spider Familiar (Lv 36)~
+@350  = ~Spider Familiar (Lv 37)~
+@351  = ~Spider Familiar (Lv 38)~
+@352  = ~Spider Familiar (Lv 39)~
+@353  = ~Spider Familiar (Lv 40)~
+@354  = ~Spider Familiar (Lv 41)~
+@355  = ~Spider Familiar (Lv 42)~
+@356  = ~Spider Familiar (Lv 43)~
+@357  = ~Spider Familiar (Lv 44)~
+@358  = ~Spider Familiar (Lv 45)~
+@359  = ~Spider Familiar (Lv 46)~
+@360  = ~Spider Familiar (Lv 47)~
+@361  = ~Spider Familiar (Lv 48)~
+@362  = ~Spider Familiar (Lv 49)~
+@363  = ~Spider Familiar (Lv 50)~
+@364  = ~Ferret Familiar (Lv 2)~
+@365  = ~Ferret Familiar (Lv 3)~
+@366  = ~Ferret Familiar (Lv 4)~
+@367  = ~Ferret Familiar (Lv 5)~
+@368  = ~Ferret Familiar (Lv 6)~
+@369  = ~Ferret Familiar (Lv 7)~
+@370  = ~Ferret Familiar (Lv 8)~
+@371  = ~Ferret Familiar (Lv 9)~
+@372  = ~Ferret Familiar (Lv 10)~
+@373  = ~Ferret Familiar (Lv 11)~
+@374  = ~Ferret Familiar (Lv 12)~
+@375  = ~Ferret Familiar (Lv 13)~
+@376  = ~Ferret Familiar (Lv 14)~
+@377  = ~Ferret Familiar (Lv 15)~
+@378  = ~Ferret Familiar (Lv 16)~
+@379  = ~Ferret Familiar (Lv 17)~
+@380  = ~Ferret Familiar (Lv 18)~
+@381  = ~Ferret Familiar (Lv 19)~
+@382  = ~Ferret Familiar (Lv 20)~
+@383  = ~Ferret Familiar (Lv 21)~
+@384  = ~Ferret Familiar (Lv 22)~
+@385  = ~Ferret Familiar (Lv 23)~
+@386  = ~Ferret Familiar (Lv 24)~
+@387  = ~Ferret Familiar (Lv 25)~
+@388  = ~Ferret Familiar (Lv 26)~
+@389  = ~Ferret Familiar (Lv 27)~
+@390  = ~Ferret Familiar (Lv 28)~
+@391  = ~Ferret Familiar (Lv 29)~
+@392  = ~Ferret Familiar (Lv 30)~
+@393  = ~Ferret Familiar (Lv 31)~
+@394  = ~Ferret Familiar (Lv 32)~
+@395  = ~Ferret Familiar (Lv 33)~
+@396  = ~Ferret Familiar (Lv 34)~
+@397  = ~Ferret Familiar (Lv 35)~
+@398  = ~Ferret Familiar (Lv 36)~
+@399  = ~Ferret Familiar (Lv 37)~
+@400  = ~Ferret Familiar (Lv 38)~
+@401  = ~Ferret Familiar (Lv 39)~
+@402  = ~Ferret Familiar (Lv 40)~
+@403  = ~Ferret Familiar (Lv 41)~
+@404  = ~Ferret Familiar (Lv 42)~
+@405  = ~Ferret Familiar (Lv 43)~
+@406  = ~Ferret Familiar (Lv 44)~
+@407  = ~Ferret Familiar (Lv 45)~
+@408  = ~Ferret Familiar (Lv 46)~
+@409  = ~Ferret Familiar (Lv 47)~
+@410  = ~Ferret Familiar (Lv 48)~
+@411  = ~Ferret Familiar (Lv 49)~
+@412  = ~Ferret Familiar (Lv 50)~
+@413  = ~Rabbit Familiar (Lv 2)~
+@414  = ~Rabbit Familiar (Lv 3)~
+@415  = ~Rabbit Familiar (Lv 4)~
+@416  = ~Rabbit Familiar (Lv 5)~
+@417  = ~Rabbit Familiar (Lv 6)~
+@418  = ~Rabbit Familiar (Lv 7)~
+@419  = ~Rabbit Familiar (Lv 8)~
+@420  = ~Rabbit Familiar (Lv 9)~
+@421  = ~Rabbit Familiar (Lv 10)~
+@422  = ~Rabbit Familiar (Lv 11)~
+@423  = ~Rabbit Familiar (Lv 12)~
+@424  = ~Rabbit Familiar (Lv 13)~
+@425  = ~Rabbit Familiar (Lv 14)~
+@426  = ~Rabbit Familiar (Lv 15)~
+@427  = ~Rabbit Familiar (Lv 16)~
+@428  = ~Rabbit Familiar (Lv 17)~
+@429  = ~Rabbit Familiar (Lv 18)~
+@430  = ~Rabbit Familiar (Lv 19)~
+@431  = ~Rabbit Familiar (Lv 20)~
+@432  = ~Rabbit Familiar (Lv 21)~
+@433  = ~Rabbit Familiar (Lv 22)~
+@434  = ~Rabbit Familiar (Lv 23)~
+@435  = ~Rabbit Familiar (Lv 24)~
+@436  = ~Rabbit Familiar (Lv 25)~
+@437  = ~Rabbit Familiar (Lv 26)~
+@438  = ~Rabbit Familiar (Lv 27)~
+@439  = ~Rabbit Familiar (Lv 28)~
+@440  = ~Rabbit Familiar (Lv 29)~
+@441  = ~Rabbit Familiar (Lv 30)~
+@442  = ~Rabbit Familiar (Lv 31)~
+@443  = ~Rabbit Familiar (Lv 32)~
+@444  = ~Rabbit Familiar (Lv 33)~
+@445  = ~Rabbit Familiar (Lv 34)~
+@446  = ~Rabbit Familiar (Lv 35)~
+@447  = ~Rabbit Familiar (Lv 36)~
+@448  = ~Rabbit Familiar (Lv 37)~
+@449  = ~Rabbit Familiar (Lv 38)~
+@450  = ~Rabbit Familiar (Lv 39)~
+@451  = ~Rabbit Familiar (Lv 40)~
+@452  = ~Rabbit Familiar (Lv 41)~
+@453  = ~Rabbit Familiar (Lv 42)~
+@454  = ~Rabbit Familiar (Lv 43)~
+@455  = ~Rabbit Familiar (Lv 44)~
+@456  = ~Rabbit Familiar (Lv 45)~
+@457  = ~Rabbit Familiar (Lv 46)~
+@458  = ~Rabbit Familiar (Lv 47)~
+@459  = ~Rabbit Familiar (Lv 48)~
+@460  = ~Rabbit Familiar (Lv 49)~
+@461  = ~Rabbit Familiar (Lv 50)~
+@462  = ~Dust Mephit Familiar (Lv 2)~
+@463  = ~Dust Mephit Familiar (Lv 3)~
+@464  = ~Dust Mephit Familiar (Lv 4)~
+@465  = ~Dust Mephit Familiar (Lv 5)~
+@466  = ~Dust Mephit Familiar (Lv 6)~
+@467  = ~Dust Mephit Familiar (Lv 7)~
+@468  = ~Dust Mephit Familiar (Lv 8)~
+@469  = ~Dust Mephit Familiar (Lv 9)~
+@470  = ~Dust Mephit Familiar (Lv 10)~
+@471  = ~Dust Mephit Familiar (Lv 11)~
+@472  = ~Dust Mephit Familiar (Lv 12)~
+@473  = ~Dust Mephit Familiar (Lv 13)~
+@474  = ~Dust Mephit Familiar (Lv 14)~
+@475  = ~Dust Mephit Familiar (Lv 15)~
+@476  = ~Dust Mephit Familiar (Lv 16)~
+@477  = ~Dust Mephit Familiar (Lv 17)~
+@478  = ~Dust Mephit Familiar (Lv 18)~
+@479  = ~Dust Mephit Familiar (Lv 19)~
+@480  = ~Dust Mephit Familiar (Lv 20)~
+@481  = ~Dust Mephit Familiar (Lv 21)~
+@482  = ~Dust Mephit Familiar (Lv 22)~
+@483  = ~Dust Mephit Familiar (Lv 23)~
+@484  = ~Dust Mephit Familiar (Lv 24)~
+@485  = ~Dust Mephit Familiar (Lv 25)~
+@486  = ~Dust Mephit Familiar (Lv 26)~
+@487  = ~Dust Mephit Familiar (Lv 27)~
+@488  = ~Dust Mephit Familiar (Lv 28)~
+@489  = ~Dust Mephit Familiar (Lv 29)~
+@490  = ~Dust Mephit Familiar (Lv 30)~
+@491  = ~Dust Mephit Familiar (Lv 31)~
+@492  = ~Dust Mephit Familiar (Lv 32)~
+@493  = ~Dust Mephit Familiar (Lv 33)~
+@494  = ~Dust Mephit Familiar (Lv 34)~
+@495  = ~Dust Mephit Familiar (Lv 35)~
+@496  = ~Dust Mephit Familiar (Lv 36)~
+@497  = ~Dust Mephit Familiar (Lv 37)~
+@498  = ~Dust Mephit Familiar (Lv 38)~
+@499  = ~Dust Mephit Familiar (Lv 39)~
+@500  = ~Dust Mephit Familiar (Lv 40)~
+@501  = ~Dust Mephit Familiar (Lv 41)~
+@502  = ~Dust Mephit Familiar (Lv 42)~
+@503  = ~Dust Mephit Familiar (Lv 43)~
+@504  = ~Dust Mephit Familiar (Lv 44)~
+@505  = ~Dust Mephit Familiar (Lv 45)~
+@506  = ~Dust Mephit Familiar (Lv 46)~
+@507  = ~Dust Mephit Familiar (Lv 47)~
+@508  = ~Dust Mephit Familiar (Lv 48)~
+@509  = ~Dust Mephit Familiar (Lv 49)~
+@510  = ~Dust Mephit Familiar (Lv 50)~
+@511  = ~Quasit Familiar~
+@512  = ~Cat Familiar~
+@513  = ~Spider Familiar~
+@514  = ~Imp Familiar~
+@515  = ~Pseudodragon Familiar~
+@516  = ~Ferret Familiar~
+@517  = ~Dust Mephit Familiar~
+@518  = ~Faerie Dragon Familiar~
+@519  = ~Rabbit Familiar~
+@520  = ~War dance improved~
+@521  = ~The Familiar has left. Hit Points bonus lost.~
+@522  = ~The bond with the Familiar is now irremediably broken.~
+@523  = ~I'm badly hurt, <PRO_MANWOMAN>!~
+@524  = ~I'm badly hurt, boss!~
+@525  = ~I'm badly hurt, my <PRO_LADYLORD>~
+@526  = ~The familiar has escaped from your backpack!~
+@527  = ~Your alignment change has disrupted the bond with the familiar.~
+@528  = ~The spell transfer was successful.~
+@529  = ~The spell transfer was not successful.~
+@530  = ~Wraith Form acquired (immunity to non magical weapons)~
+@531  = ~Phasing acquired (5% chance of invulnerability for one round after being hit)~
+@532  = ~Improved Phasing acquired (10% chance of invulnerability for one round after being hit)~
+@533  = ~Your current reputation is incompatible with the kind of familiar you wish to summon.~
+@534  = ~Well met, my <PRO_LADYLORD>.~
+@535  = ~Greetings, <PRO_MANWOMAN>.~
+@536  = ~Hey, boss.~
+@537  = ~You need to be closer to where your familiar is hiding.~
+@538  = ~Unburrow~
+@539  = ~Yikes!~
+@540  = ~You gave me a fright!~
+@541  = ~Oh there you are!~
+@542  = ~It worked!~
+@543  = ~I've been waiting for you!~
+@600  = ~Cat Familiar (Lv 1) *Emp.*~
+@601  = ~Cat Familiar (Lv 2) *Emp.*~
+@602  = ~Cat Familiar (Lv 3) *Emp.*~
+@603  = ~Cat Familiar (Lv 4) *Emp.*~
+@604  = ~Cat Familiar (Lv 5) *Emp.*~
+@605  = ~Cat Familiar (Lv 6) *Emp.*~
+@606  = ~Cat Familiar (Lv 7) *Emp.*~
+@607  = ~Cat Familiar (Lv 8) *Emp.*~
+@608  = ~Cat Familiar (Lv 9) *Emp.*~
+@609  = ~Cat Familiar (Lv 10) *Emp.*~
+@610  = ~Cat Familiar (Lv 11) *Emp.*~
+@611  = ~Cat Familiar (Lv 12) *Emp.*~
+@612  = ~Cat Familiar (Lv 13) *Emp.*~
+@613  = ~Cat Familiar (Lv 14) *Emp.*~
+@614  = ~Cat Familiar (Lv 15) *Emp.*~
+@615  = ~Cat Familiar (Lv 16) *Emp.*~
+@616  = ~Cat Familiar (Lv 17) *Emp.*~
+@617  = ~Cat Familiar (Lv 18) *Emp.*~
+@618  = ~Cat Familiar (Lv 19) *Emp.*~
+@619  = ~Cat Familiar (Lv 20) *Emp.*~
+@620  = ~Cat Familiar (Lv 21) *Emp.*~
+@621  = ~Cat Familiar (Lv 22) *Emp.*~
+@622  = ~Cat Familiar (Lv 23) *Emp.*~
+@623  = ~Cat Familiar (Lv 24) *Emp.*~
+@624  = ~Cat Familiar (Lv 25) *Emp.*~
+@625  = ~Cat Familiar (Lv 26) *Emp.*~
+@626  = ~Cat Familiar (Lv 27) *Emp.*~
+@627  = ~Cat Familiar (Lv 28) *Emp.*~
+@628  = ~Cat Familiar (Lv 29) *Emp.*~
+@629  = ~Cat Familiar (Lv 30) *Emp.*~
+@630  = ~Cat Familiar (Lv 31) *Emp.*~
+@631  = ~Cat Familiar (Lv 32) *Emp.*~
+@632  = ~Cat Familiar (Lv 33) *Emp.*~
+@633  = ~Cat Familiar (Lv 34) *Emp.*~
+@634  = ~Cat Familiar (Lv 35) *Emp.*~
+@635  = ~Cat Familiar (Lv 36) *Emp.*~
+@636  = ~Cat Familiar (Lv 37) *Emp.*~
+@637  = ~Cat Familiar (Lv 38) *Emp.*~
+@638  = ~Cat Familiar (Lv 39) *Emp.*~
+@639  = ~Cat Familiar (Lv 40) *Emp.*~
+@640  = ~Cat Familiar (Lv 41) *Emp.*~
+@641  = ~Cat Familiar (Lv 42) *Emp.*~
+@642  = ~Cat Familiar (Lv 43) *Emp.*~
+@643  = ~Cat Familiar (Lv 44) *Emp.*~
+@644  = ~Cat Familiar (Lv 45) *Emp.*~
+@645  = ~Cat Familiar (Lv 46) *Emp.*~
+@646  = ~Cat Familiar (Lv 47) *Emp.*~
+@647  = ~Cat Familiar (Lv 48) *Emp.*~
+@648  = ~Cat Familiar (Lv 49) *Emp.*~
+@649  = ~Cat Familiar (Lv 50) *Emp.*~
+@700  = ~Quasit Familiar (Lv 1) *Emp.*~
+@701  = ~Quasit Familiar (Lv 2) *Emp.*~
+@702  = ~Quasit Familiar (Lv 3) *Emp.*~
+@703  = ~Quasit Familiar (Lv 4) *Emp.*~
+@704  = ~Quasit Familiar (Lv 5) *Emp.*~
+@705  = ~Quasit Familiar (Lv 6) *Emp.*~
+@706  = ~Quasit Familiar (Lv 7) *Emp.*~
+@707  = ~Quasit Familiar (Lv 8) *Emp.*~
+@708  = ~Quasit Familiar (Lv 9) *Emp.*~
+@709  = ~Quasit Familiar (Lv 10) *Emp.*~
+@710  = ~Quasit Familiar (Lv 11) *Emp.*~
+@711  = ~Quasit Familiar (Lv 12) *Emp.*~
+@712  = ~Quasit Familiar (Lv 13) *Emp.*~
+@713  = ~Quasit Familiar (Lv 14) *Emp.*~
+@714  = ~Quasit Familiar (Lv 15) *Emp.*~
+@715  = ~Quasit Familiar (Lv 16) *Emp.*~
+@716  = ~Quasit Familiar (Lv 17) *Emp.*~
+@717  = ~Quasit Familiar (Lv 18) *Emp.*~
+@718  = ~Quasit Familiar (Lv 19) *Emp.*~
+@719  = ~Quasit Familiar (Lv 20) *Emp.*~
+@720  = ~Quasit Familiar (Lv 21) *Emp.*~
+@721  = ~Quasit Familiar (Lv 22) *Emp.*~
+@722  = ~Quasit Familiar (Lv 23) *Emp.*~
+@723  = ~Quasit Familiar (Lv 24) *Emp.*~
+@724  = ~Quasit Familiar (Lv 25) *Emp.*~
+@725  = ~Quasit Familiar (Lv 26) *Emp.*~
+@726  = ~Quasit Familiar (Lv 27) *Emp.*~
+@727  = ~Quasit Familiar (Lv 28) *Emp.*~
+@728  = ~Quasit Familiar (Lv 29) *Emp.*~
+@729  = ~Quasit Familiar (Lv 30) *Emp.*~
+@730  = ~Quasit Familiar (Lv 31) *Emp.*~
+@731  = ~Quasit Familiar (Lv 32) *Emp.*~
+@732  = ~Quasit Familiar (Lv 33) *Emp.*~
+@733  = ~Quasit Familiar (Lv 34) *Emp.*~
+@734  = ~Quasit Familiar (Lv 35) *Emp.*~
+@735  = ~Quasit Familiar (Lv 36) *Emp.*~
+@736  = ~Quasit Familiar (Lv 37) *Emp.*~
+@737  = ~Quasit Familiar (Lv 38) *Emp.*~
+@738  = ~Quasit Familiar (Lv 39) *Emp.*~
+@739  = ~Quasit Familiar (Lv 40) *Emp.*~
+@740  = ~Quasit Familiar (Lv 41) *Emp.*~
+@741  = ~Quasit Familiar (Lv 42) *Emp.*~
+@742  = ~Quasit Familiar (Lv 43) *Emp.*~
+@743  = ~Quasit Familiar (Lv 44) *Emp.*~
+@744  = ~Quasit Familiar (Lv 45) *Emp.*~
+@745  = ~Quasit Familiar (Lv 46) *Emp.*~
+@746  = ~Quasit Familiar (Lv 47) *Emp.*~
+@747  = ~Quasit Familiar (Lv 48) *Emp.*~
+@748  = ~Quasit Familiar (Lv 49) *Emp.*~
+@749  = ~Quasit Familiar (Lv 50) *Emp.*~
+@800  = ~Spider Familiar (Lv 1) *Emp.*~
+@801  = ~Spider Familiar (Lv 2) *Emp.*~
+@802  = ~Spider Familiar (Lv 3) *Emp.*~
+@803  = ~Spider Familiar (Lv 4) *Emp.*~
+@804  = ~Spider Familiar (Lv 5) *Emp.*~
+@805  = ~Spider Familiar (Lv 6) *Emp.*~
+@806  = ~Spider Familiar (Lv 7) *Emp.*~
+@807  = ~Spider Familiar (Lv 8) *Emp.*~
+@808  = ~Spider Familiar (Lv 9) *Emp.*~
+@809  = ~Spider Familiar (Lv 10) *Emp.*~
+@810  = ~Spider Familiar (Lv 11) *Emp.*~
+@811  = ~Spider Familiar (Lv 12) *Emp.*~
+@812  = ~Spider Familiar (Lv 13) *Emp.*~
+@813  = ~Spider Familiar (Lv 14) *Emp.*~
+@814  = ~Spider Familiar (Lv 15) *Emp.*~
+@815  = ~Spider Familiar (Lv 16) *Emp.*~
+@816  = ~Spider Familiar (Lv 17) *Emp.*~
+@817  = ~Spider Familiar (Lv 18) *Emp.*~
+@818  = ~Spider Familiar (Lv 19) *Emp.*~
+@819  = ~Spider Familiar (Lv 20) *Emp.*~
+@820  = ~Spider Familiar (Lv 21) *Emp.*~
+@821  = ~Spider Familiar (Lv 22) *Emp.*~
+@822  = ~Spider Familiar (Lv 23) *Emp.*~
+@823  = ~Spider Familiar (Lv 24) *Emp.*~
+@824  = ~Spider Familiar (Lv 25) *Emp.*~
+@825  = ~Spider Familiar (Lv 26) *Emp.*~
+@826  = ~Spider Familiar (Lv 27) *Emp.*~
+@827  = ~Spider Familiar (Lv 28) *Emp.*~
+@828  = ~Spider Familiar (Lv 29) *Emp.*~
+@829  = ~Spider Familiar (Lv 30) *Emp.*~
+@830  = ~Spider Familiar (Lv 31) *Emp.*~
+@831  = ~Spider Familiar (Lv 32) *Emp.*~
+@832  = ~Spider Familiar (Lv 33) *Emp.*~
+@833  = ~Spider Familiar (Lv 34) *Emp.*~
+@834  = ~Spider Familiar (Lv 35) *Emp.*~
+@835  = ~Spider Familiar (Lv 36) *Emp.*~
+@836  = ~Spider Familiar (Lv 37) *Emp.*~
+@837  = ~Spider Familiar (Lv 38) *Emp.*~
+@838  = ~Spider Familiar (Lv 39) *Emp.*~
+@839  = ~Spider Familiar (Lv 40) *Emp.*~
+@840  = ~Spider Familiar (Lv 41) *Emp.*~
+@841  = ~Spider Familiar (Lv 42) *Emp.*~
+@842  = ~Spider Familiar (Lv 43) *Emp.*~
+@843  = ~Spider Familiar (Lv 44) *Emp.*~
+@844  = ~Spider Familiar (Lv 45) *Emp.*~
+@845  = ~Spider Familiar (Lv 46) *Emp.*~
+@846  = ~Spider Familiar (Lv 47) *Emp.*~
+@847  = ~Spider Familiar (Lv 48) *Emp.*~
+@848  = ~Spider Familiar (Lv 49) *Emp.*~
+@849  = ~Spider Familiar (Lv 50) *Emp.*~
+@900  = ~Ferret Familiar (Lv 1) *Emp.*~
+@901  = ~Ferret Familiar (Lv 2) *Emp.*~
+@902  = ~Ferret Familiar (Lv 3) *Emp.*~
+@903  = ~Ferret Familiar (Lv 4) *Emp.*~
+@904  = ~Ferret Familiar (Lv 5) *Emp.*~
+@905  = ~Ferret Familiar (Lv 6) *Emp.*~
+@906  = ~Ferret Familiar (Lv 7) *Emp.*~
+@907  = ~Ferret Familiar (Lv 8) *Emp.*~
+@908  = ~Ferret Familiar (Lv 9) *Emp.*~
+@909  = ~Ferret Familiar (Lv 10) *Emp.*~
+@910  = ~Ferret Familiar (Lv 11) *Emp.*~
+@911  = ~Ferret Familiar (Lv 12) *Emp.*~
+@912  = ~Ferret Familiar (Lv 13) *Emp.*~
+@913  = ~Ferret Familiar (Lv 14) *Emp.*~
+@914  = ~Ferret Familiar (Lv 15) *Emp.*~
+@915  = ~Ferret Familiar (Lv 16) *Emp.*~
+@916  = ~Ferret Familiar (Lv 17) *Emp.*~
+@917  = ~Ferret Familiar (Lv 18) *Emp.*~
+@918  = ~Ferret Familiar (Lv 19) *Emp.*~
+@919  = ~Ferret Familiar (Lv 20) *Emp.*~
+@920  = ~Ferret Familiar (Lv 21) *Emp.*~
+@921  = ~Ferret Familiar (Lv 22) *Emp.*~
+@922  = ~Ferret Familiar (Lv 23) *Emp.*~
+@923  = ~Ferret Familiar (Lv 24) *Emp.*~
+@924  = ~Ferret Familiar (Lv 25) *Emp.*~
+@925  = ~Ferret Familiar (Lv 26) *Emp.*~
+@926  = ~Ferret Familiar (Lv 27) *Emp.*~
+@927  = ~Ferret Familiar (Lv 28) *Emp.*~
+@928  = ~Ferret Familiar (Lv 29) *Emp.*~
+@929  = ~Ferret Familiar (Lv 30) *Emp.*~
+@930  = ~Ferret Familiar (Lv 31) *Emp.*~
+@931  = ~Ferret Familiar (Lv 32) *Emp.*~
+@932  = ~Ferret Familiar (Lv 33) *Emp.*~
+@933  = ~Ferret Familiar (Lv 34) *Emp.*~
+@934  = ~Ferret Familiar (Lv 35) *Emp.*~
+@935  = ~Ferret Familiar (Lv 36) *Emp.*~
+@936  = ~Ferret Familiar (Lv 37) *Emp.*~
+@937  = ~Ferret Familiar (Lv 38) *Emp.*~
+@938  = ~Ferret Familiar (Lv 39) *Emp.*~
+@939  = ~Ferret Familiar (Lv 40) *Emp.*~
+@940  = ~Ferret Familiar (Lv 41) *Emp.*~
+@941  = ~Ferret Familiar (Lv 42) *Emp.*~
+@942  = ~Ferret Familiar (Lv 43) *Emp.*~
+@943  = ~Ferret Familiar (Lv 44) *Emp.*~
+@944  = ~Ferret Familiar (Lv 45) *Emp.*~
+@945  = ~Ferret Familiar (Lv 46) *Emp.*~
+@946  = ~Ferret Familiar (Lv 47) *Emp.*~
+@947  = ~Ferret Familiar (Lv 48) *Emp.*~
+@948  = ~Ferret Familiar (Lv 49) *Emp.*~
+@949  = ~Ferret Familiar (Lv 50) *Emp.*~
+@1000  = ~Rabbit Familiar (Lv 1) *Emp.*~
+@1001  = ~Rabbit Familiar (Lv 2) *Emp.*~
+@1002  = ~Rabbit Familiar (Lv 3) *Emp.*~
+@1003  = ~Rabbit Familiar (Lv 4) *Emp.*~
+@1004  = ~Rabbit Familiar (Lv 5) *Emp.*~
+@1005  = ~Rabbit Familiar (Lv 6) *Emp.*~
+@1006  = ~Rabbit Familiar (Lv 7) *Emp.*~
+@1007  = ~Rabbit Familiar (Lv 8) *Emp.*~
+@1008  = ~Rabbit Familiar (Lv 9) *Emp.*~
+@1009  = ~Rabbit Familiar (Lv 10) *Emp.*~
+@1010  = ~Rabbit Familiar (Lv 11) *Emp.*~
+@1011  = ~Rabbit Familiar (Lv 12) *Emp.*~
+@1012  = ~Rabbit Familiar (Lv 13) *Emp.*~
+@1013  = ~Rabbit Familiar (Lv 14) *Emp.*~
+@1014  = ~Rabbit Familiar (Lv 15) *Emp.*~
+@1015  = ~Rabbit Familiar (Lv 16) *Emp.*~
+@1016  = ~Rabbit Familiar (Lv 17) *Emp.*~
+@1017  = ~Rabbit Familiar (Lv 18) *Emp.*~
+@1018  = ~Rabbit Familiar (Lv 19) *Emp.*~
+@1019  = ~Rabbit Familiar (Lv 20) *Emp.*~
+@1020  = ~Rabbit Familiar (Lv 21) *Emp.*~
+@1021  = ~Rabbit Familiar (Lv 22) *Emp.*~
+@1022  = ~Rabbit Familiar (Lv 23) *Emp.*~
+@1023  = ~Rabbit Familiar (Lv 24) *Emp.*~
+@1024  = ~Rabbit Familiar (Lv 25) *Emp.*~
+@1025  = ~Rabbit Familiar (Lv 26) *Emp.*~
+@1026  = ~Rabbit Familiar (Lv 27) *Emp.*~
+@1027  = ~Rabbit Familiar (Lv 28) *Emp.*~
+@1028  = ~Rabbit Familiar (Lv 29) *Emp.*~
+@1029  = ~Rabbit Familiar (Lv 30) *Emp.*~
+@1030  = ~Rabbit Familiar (Lv 31) *Emp.*~
+@1031  = ~Rabbit Familiar (Lv 32) *Emp.*~
+@1032  = ~Rabbit Familiar (Lv 33) *Emp.*~
+@1033  = ~Rabbit Familiar (Lv 34) *Emp.*~
+@1034  = ~Rabbit Familiar (Lv 35) *Emp.*~
+@1035  = ~Rabbit Familiar (Lv 36) *Emp.*~
+@1036  = ~Rabbit Familiar (Lv 37) *Emp.*~
+@1037  = ~Rabbit Familiar (Lv 38) *Emp.*~
+@1038  = ~Rabbit Familiar (Lv 39) *Emp.*~
+@1039  = ~Rabbit Familiar (Lv 40) *Emp.*~
+@1040  = ~Rabbit Familiar (Lv 41) *Emp.*~
+@1041  = ~Rabbit Familiar (Lv 42) *Emp.*~
+@1042  = ~Rabbit Familiar (Lv 43) *Emp.*~
+@1043  = ~Rabbit Familiar (Lv 44) *Emp.*~
+@1044  = ~Rabbit Familiar (Lv 45) *Emp.*~
+@1045  = ~Rabbit Familiar (Lv 46) *Emp.*~
+@1046  = ~Rabbit Familiar (Lv 47) *Emp.*~
+@1047  = ~Rabbit Familiar (Lv 48) *Emp.*~
+@1048  = ~Rabbit Familiar (Lv 49) *Emp.*~
+@1049  = ~Rabbit Familiar (Lv 50) *Emp.*~
+@1100  = ~Dust Mephit Familiar (Lv 1) *Emp.*~
+@1101  = ~Dust Mephit Familiar (Lv 2) *Emp.*~
+@1102  = ~Dust Mephit Familiar (Lv 3) *Emp.*~
+@1103  = ~Dust Mephit Familiar (Lv 4) *Emp.*~
+@1104  = ~Dust Mephit Familiar (Lv 5) *Emp.*~
+@1105  = ~Dust Mephit Familiar (Lv 6) *Emp.*~
+@1106  = ~Dust Mephit Familiar (Lv 7) *Emp.*~
+@1107  = ~Dust Mephit Familiar (Lv 8) *Emp.*~
+@1108  = ~Dust Mephit Familiar (Lv 9) *Emp.*~
+@1109  = ~Dust Mephit Familiar (Lv 10) *Emp.*~
+@1110  = ~Dust Mephit Familiar (Lv 11) *Emp.*~
+@1111  = ~Dust Mephit Familiar (Lv 12) *Emp.*~
+@1112  = ~Dust Mephit Familiar (Lv 13) *Emp.*~
+@1113  = ~Dust Mephit Familiar (Lv 14) *Emp.*~
+@1114  = ~Dust Mephit Familiar (Lv 15) *Emp.*~
+@1115  = ~Dust Mephit Familiar (Lv 16) *Emp.*~
+@1116  = ~Dust Mephit Familiar (Lv 17) *Emp.*~
+@1117  = ~Dust Mephit Familiar (Lv 18) *Emp.*~
+@1118  = ~Dust Mephit Familiar (Lv 19) *Emp.*~
+@1119  = ~Dust Mephit Familiar (Lv 20) *Emp.*~
+@1120  = ~Dust Mephit Familiar (Lv 21) *Emp.*~
+@1121  = ~Dust Mephit Familiar (Lv 22) *Emp.*~
+@1122  = ~Dust Mephit Familiar (Lv 23) *Emp.*~
+@1123  = ~Dust Mephit Familiar (Lv 24) *Emp.*~
+@1124  = ~Dust Mephit Familiar (Lv 25) *Emp.*~
+@1125  = ~Dust Mephit Familiar (Lv 26) *Emp.*~
+@1126  = ~Dust Mephit Familiar (Lv 27) *Emp.*~
+@1127  = ~Dust Mephit Familiar (Lv 28) *Emp.*~
+@1128  = ~Dust Mephit Familiar (Lv 29) *Emp.*~
+@1129  = ~Dust Mephit Familiar (Lv 30) *Emp.*~
+@1130  = ~Dust Mephit Familiar (Lv 31) *Emp.*~
+@1131  = ~Dust Mephit Familiar (Lv 32) *Emp.*~
+@1132  = ~Dust Mephit Familiar (Lv 33) *Emp.*~
+@1133  = ~Dust Mephit Familiar (Lv 34) *Emp.*~
+@1134  = ~Dust Mephit Familiar (Lv 35) *Emp.*~
+@1135  = ~Dust Mephit Familiar (Lv 36) *Emp.*~
+@1136  = ~Dust Mephit Familiar (Lv 37) *Emp.*~
+@1137  = ~Dust Mephit Familiar (Lv 38) *Emp.*~
+@1138  = ~Dust Mephit Familiar (Lv 39) *Emp.*~
+@1139  = ~Dust Mephit Familiar (Lv 40) *Emp.*~
+@1140  = ~Dust Mephit Familiar (Lv 41) *Emp.*~
+@1141  = ~Dust Mephit Familiar (Lv 42) *Emp.*~
+@1142  = ~Dust Mephit Familiar (Lv 43) *Emp.*~
+@1143  = ~Dust Mephit Familiar (Lv 44) *Emp.*~
+@1144  = ~Dust Mephit Familiar (Lv 45) *Emp.*~
+@1145  = ~Dust Mephit Familiar (Lv 46) *Emp.*~
+@1146  = ~Dust Mephit Familiar (Lv 47) *Emp.*~
+@1147  = ~Dust Mephit Familiar (Lv 48) *Emp.*~
+@1148  = ~Dust Mephit Familiar (Lv 49) *Emp.*~
+@1149  = ~Dust Mephit Familiar (Lv 50) *Emp.*~

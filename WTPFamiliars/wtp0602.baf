@@ -1,0 +1,98 @@
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMCAT") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMCAT")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMMEP") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMMEP")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMFAE") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMFAE")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMFER") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMFER")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMIMP") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMIMP")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFAMPS") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFAMPS")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMQUA") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMQUA")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMRAB") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMRAB")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("MeetOldenFriends","GLOBAL",100)
+	Global("IHaveFamiliar","GLOBAL",0)
+	PartyHasItem("WTPFMSPD") // Familiar
+THEN
+	RESPONSE #100
+		ActionOverride("Picture 1",TakePartyItem("WTPFMSPD")) // Familiar
+		SetGlobal("IHaveFamiliar","GLOBAL",2)
+		Continue()
+END
