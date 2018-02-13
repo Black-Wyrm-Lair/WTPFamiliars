@@ -14,14 +14,16 @@ LANGUAGE ~English~ ~English~ ~WTPFamiliars/language/English/Setup-WTPFamiliars.t
 //README ~WTPFamiliars/Readme-WTPFamiliars.html~
 
 BEGIN @13
-REQUIRE_PREDICATE GAME_IS ~bgt tob~ @14
+REQUIRE_PREDICATE GAME_IS ~bgt tob bgee bg2ee eet~ @14
 
+ACTION_IF GAME_IS ~bgt tob~ BEGIN
   OUTER_SPRINT ~TOBEX_MOD_DIRECTORY~ ~WTPFamiliars~
   LOAD_TRA ~WTPFamiliars/tobex_redist/tobex.tra~
   INCLUDE ~WTPFamiliars/tobex_redist/tobex.tpa~
   COPY ~tobex_ini/tobexcore.ini~ ~tobex_ini/tobexcore.ini~
     REPLACE_TEXTUALLY ~Expanded Triggers=0~ ~Expanded Triggers=1~
   BUT_ONLY
+END
 
 /// Copy portraits/effs/2da's/bams/Call 2da spell/Con modifier spells
 
@@ -519,7 +521,9 @@ EXTEND_BOTTOM ~baldur25.bcs~ ~WTPFamiliars/FamiliartobaldurBCS.baf~
 
 // Extend ar0602.bcs to account for the new familiars
 
+ACTION_IF GAME_IS ~bgt tob bg2ee eet~ BEGIN
   EXTEND_TOP ~ar0602.bcs~ ~WTPFamiliars/wtp0602.baf~
+END
 
 // End of Script EXTENDing - Familiars have sounds!
 
