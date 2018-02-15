@@ -77,12 +77,12 @@ IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 1 // from:
   IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))~ THEN REPLY @28 GOTO 60
 END
 
-IF ~~ THEN BEGIN 2 // from: 
+IF ~~ THEN BEGIN 2 // from:
   SAY #72634 /* ~"Oh, sure.  Stick me in your smelly pack.  Ever thought of putting some mint in there?  Baaah..."  Reluctantly, the imp crawls into your pack.~ */
   IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmimp",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 3 // from: 
+IF ~~ THEN BEGIN 3 // from:
   SAY #58331 /* ~It seems disgusted as you pat it on the head.  "Oh, now I'm a cute little bunny?  Give me a break, boss."  The imp darts away and does a heebie-jeebie dance.~ */
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 51
   IF ~!InventoryFull(Player1)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58332 /* ~Come here, then.  Get in my pack.~ */ GOTO 2
@@ -101,7 +101,7 @@ IF ~~ THEN BEGIN 3 // from:
   IF ~ReputationLT(Player1,17)ReputationGT(Player1,6)~ THEN REPLY #58351 /* ~Alright, let's just keep going.~ */ GOTO 20
 END
 
-IF ~~ THEN BEGIN 4 // from: 
+IF ~~ THEN BEGIN 4 // from:
   SAY #58334 /* ~It looks at you incredulously, wondering if you are serious or if this is a prelude to a slap.  "You want *me* to give *you* advice, boss?  That's a first."~ */
   IF ~Global("chapter","GLOBAL",1)AreaType(DUNGEON)~ THEN GOTO 5
   IF ~Global("chapter","GLOBAL",1)!AreaType(DUNGEON)~ THEN GOTO 6
@@ -113,22 +113,22 @@ IF ~~ THEN BEGIN 4 // from:
   IF ~Global("chapter","GLOBAL",7)~ THEN GOTO 12
 END
 
-IF ~~ THEN BEGIN 5 // from: 
+IF ~~ THEN BEGIN 5 // from:
   SAY #58335 /* ~It looks around a few moments before turning back to you.  "Yeah, I got advice.  Get your tail outta here, or hadn't you figured that out?  Sheesh, yer dumb."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 6 // from: 
+IF ~~ THEN BEGIN 6 // from:
   SAY #58336 /* ~It its eyes in an exaggerated fashion.  "What?  Now I'm your tourist guide?  Do whatever you want, boss.  Go kill a king or something, sheesh."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 7 // from: 
+IF ~~ THEN BEGIN 7 // from:
   SAY #58337 /* ~"Let's see... advice.  Advice... advice.  Oh, yeah, I know... STOP BUGGIN' ME!!  Yeah, that's the ticket..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 8 // from: 
+IF ~~ THEN BEGIN 8 // from:
   SAY #58338 /* ~"Well heck, I guess you just do what you're told, eh?  Now, if you'd listened to me right off the bat, boss, you never would've gotten into this mess..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
@@ -138,12 +138,12 @@ IF ~~ THEN BEGIN 9 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 10 // from: 
+IF ~~ THEN BEGIN 10 // from:
   SAY #58340 /* ~The demon looks about.  "What?  Seems like a cheery enough place.  Slaughter the locals, set yourself up as absolute ruler and tyrant.  Works for me."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 11 // from: 
+IF ~~ THEN BEGIN 11 // from:
   SAY #58341 /* ~The creature looks quizzical.  "Isn't it obvious?  You get to that elven city.  All that pillaging, there's gotta be treasure ripe for the taking.  Sheesh."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
@@ -153,7 +153,7 @@ IF ~~ THEN BEGIN 12 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 13 // from: 
+IF ~~ THEN BEGIN 13 // from:
   SAY #58344 /* ~It looks at you suspiciously, its sulfur eyes squinting.  "Hmph.  Since when are you so interested in me, boss?  Up 'til now its all been you you you."~ */
   IF ~HPPercentLT(Myself,100)!HPPercentLT(Myself,50)~ THEN GOTO 14
   IF ~HPPercentLT(Myself,50)~ THEN GOTO 15
@@ -163,42 +163,42 @@ IF ~~ THEN BEGIN 13 // from:
   IF ~!HPPercentLT(Myself,100)RandomNum(4,4)~ THEN GOTO 19
 END
 
-IF ~~ THEN BEGIN 14 // from: 
+IF ~~ THEN BEGIN 14 // from:
   SAY #58345 /* ~"But if you're really concerned, you could get me some healing.  I got scratches, you know... you wouldn't want me to die, would you?  I'm too useful!"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 15 // from: 
+IF ~~ THEN BEGIN 15 // from:
   SAY #58346 /* ~"But since you're asking, I could use healing.  Ichor's running bad... you wouldn't want to send me back to the planes, would you?  *That* would be a shame..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 16 // from: 
+IF ~~ THEN BEGIN 16 // from:
   SAY #58347 /* ~"But, hmmmn, let me see.  I'm kinda hungry.  How about a puppy sandwich?  A steak?  A chicken sacrifice?  C'mon, throw me a bone, here, sheesh!"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 17 // from: 
+IF ~~ THEN BEGIN 17 // from:
   SAY #58348 /* ~"But since you asked, I think you should get more gold.  I wanna sleep in a BIG bag of gold.  I could swim in it... yeah, that's it, swim in the gold... yeah..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 18 // from: 
+IF ~~ THEN BEGIN 18 // from:
   SAY #58349 /* ~"But I would like to say that you run around too much.  Here, there, back again... sheesh!  Don't you ever stop a while, set up shop?  Gimme a break, boss!"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 19 // from: 
+IF ~~ THEN BEGIN 19 // from:
   SAY #58350 /* ~"But since you asked, I wanna register a complaint.  Where's all *my* magical stuff?  I want a big sword... and a bag of holding... and some wands, yeah, wands..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 20 // from: 
+IF ~~ THEN BEGIN 20 // from:
   SAY #58352 /* ~It looks ahead and sighs, scratching its rear luridly.  "Oh, sure.  Only, what, another fifty years of wanderin' around?  Don't you ever settle down?  Sheesh..."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 21 // from: 
+IF ~~ THEN BEGIN 21 // from:
   SAY #58388 /* ~The imp reels from the blow.  "HeeEEYY!  Cripes!  What wuz that for?!  I did everything you told me to, boss!  Sheesh!  Some people..."~ */
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 51
   IF ~!InventoryFull(Player1)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #59470 /* ~Come here, then.  Get in my pack.~ */ GOTO 2
@@ -218,7 +218,7 @@ IF ~~ THEN BEGIN 21 // from:
   IF ~~ THEN REPLY #58351 /* ~Alright, let's just keep going.~ */ GOTO 20
 END
 
-IF ~~ THEN BEGIN 22 // from: 
+IF ~~ THEN BEGIN 22 // from:
   SAY #58389 /* ~Another slap sends it to the floor, frantically covering its head.  "Gaaah!  Okay!  You're the boss-<PRO_MANWOMAN>!  YOU boss, ME just little follower!  I get it!"~ */
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 51
   IF ~!InventoryFull(Player1)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #59470 /* ~Come here, then.  Get in my pack.~ */ GOTO 2
@@ -235,7 +235,7 @@ IF ~~ THEN BEGIN 22 // from:
   IF ~~ THEN REPLY #58405 /* ~Alright, let's just keep going.~ */ GOTO 20
 END
 
-IF ~~ THEN BEGIN 23 // from: 
+IF ~~ THEN BEGIN 23 // from:
   SAY #58397 /* ~"Ow!  Dammit, stop it!  I'll do whatever you say, just stop slappin'!"  It takes steps away, muttering something about 'abusive co-dependant relationships' or similar.~ */
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 51
   IF ~!InventoryFull(Player1)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #59470 /* ~Come here, then.  Get in my pack.~ */ GOTO 2
@@ -252,17 +252,17 @@ IF ~~ THEN BEGIN 23 // from:
   IF ~~ THEN REPLY #58405 /* ~Alright, let's just keep going.~ */ GOTO 20
 END
 
-IF ~~ THEN BEGIN 24 // from: 
+IF ~~ THEN BEGIN 24 // from:
   SAY #58398 /* ~The imp darts away at the last second. "Nyah!  Thhhppppfffttt! You couldn't hit the broad side of a barn! You suck!" It dashes away before a reprisal can come.~ */
   IF ~~ THEN DO ~RunAwayFrom(LastTalkedToBy,30)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 25 // from: 
+IF ~~ THEN BEGIN 25 // from:
   SAY #72665 /* ~It rolls its eyes.  "Oh, sure.  Stick me in your smelly pack.  Ever thought of sticking some mint in there?  Baaah..." It reluctantly crawls in.~ */
   IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmmep",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 26 // from: 
+IF ~~ THEN BEGIN 26 // from:
   SAY #72667 /* ~It rolls its eyes.  "Oh, sure.  Stick me in your smelly pack.  Ever thought of sticking some mint in there?  Baaah..." It reluctantly crawls in.~ */
   IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmqua",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
@@ -272,7 +272,7 @@ IF ~~ THEN BEGIN 27 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 28 // from: 
+IF ~~ THEN BEGIN 28 // from:
   SAY #73441 /* ~The wounded imp takes a piece of dried meat gingerly from your pack and gulps it down greedily.  As he munches away, he looks at you askance.  "This don't mean I owes you nothin', boss."~ */
   IF ~~ THEN DO ~ApplySpell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)ClearActions(Myself)~ EXIT
 END
@@ -305,7 +305,7 @@ IF ~~ THEN BEGIN 33 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 34 // from: 
+IF ~~ THEN BEGIN 34 // from:
 SAY #58334 /* ~It looks at you incredulously, wondering if you are serious or if this is a prelude to a slap.  "You want *me* to give *you* advice, boss?  That's a first."~ */
   IF ~Global("chapter","GLOBAL",1)~ THEN GOTO 35
   IF ~Global("chapter","GLOBAL",2)~ THEN GOTO 36
@@ -319,107 +319,107 @@ SAY #58334 /* ~It looks at you incredulously, wondering if you are serious or if
   IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 44
 END
 
-IF ~~ THEN BEGIN 35 // from: 
+IF ~~ THEN BEGIN 35 // from:
   SAY @0 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 36 // from: 
+IF ~~ THEN BEGIN 36 // from:
   SAY @1 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 37 // from: 
+IF ~~ THEN BEGIN 37 // from:
   SAY @2 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 38 // from: 
+IF ~~ THEN BEGIN 38 // from:
   SAY @3 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 39 // from: 
+IF ~~ THEN BEGIN 39 // from:
   SAY @4 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 40 // from: 
+IF ~~ THEN BEGIN 40 // from:
   SAY @5 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 41 // from: 
+IF ~~ THEN BEGIN 41 // from:
   SAY @6 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 42 // from: 
+IF ~~ THEN BEGIN 42 // from:
   SAY @7 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 43 // from: 
+IF ~~ THEN BEGIN 43 // from:
   SAY @8 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 44 // from: 
+IF ~~ THEN BEGIN 44 // from:
   SAY @9 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 48 // from: 
+IF ~~ THEN BEGIN 48 // from:
   SAY @10 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 49 // from: 
+IF ~~ THEN BEGIN 49 // from:
   SAY @17 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 50 // from: 
+IF ~~ THEN BEGIN 50 // from:
   SAY @18 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)RunAwayFrom(Player1,45)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 51 // from: 
+IF ~~ THEN BEGIN 51 // from:
   SAY @20 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)SetGlobal("#GFLVUP","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 55 // from: 
+IF ~~ THEN BEGIN 55 // from:
   SAY @24 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 56 // from: 
+IF ~~ THEN BEGIN 56 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmimp",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 57 // from: 
+IF ~~ THEN BEGIN 57 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmmep",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 58 // from: 
+IF ~~ THEN BEGIN 58 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmqua",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 59 // from: 
+IF ~~ THEN BEGIN 59 // from:
   SAY @27 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 60 // from: 
+IF ~~ THEN BEGIN 60 // from:
   SAY @29 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 61 // from: 
+IF ~~ THEN BEGIN 61 // from:
   SAY @30 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END

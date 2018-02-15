@@ -22,91 +22,92 @@ ACTION_IF GAME_IS ~bgt tob~ BEGIN
   INCLUDE ~WTPFamiliars/tobex_redist/tobex.tpa~
   COPY ~tobex_ini/tobexcore.ini~ ~tobex_ini/tobexcore.ini~
     REPLACE_TEXTUALLY ~Expanded Triggers=0~ ~Expanded Triggers=1~
-  BUT_ONLY
+    BUT_ONLY
 END
 
 /// Copy portraits/effs/2da's/bams/Call 2da spell/Con modifier spells
 
-COPY ~WTPFamiliars/SimpleCopy~ ~Override~
+COPY ~WTPFamiliars/SimpleCopy~ ~override~
 COPY ~WTPFamiliars/sounds~ ~override~
 AT_INTERACTIVE_NOW ~WTPFamiliars/WTPFamiliaraudio.bat~
 
 // Items patch
 
-COPY_EXISTING "ring94.itm" override
-    "ring95.itm" override
-    "ring99.itm" override
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target=1 timing=2 parameter1=17396 resist_dispel=2 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat1 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat2 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat3 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat4 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat5 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat6 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat7 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat8 END
-BUT_ONLY
 
-COPY_EXISTING "ring97.itm" override
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat1 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat2 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat3 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat4 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat5 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat6 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat7 END
- LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat8 END
-BUT_ONLY
+COPY_EXISTING "ring94.itm" ~override~
+              "ring95.itm" ~override~
+              "ring99.itm" ~override~
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target=1 timing=2 parameter1=17396 resist_dispel=2 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat1 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat2 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat3 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat4 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat5 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat6 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat7 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat8 END
+  BUT_ONLY
+
+COPY_EXISTING "ring97.itm" ~override~
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat1 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat2 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat3 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat4 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat5 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat6 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat7 END
+  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target=1 timing=2 resist_dispel=2 STR_VAR resource = wtpspat8 END
+  BUT_ONLY
 
 ///spells
 
-COPY ~WTPFamiliars/wtpin02.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin02.spl~ ~override~
   SAY NAME1 @16
   SAY UNIDENTIFIED_DESC @17
 
-COPY ~WTPFamiliars/wtpin02b.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin02b.spl~ ~override~
   SAY UNIDENTIFIED_DESC @17
 
-COPY ~WTPFamiliars/wtpin01.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin01.spl~ ~override~
   SAY NAME1 @21
   SAY UNIDENTIFIED_DESC @19
 
-COPY ~WTPFamiliars/wtpin06.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin06.spl~ ~override~
   SAY NAME1 @22
   SAY UNIDENTIFIED_DESC @20
 
-COPY ~WTPFamiliars/wtpin07.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin07.spl~ ~override~
   SAY NAME1 @24
   SAY UNIDENTIFIED_DESC @23
 
-COPY ~WTPFamiliars/wtpin08.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin08.spl~ ~override~
   SAY NAME1 @64
   SAY UNIDENTIFIED_DESC @65
 
-COPY ~WTPFamiliars/wtpin09.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin09.spl~ ~override~
   SAY NAME1 @62
   SAY UNIDENTIFIED_DESC @63
 
-COPY ~WTPFamiliars/wtpin10.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin10.spl~ ~override~
   SAY NAME1 @49
   SAY UNIDENTIFIED_DESC @50
 
-COPY ~WTPFamiliars/wtpin11.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin11.spl~ ~override~
   SAY NAME1 @66
 
-COPY ~WTPFamiliars/wtpin12.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin12.spl~ ~override~
   SAY NAME1 @67
 
-COPY ~WTPFamiliars/wtpin12d.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin12d.spl~ ~override~
   SAY NAME1 @538
 
-COPY ~WTPFamiliars/wtpin14.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin14.spl~ ~override~
   SAY NAME1 @68
 
-COPY ~WTPFamiliars/wtpin15.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin15.spl~ ~override~
   SAY NAME1 @60
 
-COPY ~WTPFamiliars/wtpin16.spl~ ~Override~
+COPY ~WTPFamiliars/wtpin16.spl~ ~override~
   SAY NAME1 #12017
 
 ///cre and items
@@ -114,7 +115,7 @@ COPY ~WTPFamiliars/wtpin16.spl~ ~Override~
 
 /*  WTPCAT.CRE
   Cat           */
-COPY ~WTPFamiliars/wtpcat.cre~ ~Override~
+COPY ~WTPFamiliars/wtpcat.cre~ ~override~
   SAY NAME1 @5
   SAY NAME2 @5
   SAY BORED ~~ [WTPCAT01]
@@ -135,7 +136,7 @@ COPY ~WTPFamiliars/wtpcat.cre~ ~Override~
 
 /*  WTPDMEPH.CRE
   Dust Mephit     */
-COPY ~WTPFamiliars/wtpdmeph.cre~ ~Override~
+COPY ~WTPFamiliars/wtpdmeph.cre~ ~override~
   SAY NAME1 @10
   SAY NAME2 @10
   SAY BORED ~~ [WTPMEP02]
@@ -156,7 +157,7 @@ COPY ~WTPFamiliars/wtpdmeph.cre~ ~Override~
 
 /*  WTPFAIRY.CRE
   Fairy Dragon    */
-COPY ~WTPFamiliars/wtpfairy.cre~ ~Override~
+COPY ~WTPFamiliars/wtpfairy.cre~ ~override~
   SAY NAME1 @11
   SAY NAME2 @11
   SAY BORED ~~ [WTPFAE01]
@@ -177,7 +178,7 @@ COPY ~WTPFamiliars/wtpfairy.cre~ ~Override~
 
 /*  WTPFERRE.CRE
   Ferret          */
-COPY ~WTPFamiliars/wtpferre.cre~ ~Override~
+COPY ~WTPFamiliars/wtpferre.cre~ ~override~
   SAY NAME1 @9
   SAY NAME2 @9
   SAY BORED ~~ [WTPFER01]
@@ -198,7 +199,7 @@ COPY ~WTPFamiliars/wtpferre.cre~ ~Override~
 
 /*  WTPIMP.CRE
   Imp           */
-COPY ~WTPFamiliars/wtpimp.cre~ ~Override~
+COPY ~WTPFamiliars/wtpimp.cre~ ~override~
   SAY NAME1 @7
   SAY NAME2 @7
   SAY BORED ~~ [WTPIMP01]
@@ -217,10 +218,9 @@ COPY ~WTPFamiliars/wtpimp.cre~ ~Override~
   SAY SELECT_RARE1 ~~ [WTPIMP12]
   SAY SELECT_RARE2 ~~ [WTPIMP13]
 
-
 /*  WTPQUASI.CRE
   Quasit          */
-COPY ~WTPFamiliars/wtpquasi.cre~ ~Override~
+COPY ~WTPFamiliars/wtpquasi.cre~ ~override~
   SAY NAME1 @4
   SAY NAME2 @4
   SAY BORED ~~ [WTPIMP01]
@@ -241,7 +241,7 @@ COPY ~WTPFamiliars/wtpquasi.cre~ ~Override~
 
 /*  WTPRABBI.CRE
   Rabbit          */
-COPY ~WTPFamiliars/wtprabbi.cre~ ~Override~
+COPY ~WTPFamiliars/wtprabbi.cre~ ~override~
   SAY NAME1 @12
   SAY NAME2 @12
   SAY BORED ~~ [WTPRAB01]
@@ -262,7 +262,7 @@ COPY ~WTPFamiliars/wtprabbi.cre~ ~Override~
 
 /*  WTPSEUDO.CRE
   Pseudo Dragon   */
-COPY ~WTPFamiliars/wtpseudo.cre~ ~Override~
+COPY ~WTPFamiliars/wtpseudo.cre~ ~override~
   SAY NAME1 @8
   SAY NAME2 @8
   SAY BORED ~~ [WTPFAE01]
@@ -283,7 +283,7 @@ COPY ~WTPFamiliars/wtpseudo.cre~ ~Override~
 
 /*  WTPSPIDE.CRE
   Small Spider    */
-COPY ~WTPFamiliars/wtpspide.cre~ ~Override~
+COPY ~WTPFamiliars/wtpspide.cre~ ~override~
   SAY NAME1 @6
   SAY NAME2 @6
   SAY BORED ~~ [WTPSPD01]
@@ -304,94 +304,94 @@ COPY ~WTPFamiliars/wtpspide.cre~ ~Override~
 
 /*  Invisible Creatures  */
 
-COPY ~WTPFamiliars/wtpnag1.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag1.cre~ ~override~
   SAY BORED ~~ [WTPFAE01]
 
-COPY ~WTPFamiliars/wtpnag2.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag2.cre~ ~override~
   SAY BORED ~~ [WTPFAE01]
 
-COPY ~WTPFamiliars/wtpnag3.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag3.cre~ ~override~
   SAY BORED ~~ [WTPFER01]
 
-COPY ~WTPFamiliars/wtpnag4.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag4.cre~ ~override~
   SAY BORED ~~ [WTPCAT01]
 
-COPY ~WTPFamiliars/wtpnag5.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag5.cre~ ~override~
   SAY BORED ~~ [WTPRAB01]
 
-COPY ~WTPFamiliars/wtpnag6.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag6.cre~ ~override~
   SAY BORED ~~ [WTPSPD01]
 
-COPY ~WTPFamiliars/wtpnag7.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag7.cre~ ~override~
   SAY BORED ~~ [WTPIMP01]
 
-COPY ~WTPFamiliars/wtpnag8.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag8.cre~ ~override~
   SAY BORED ~~ [WTPMEP02]
 
-COPY ~WTPFamiliars/wtpnag9.cre~ ~Override~
+COPY ~WTPFamiliars/wtpnag9.cre~ ~override~
   SAY BORED ~~ [WTPIMP01]
 
-COPY ~WTPFamiliars/WTPTAUN.cre~ ~Override~
+COPY ~WTPFamiliars/WTPTAUN.cre~ ~override~
 
 /*  WTPFAMPS.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfamps.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfamps.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @56
 
 /*  WTPFMCAT.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmcat.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmcat.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @58
 
 /*  WTPFMFAE.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmfae.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmfae.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @52
 
 /*  WTPFMFER.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmfer.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmfer.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @53
 
 /*  WTPFMIMP.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmimp.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmimp.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @54
 
 /*  WTPFMMEP.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmmep.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmmep.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @51
 
 /*  WTPFMQUA.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmqua.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmqua.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @55
 
 /*  WTPFMRAB.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmrab.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmrab.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @57
 
 /*  WTPFMSPD.ITM
   Familiar        */
-COPY ~WTPFamiliars/wtpfmspd.itm~ ~Override~
+COPY ~WTPFamiliars/wtpfmspd.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @3
@@ -402,11 +402,11 @@ COPY ~WTPFamiliars/wtpfmspd.itm~ ~Override~
 
 /*  WTPFAMA.SPL
   Find Familiar  */
-COPY ~WTPFamiliars/wtpfama.spl~ ~Override/SPWI123.spl~
+COPY ~WTPFamiliars/wtpfama.spl~ ~override/SPWI123.spl~
   SAY 0x8 @0
   SAY 0x50 @2
 
-COPY ~WTPFamiliars/wtpfamab.spl~ ~Override/SPCL342.spl~
+COPY ~WTPFamiliars/wtpfamab.spl~ ~override/SPCL342.spl~
   SAY 0x8 @0
   SAY 0x50 @2
 
@@ -419,71 +419,71 @@ COPY_EXISTING ~scrl6d.itm~ ~override~
 ///////////////////////////////////////////////////////////////////////
 
 /* WTPFCEQU.SPL */
-COPY ~WTPFamiliars/wtpfcequ.spl~ ~Override~
-SAY 0x8 @511
+COPY ~WTPFamiliars/wtpfcequ.spl~ ~override~
+  SAY 0x8 @511
 
 /* WTPFCNCT.SPL */
-COPY ~WTPFamiliars/wtpfcnct.spl~ ~Override~
-SAY 0x8 @512
+COPY ~WTPFamiliars/wtpfcnct.spl~ ~override~
+  SAY 0x8 @512
 
 /* WTPFTNSP.SPL */
-COPY ~WTPFamiliars/wtpftnsp.spl~ ~Override~
-SAY 0x8 @513
+COPY ~WTPFamiliars/wtpftnsp.spl~ ~override~
+  SAY 0x8 @513
 
 /* WTPFLEIM.SPL */
-COPY ~WTPFamiliars/wtpfleim.spl~ ~Override~
-SAY 0x8 @514
+COPY ~WTPFamiliars/wtpfleim.spl~ ~override~
+  SAY 0x8 @514
 
 /* WTPFNGPD.SPL */
-COPY ~WTPFamiliars/wtpfngpd.spl~ ~Override~
-SAY 0x8 @515
+COPY ~WTPFamiliars/wtpfngpd.spl~ ~override~
+  SAY 0x8 @515
 
 /* WTPFLNFE.SPL */
-COPY ~WTPFamiliars/wtpflnfe.spl~ ~Override~
-SAY 0x8 @516
+COPY ~WTPFamiliars/wtpflnfe.spl~ ~override~
+  SAY 0x8 @516
 
 /* WTPFNEME.SPL */
-COPY ~WTPFamiliars/wtpfneme.spl~ ~Override~
-SAY 0x8 @517
+COPY ~WTPFamiliars/wtpfneme.spl~ ~override~
+  SAY 0x8 @517
 
 /* WTPFCGFD.SPL */
-COPY ~WTPFamiliars/wtpfcgfd.spl~ ~Override~
-SAY 0x8 @518
+COPY ~WTPFamiliars/wtpfcgfd.spl~ ~override~
+  SAY 0x8 @518
 
 /* WTPFLGRA.SPL */
-COPY ~WTPFamiliars/wtpflgra.spl~ ~Override~
-SAY 0x8 @519
+COPY ~WTPFamiliars/wtpflgra.spl~ ~override~
+  SAY 0x8 @519
 
 ///////////////////////////
 ////  Summon Cre Spell  ///
 ///////////////////////////
 
-COPY ~WTPFamiliars/wtpfamce.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamce.spl~ ~override~
+  SAY 0x8 @15
 
-COPY~WTPFamiliars/wtpfamcg.spl~ ~Override~
-SAY 0x8 @15
+COPY~WTPFamiliars/wtpfamcg.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamcn.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamcn.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamle.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamle.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamlg.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamlg.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamln.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamln.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamne.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamne.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamng.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamng.spl~ ~override~
+  SAY 0x8 @15
 
-COPY ~WTPFamiliars/wtpfamtn.spl~ ~Override~
-SAY 0x8 @15
+COPY ~WTPFamiliars/wtpfamtn.spl~ ~override~
+  SAY 0x8 @15
 
 ///////////////////////////////////////////
 ////compiling - Familiar Dialogs&Scripts///
@@ -498,25 +498,26 @@ COMPILE ~WTPFamiliars/WTPFAMP1.d~
 // Script compiling - script to apply Con spells to Familiar and PC
 
 COMPILE ~WTPFamiliars/WTPFSPI.baf~
-    ~WTPFamiliars/WTPFDME.baf~
-    ~WTPFamiliars/WTPFQUA.baf~
-    ~WTPFamiliars/WTPFCAT.baf~
-    ~WTPFamiliars/WTPFFER.baf~
-    ~WTPFamiliars/WTPFRAB.baf~
-    ~WTPFamiliars/WTPFIMP.baf~
-    ~WTPFamiliars/WTPFPSE.baf~
-    ~WTPFamiliars/WTPFFAE.baf~
-    ~WTPFamiliars/WTPNAG.baf~
-    ~WTPFamiliars/WTPTAU1.baf~
+        ~WTPFamiliars/WTPFDME.baf~
+        ~WTPFamiliars/WTPFQUA.baf~
+        ~WTPFamiliars/WTPFCAT.baf~
+        ~WTPFamiliars/WTPFFER.baf~
+        ~WTPFamiliars/WTPFRAB.baf~
+        ~WTPFamiliars/WTPFIMP.baf~
+        ~WTPFamiliars/WTPFPSE.baf~
+        ~WTPFamiliars/WTPFFAE.baf~
+        ~WTPFamiliars/WTPNAG.baf~
+        ~WTPFamiliars/WTPTAU1.baf~
 
 // Extend Baldur.bcs and baldur25.bcs so Familiar follows PC from area to area and works for ToB Familiar summon too!
 
-COPY_EXISTING ~baldur.bcs~ ~override~
-    ~baldur25.bcs~ ~override~
-REPLACE_BCS_BLOCK ~WTPFamiliars/OldFam.baf~ ~WTPFamiliars/NewFam.baf~
-BUT_ONLY
+COPY_EXISTING ~baldur.bcs~   ~override~
+              ~baldur25.bcs~ ~override~
+  REPLACE_BCS_BLOCK ~WTPFamiliars/OldFam.baf~ ~WTPFamiliars/NewFam.baf~
+  BUT_ONLY
 
-EXTEND_BOTTOM ~baldur.bcs~ ~WTPFamiliars/FamiliartobaldurBCS.baf~
+EXTEND_BOTTOM ~baldur.bcs~   ~WTPFamiliars/FamiliartobaldurBCS.baf~
+
 EXTEND_BOTTOM ~baldur25.bcs~ ~WTPFamiliars/FamiliartobaldurBCS.baf~
 
 // Extend ar0602.bcs to account for the new familiars

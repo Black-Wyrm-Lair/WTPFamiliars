@@ -42,8 +42,8 @@ IF ~!InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 0 // from:
   IF ~~ THEN DO ~MoveToObject(Player1)ClearActions(Myself)~ EXIT
 END
 
-IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 1 // from: 
-  SAY #58297 /* ~The small dragon-like creature flutters its wings happily, looking at you with almost kaleidoscopic eyes. "You wish something?" It awaits your attention, tail flicking.~ */ 
+IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 1 // from:
+  SAY #58297 /* ~The small dragon-like creature flutters its wings happily, looking at you with almost kaleidoscopic eyes. "You wish something?" It awaits your attention, tail flicking.~ */
   IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 45
   IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
   IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58866 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 21
@@ -194,7 +194,7 @@ IF ~~ THEN BEGIN 21 // from: 3.4 1.5
   IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 22 // from: 
+IF ~~ THEN BEGIN 22 // from:
   SAY #72074 /* ~The familiar cranes its neck back and looks up at you with a slightly bewildered expression.  "You wish to ask *me* for advice, my <PRO_LADYLORD>?"~ */
   IF ~True()~ THEN EXIT
   IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 23
@@ -207,12 +207,12 @@ IF ~~ THEN BEGIN 23 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 24 // from: 
+IF ~~ THEN BEGIN 24 // from:
   SAY #72695 /* ~Its bright eyes look piercingly into yours.  "There has been so much death, my <LADYLORD>.  So much destruction.  But I trust you will find the way to do what is right."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 25 // from: 
+IF ~~ THEN BEGIN 25 // from:
   SAY #72696 /* ~For a moment, the dragon growls fiercely.  "The imposter must die, my <LADYLORD>!  You must somehow go into the Throne of Bhaal and confront her!"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
@@ -222,12 +222,12 @@ IF ~~ THEN BEGIN 26 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 27 // from: 
+IF ~~ THEN BEGIN 27 // from:
   SAY #73430 /* ~The dragon's eyes swirl with pleasure as it noisily gulps down a large quantity of nuts and berries that you have collected.  It's wounds visibly start healing immediately.~ */
   IF ~~ THEN DO ~ApplySpell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 28 // from: 
+IF ~~ THEN BEGIN 28 // from:
   SAY #58309 /* ~The familiar cranes its neck back and looks up at you with a slightly bewildered expression.  "You wish to ask *me* for advice, my <PRO_LADYLORD>?"~ */
   IF ~Global("chapter","GLOBAL",1)~ THEN GOTO 29
   IF ~Global("chapter","GLOBAL",2)~ THEN GOTO 30
@@ -241,82 +241,82 @@ IF ~~ THEN BEGIN 28 // from:
   IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 38
 END
 
-IF ~~ THEN BEGIN 29 // from: 
+IF ~~ THEN BEGIN 29 // from:
   SAY @0 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 30 // from: 
+IF ~~ THEN BEGIN 30 // from:
   SAY @1 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 31 // from: 
+IF ~~ THEN BEGIN 31 // from:
   SAY @2 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 32 // from: 
+IF ~~ THEN BEGIN 32 // from:
   SAY @3 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 33 // from: 
+IF ~~ THEN BEGIN 33 // from:
   SAY @4 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 34 // from: 
+IF ~~ THEN BEGIN 34 // from:
   SAY @5 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 35 // from: 
+IF ~~ THEN BEGIN 35 // from:
   SAY @6 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 36 // from: 
+IF ~~ THEN BEGIN 36 // from:
   SAY @7 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 37 // from: 
+IF ~~ THEN BEGIN 37 // from:
   SAY @8 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 38 // from: 
+IF ~~ THEN BEGIN 38 // from:
   SAY @9 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 42 // from: 
+IF ~~ THEN BEGIN 42 // from:
   SAY @10 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 43 // from: 
+IF ~~ THEN BEGIN 43 // from:
   SAY @17 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 44 // from: 
+IF ~~ THEN BEGIN 44 // from:
   SAY @18 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)RunAwayFrom(Player1,45)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 45 // from: 
+IF ~~ THEN BEGIN 45 // from:
   SAY @20 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)SetGlobal("#GFLVUP","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 50 // from: 
+IF ~~ THEN BEGIN 50 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfamps",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 51 // from: 
+IF ~~ THEN BEGIN 51 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END

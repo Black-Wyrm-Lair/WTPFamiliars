@@ -1,20 +1,20 @@
 BEGIN ~WTPWISH~
 
-IF ~Global("wishjames","LOCALS",0)~ THEN BEGIN 1 
+IF ~Global("wishjames","LOCALS",0)~ THEN BEGIN 1
   SAY @0
   IF ~~ THEN REPLY @1 DO ~SetGlobal("wishjames","LOCALS",1)ActionOverride("wtpfairy",FaceObject("wtpwish"))~ GOTO 2
   IF ~~ THEN REPLY @2 DO ~SetGlobal("wishjames","LOCALS",1)ActionOverride("wtpfairy",FaceObject("wtpwish"))~ GOTO 3
 END
 
-IF ~~ THEN BEGIN 2 
-  SAY @4  
+IF ~~ THEN BEGIN 2
+  SAY @4
   IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY #58562 GOTO 4
   IF ~CheckStatGT(LastTalkedToBy,11,WIS)~ THEN REPLY #58566 GOTO 5
   IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY #58569 GOTO 6
   IF ~~ THEN REPLY @5 GOTO 7
 END
 
-IF ~~ THEN BEGIN 3 
+IF ~~ THEN BEGIN 3
   SAY @3
   IF ~~ THEN DO ~SetInterrupt(FALSE)
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
@@ -28,7 +28,7 @@ ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
 IF ~~ THEN BEGIN 5
-  SAY #58577 
+  SAY #58577
   IF ~~ THEN DO ~ActionOverride(LastTalkedToBy,ReallyForceSpell(Myself,WISH_GLOBE))
 ActionOverride(Player1,ReallyForceSpell(Myself,WISH_GLOBE))
 ActionOverride(Player2,ReallyForceSpell(Myself,WISH_GLOBE))
@@ -53,7 +53,7 @@ SetInterrupt(FALSE)
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
-IF ~~ THEN BEGIN 7 
+IF ~~ THEN BEGIN 7
   SAY @6
   IF ~~ THEN DO ~SetInterrupt(FALSE)
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT

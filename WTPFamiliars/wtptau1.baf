@@ -1,399 +1,399 @@
 // The spell set the duration using TAUNT as global (1=2 rounds, 2=4 rounds, 3=6 rounds, 4=8 rounds, 10=1 turn)
-// and start a timer that matches the spell duration - the next five blocks run only once 
+// and start a timer that matches the spell duration - the next five blocks run only once
 
 IF
-	Global("#GTAUNT","GLOBAL",1)
+  Global("#GTAUNT","GLOBAL",1)
 THEN
   RESPONSE #100
-	ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
-	ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",360)
-	SetGlobal("#GTAUNT","GLOBAL",0)
-	SetGlobalTimer("#GTAUEND","LOCALS",12)
+    ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
+    ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",360)
+    SetGlobal("#GTAUNT","GLOBAL",0)
+    SetGlobalTimer("#GTAUEND","LOCALS",12)
 END
 
 IF
-	Global("#GTAUNT","GLOBAL",2)
+  Global("#GTAUNT","GLOBAL",2)
 THEN
   RESPONSE #100
-	ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
-	ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",540))
-	SetGlobal("#GTAUNT","GLOBAL",0)
-	SetGlobalTimer("#GTAUEND","LOCALS",24)
+    ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
+    ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",540))
+    SetGlobal("#GTAUNT","GLOBAL",0)
+    SetGlobalTimer("#GTAUEND","LOCALS",24)
 END
 
 IF
-	Global("#GTAUNT","GLOBAL",3)
+  Global("#GTAUNT","GLOBAL",3)
 THEN
   RESPONSE #100
-	ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
-	ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",720))
-	SetGlobal("#GTAUNT","GLOBAL",0)
-	SetGlobalTimer("#GTAUEND","LOCALS",36)
+    ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
+    ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",720))
+    SetGlobal("#GTAUNT","GLOBAL",0)
+    SetGlobalTimer("#GTAUEND","LOCALS",36)
 END
 
 IF
-	Global("#GTAUNT","GLOBAL",4)
+  Global("#GTAUNT","GLOBAL",4)
 THEN
   RESPONSE #100
-	ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
-	ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",900))
-	SetGlobal("#GTAUNT","GLOBAL",0)
-	SetGlobalTimer("#GTAUEND","LOCALS",48)
+    ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
+    ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",900))
+    SetGlobal("#GTAUNT","GLOBAL",0)
+    SetGlobalTimer("#GTAUEND","LOCALS",48)
 END
 
 IF
-	Global("#GTAUNT","GLOBAL",5)
+  Global("#GTAUNT","GLOBAL",5)
 THEN
   RESPONSE #100
-	ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
-	ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",1080))
-	SetGlobal("#GTAUNT","GLOBAL",0)
-	SetGlobalTimer("#GTAUEND","LOCALS",60)
+    ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
+    ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",1080))
+    SetGlobal("#GTAUNT","GLOBAL",0)
+    SetGlobalTimer("#GTAUEND","LOCALS",60)
 END
 
 // The next blocks interrupt the AttackReevaluate if the familiar is farther than 10 feet and the spell has not expired
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(Nearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(Nearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(Nearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(Nearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(SecondNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(SecondNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(SecondNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(SecondNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(ThirdNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(ThirdNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(ThirdNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(ThirdNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(FourthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(FourthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(FourthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(FourthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(FifthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(FifthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(FifthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(FifthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(SixthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(SixthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(SixthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(SixthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(SeventhNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(SeventhNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(SeventhNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(SeventhNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(EighthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(EighthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride("WTPFERRE", DisplayStringHead(Myself,@225))
-	ClearActions(EighthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ActionOverride("WTPFERRE", DisplayStringHead(Myself,@225))
+    ClearActions(EighthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(NinthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(NinthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(NinthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(NinthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 IF
-	!Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
-	!TriggerOverride(TenthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  !Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
+  !TriggerOverride(TenthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ClearActions(TenthNearest)
-        SetGlobal("#GAROUND","GLOBAL",1)
+    ClearActions(TenthNearest)
+    SetGlobal("#GAROUND","GLOBAL",1)
 END
 
 // The next blocks resume the AttackReevaluate if the familiar is back within 10 feet and the spell has not expired
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(Nearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(Nearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(Nearest, EquipMostDamagingMelee())
-	ActionOverride(Nearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(Nearest, EquipMostDamagingMelee())
+    ActionOverride(Nearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(SecondNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(SecondNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(SecondNearest, EquipMostDamagingMelee())
-	ActionOverride(SecondNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(SecondNearest, EquipMostDamagingMelee())
+    ActionOverride(SecondNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(ThirdNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(ThirdNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(ThirdNearest, EquipMostDamagingMelee())
-	ActionOverride(ThirdNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(ThirdNearest, EquipMostDamagingMelee())
+    ActionOverride(ThirdNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(FourthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(FourthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(FourthNearest, EquipMostDamagingMelee())
-	ActionOverride(FourthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(FourthNearest, EquipMostDamagingMelee())
+    ActionOverride(FourthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(FifthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(FifthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(FifthNearest, EquipMostDamagingMelee())
-	ActionOverride(FifthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(FifthNearest, EquipMostDamagingMelee())
+    ActionOverride(FifthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(SixthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(SixthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(SixthNearest, EquipMostDamagingMelee())
-	ActionOverride(SixthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(SixthNearest, EquipMostDamagingMelee())
+    ActionOverride(SixthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(SeventhNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(SeventhNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(SeventhNearest, EquipMostDamagingMelee())
-	ActionOverride(SeventhNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(SeventhNearest, EquipMostDamagingMelee())
+    ActionOverride(SeventhNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(EighthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(EighthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(EighthNearest, EquipMostDamagingMelee())
-	ActionOverride(EighthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(EighthNearest, EquipMostDamagingMelee())
+    ActionOverride(EighthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(NinthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(NinthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(NinthNearest, EquipMostDamagingMelee())
-	ActionOverride(NinthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(NinthNearest, EquipMostDamagingMelee())
+    ActionOverride(NinthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 IF
-	Global("#GAROUND","GLOBAL",1)
-	TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
-	TriggerOverride(TenthNearest, LOS("WTPFERRE",10))
-	GlobalTimerNotExpired("#GTAUEND","LOCALS")
+  Global("#GAROUND","GLOBAL",1)
+  TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
+  TriggerOverride(TenthNearest, LOS("WTPFERRE",10))
+  GlobalTimerNotExpired("#GTAUEND","LOCALS")
 THEN
   RESPONSE #100
-	ActionOverride(TenthNearest, EquipMostDamagingMelee())
-	ActionOverride(TenthNearest, AttackReevaluate("WTPFERRE",90))
-	SetGlobal("#GAROUND","GLOBAL",2)
+    ActionOverride(TenthNearest, EquipMostDamagingMelee())
+    ActionOverride(TenthNearest, AttackReevaluate("WTPFERRE",90))
+    SetGlobal("#GAROUND","GLOBAL",2)
 END
 
 // The last blocks interrupt the AttackReevaluate and removes the invisible creature (hopefully restoring the orignal AI?)
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(Nearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(Nearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(Nearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(Nearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(Nearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(SecondNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(SecondNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(SecondNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(SecondNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(SecondNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(ThirdNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(ThirdNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(ThirdNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(ThirdNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(ThirdNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(FourthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(FourthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(FourthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(FourthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(FourthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(FifthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(FifthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(FifthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(FifthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(FifthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(SixthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(SixthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(SixthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(SixthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(SixthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(SeventhNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(SeventhNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(SeventhNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(SeventhNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(SeventhNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(EighthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(EighthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(EighthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(EighthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(EighthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(NinthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(NinthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(NinthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(NinthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(NinthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END
 
 IF
-	GlobalTimerExpired("#GTAUEND","LOCALS")
-	TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
+  GlobalTimerExpired("#GTAUEND","LOCALS")
+  TriggerOverride(TenthNearest, Global("#GFOLLOW","LOCALS",1))
 THEN
   RESPONSE #100
-	ActionOverride(TenthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
-	ClearActions(TenthNearest)
-        SetGlobal("#GAROUND","GLOBAL",0)
-	DestroySelf()
+    ActionOverride(TenthNearest, SetGlobal("#GFOLLOW","LOCALS",0))
+    ClearActions(TenthNearest)
+    SetGlobal("#GAROUND","GLOBAL",0)
+    DestroySelf()
 END

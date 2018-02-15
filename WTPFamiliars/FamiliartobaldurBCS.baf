@@ -3,563 +3,563 @@
 ///////////////////////////////
 
 IF
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",0))
-	!ObjectActionListEmpty(Player1)
-	CombatCounterLT(1)
-	!TriggerOverride(Player1,Detect([ENEMY]))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",0))
+  !ObjectActionListEmpty(Player1)
+  CombatCounterLT(1)
+  !TriggerOverride(Player1,Detect([ENEMY]))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
 THEN
-   	RESPONSE #100
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",1))	
+  RESPONSE #100
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",1))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfamps",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfamps",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfamps",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfamps",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)	
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfamps",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfamps",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag1",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfamps",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfamps",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPfamps","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfamps"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPfamps","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG1",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfamps"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfae",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfae",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfae",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfae",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfae",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfae",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag2",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfae",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfae",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMFAE","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmfae"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMFAE","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG2",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmfae"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfer",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfer",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfer",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfer",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfer",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfer",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag3",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmfer",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmfer",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMFER","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmfer"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMFER","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG3",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmfer"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmcat",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmcat",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmcat",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmcat",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmcat",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmcat",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag4",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmcat",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmcat",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMCAT","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmcat"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMCAT","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG4",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmcat"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmrab",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmrab",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmrab",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmrab",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmrab",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmrab",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag5",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmrab",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmrab",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMRAB","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmrab"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMRAB","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG5",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmrab"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmspd",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmspd",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmspd",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmspd",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmspd",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmspd",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag6",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmspd",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmspd",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMSPD","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmspd"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMSPD","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG6",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmspd"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmimp",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmimp",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmimp",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmimp",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmimp",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmimp",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag7",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmimp",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmimp",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMIMP","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmimp"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMIMP","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG7",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmimp"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmmep",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmmep",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))	
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmmep",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmmep",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmmep",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmmep",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag8",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmmep",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmmep",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMMEP","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmmep"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMMEP","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG8",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmmep"))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 0)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmqua",Player1)
+  Global("#GINPACK", "GLOBAL", 0)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmqua",Player1)
 THEN
-   	RESPONSE #100
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
+  RESPONSE #100
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 2)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmqua",Player1)
+  Global("#GINPACK", "GLOBAL", 2)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmqua",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",1)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)	
-		ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",1)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 4)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmqua",Player1)
+  Global("#GINPACK", "GLOBAL", 4)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmqua",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",4)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		IncrementGlobal("#GINPACK","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
-		CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)
-		ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",4)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    IncrementGlobal("#GINPACK","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,MoveViewObject(Myself,INSTANT))
+    CreateCreatureObjectOffScreen("wtpnag9",Player1,0,0,0)
+    ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
 END
 
 IF
-	Global("#GINPACK", "GLOBAL", 6)	
-	TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
-	GlobalTimerExpired("#GWANOUT","GLOBAL")
-	HasItem("wtpfmqua",Player1)
+  Global("#GINPACK", "GLOBAL", 6)
+  TriggerOverride(Player1, Global("#GFAMINT","LOCALS",1))
+  GlobalTimerExpired("#GWANOUT","GLOBAL")
+  HasItem("wtpfmqua",Player1)
 THEN
-   	RESPONSE #100
-		SetGlobal("#GHARAS","GLOBAL",7)
-		SetGlobal("#GEMPCHA","GLOBAL",1)
-		ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
-		ActionOverride(Player1,DisplayString(Myself,@526))
-		SetGlobal("WTPFMQUA","GLOBAL",1)
-		ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
-		ActionOverride(Player1,DestroyItem("wtpfmqua"))
+  RESPONSE #100
+    SetGlobal("#GHARAS","GLOBAL",7)
+    SetGlobal("#GEMPCHA","GLOBAL",1)
+    ActionOverride(Player1,SetGlobal("#GFAMINT","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,@526))
+    SetGlobal("WTPFMQUA","GLOBAL",1)
+    ActionOverride(Player1,VerbalConstant("WTPNAG9",BORED))
+    ActionOverride(Player1,DestroyItem("wtpfmqua"))
 END
 
 /////////////////////////////////////////
@@ -567,81 +567,81 @@ END
 /////////////////////////////////////////
 
 IF
-    !TriggerOverride("WTPRABBI",AreaType(DUNGEON))
-    !TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
-    TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",0))
+  !TriggerOverride("WTPRABBI",AreaType(DUNGEON))
+  !TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
+  TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",0))
 THEN
-    RESPONSE #100
-    	ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",1))
-	ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12F",Myself))
+  RESPONSE #100
+    ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",1))
+    ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12F",Myself))
 END
 
 IF
-    OR(2)
-     TriggerOverride("WTPRABBI",AreaType(DUNGEON))
-     TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
-    TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",1))
+  OR(2)
+    TriggerOverride("WTPRABBI",AreaType(DUNGEON))
+    TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
+  TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",1))
 THEN
-    RESPONSE #100
-    	ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",0))
-	ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12G",Myself))
+  RESPONSE #100
+    ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",0))
+    ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12G",Myself))
 END
 
 IF
-    Global("#GINBURR","GLOBAL",1)
-    TriggerOverride(Player1,Global("#GRECALL","LOCALS",0))
-    ObjectActionListEmpty(Player1)
+  Global("#GINBURR","GLOBAL",1)
+  TriggerOverride(Player1,Global("#GRECALL","LOCALS",0))
+  ObjectActionListEmpty(Player1)
 THEN
-    RESPONSE #100
-		ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
-		ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
+  RESPONSE #100
+    ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
+    ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
 END
 
 IF
-    TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
-    !TriggerOverride(Player1,AreaType(OUTDOOR))
-    OR(2)
-     !TriggerOverride("WTPRABBI",Range(Player1,15))
-     !TriggerOverride(Player1,AreaType(DUNGEON))
-THEN
-    RESPONSE #100
-		ActionOverride(Player1,DisplayString(Myself,@537))
-		ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
-		ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
-		ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
-END
-
-IF
-    TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
+  TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
+  !TriggerOverride(Player1,AreaType(OUTDOOR))
+  OR(2)
+    !TriggerOverride("WTPRABBI",Range(Player1,15))
     !TriggerOverride(Player1,AreaType(DUNGEON))
-    OR(2)
-     !TriggerOverride("WTPRABBI",Range(Player1,15))
-     !TriggerOverride(Player1,AreaType(OUTDOOR))
 THEN
-    RESPONSE #100
-		ActionOverride(Player1,DisplayString(Myself,@537))
-		ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
-		ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
-		ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@537))
+    ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
+    ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
+    ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
 END
 
 IF
-    TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
+  TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
+  !TriggerOverride(Player1,AreaType(DUNGEON))
+  OR(2)
+    !TriggerOverride("WTPRABBI",Range(Player1,15))
+    !TriggerOverride(Player1,AreaType(OUTDOOR))
 THEN
-    RESPONSE #100
-		ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",0))
-		ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
-		ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12A",Myself))		
-		IncrementGlobal("#GINBURR","GLOBAL",1)
-END  
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@537))
+    ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
+    ActionOverride(Player1,ApplySpellRES("WTPIN12C",Myself))
+    ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",1))
+END
 
 IF
-    Global("#GINBURR","GLOBAL",2)
+  TriggerOverride(Player1,Global("#GRECALL","LOCALS",2))
 THEN
-    RESPONSE #100
-		ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12B",Myself))
-		ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",0))		
-		SetGlobal("#GINBURR","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",0))
+    ActionOverride(Player1,ApplySpellRES("WTPIN12E",Myself))
+    ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12A",Myself))
+    IncrementGlobal("#GINBURR","GLOBAL",1)
+END
+
+IF
+  Global("#GINBURR","GLOBAL",2)
+THEN
+  RESPONSE #100
+    ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12B",Myself))
+    ActionOverride(Player1,SetGlobal("#GRECALL","LOCALS",0))
+    SetGlobal("#GINBURR","GLOBAL",0)
 END
 
 /////////////////////////////////////////
@@ -649,141 +649,141 @@ END
 /////////////////////////////////////////
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(5)
-	 SpellCast(Player2,2123)
-	 SpellCast(Player3,2123)
-	 SpellCast(Player4,2123)
-	 SpellCast(Player5,2123)
-	 SpellCast(Player6,2123)
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(5)
+    SpellCast(Player2,2123)
+    SpellCast(Player3,2123)
+    SpellCast(Player4,2123)
+    SpellCast(Player5,2123)
+    SpellCast(Player6,2123)
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,8538))
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,8538))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(5)
-    	 SpellCastInnateRES("SPCL342",Player2)
-    	 SpellCastInnateRES("SPCL342",Player3)
-    	 SpellCastInnateRES("SPCL342",Player4)
-    	 SpellCastInnateRES("SPCL342",Player5)
-    	 SpellCastInnateRES("SPCL342",Player6)
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(5)
+    SpellCastInnateRES("SPCL342",Player2)
+    SpellCastInnateRES("SPCL342",Player3)
+    SpellCastInnateRES("SPCL342",Player4)
+    SpellCastInnateRES("SPCL342",Player5)
+    SpellCastInnateRES("SPCL342",Player6)
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,8538))
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,8538))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(5)
-    	 TriggerOverride(Player2,Global("#GSCRFAI","LOCALS",1))
-    	 TriggerOverride(Player3,Global("#GSCRFAI","LOCALS",1))
-    	 TriggerOverride(Player4,Global("#GSCRFAI","LOCALS",1))
-    	 TriggerOverride(Player5,Global("#GSCRFAI","LOCALS",1))
-    	 TriggerOverride(Player6,Global("#GSCRFAI","LOCALS",1))
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(5)
+    TriggerOverride(Player2,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player3,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player4,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player5,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player6,Global("#GSCRFAI","LOCALS",1))
 THEN
-    RESPONSE #100
-	ActionOverride(Player2,SetGlobal("#GSCRFAI","LOCALS",0))
-	ActionOverride(Player3,SetGlobal("#GSCRFAI","LOCALS",0))
-	ActionOverride(Player4,SetGlobal("#GSCRFAI","LOCALS",0))
-	ActionOverride(Player5,SetGlobal("#GSCRFAI","LOCALS",0))
-	ActionOverride(Player6,SetGlobal("#GSCRFAI","LOCALS",0))
-        ActionOverride(Player1,DisplayString(Myself,8538))
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player2,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player3,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player4,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player5,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player6,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player1,DisplayString(Myself,8538))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
-        Global("WTPFAMA1","GLOBAL",1)
-	OR(9)
-   	 Global("WTPFAMNG","GLOBAL",2)
-    	 Global("WTPFAMCE","GLOBAL",2)
-   	 Global("WTPFAMTN","GLOBAL",2)
-    	 Global("WTPFAMCG","GLOBAL",2)
-    	 Global("WTPFAMNE","GLOBAL",2)
-    	 Global("WTPFAMLG","GLOBAL",2)
-    	 Global("WTPFAMCN","GLOBAL",2)
-    	 Global("WTPFAMLN","GLOBAL",2)
-    	 Global("WTPFAMLE","GLOBAL",2)
+  TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(9)
+    Global("WTPFAMNG","GLOBAL",2)
+    Global("WTPFAMCE","GLOBAL",2)
+    Global("WTPFAMTN","GLOBAL",2)
+    Global("WTPFAMCG","GLOBAL",2)
+    Global("WTPFAMNE","GLOBAL",2)
+    Global("WTPFAMLG","GLOBAL",2)
+    Global("WTPFAMCN","GLOBAL",2)
+    Global("WTPFAMLN","GLOBAL",2)
+    Global("WTPFAMLE","GLOBAL",2)
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,8537))
-	ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,8537))
+    ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(2)
-         SpellCast(Player1,2123)
-         SpellCastInnateRES("SPCL342",Player1)
-	OR(9)
-   	 Global("WTPFAMNG","GLOBAL",2)
-    	 Global("WTPFAMCE","GLOBAL",2)
-   	 Global("WTPFAMTN","GLOBAL",2)
-    	 Global("WTPFAMCG","GLOBAL",2)
-    	 Global("WTPFAMNE","GLOBAL",2)
-    	 Global("WTPFAMLG","GLOBAL",2)
-    	 Global("WTPFAMCN","GLOBAL",2)
-    	 Global("WTPFAMLN","GLOBAL",2)
-    	 Global("WTPFAMLE","GLOBAL",2)
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(2)
+    SpellCast(Player1,2123)
+    SpellCastInnateRES("SPCL342",Player1)
+  OR(9)
+    Global("WTPFAMNG","GLOBAL",2)
+    Global("WTPFAMCE","GLOBAL",2)
+    Global("WTPFAMTN","GLOBAL",2)
+    Global("WTPFAMCG","GLOBAL",2)
+    Global("WTPFAMNE","GLOBAL",2)
+    Global("WTPFAMLG","GLOBAL",2)
+    Global("WTPFAMCN","GLOBAL",2)
+    Global("WTPFAMLN","GLOBAL",2)
+    Global("WTPFAMLE","GLOBAL",2)
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,8537))
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,8537))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))	
-    	GlobalTimerNotExpired("#Gmourn","GLOBAL")
+  Global("WTPFAMA1","GLOBAL",1)
+  TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
+  GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,@18))
-	ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
-        SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@18))
+    ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
-	OR(2)
-     	 TriggerOverride(Player1,Detect([ENEMY]))
-    	 ActuallyInCombat()
+  Global("WTPFAMA1","GLOBAL",1)
+  TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
+  OR(2)
+    TriggerOverride(Player1,Detect([ENEMY]))
+    ActuallyInCombat()
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,@69))
-	ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
-        SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@69))
+    ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(2)
-     	 SpellCast(Player1,2123)
-     	 SpellCastInnateRES("SPCL342",Player1)	
-    	GlobalTimerNotExpired("#Gmourn","GLOBAL")
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(2)
+    SpellCast(Player1,2123)
+    SpellCastInnateRES("SPCL342",Player1)
+  GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,@18))
-        SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@18))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("WTPFAMA1","GLOBAL",1)
-	OR(2)
-    	 SpellCast(Player1,2123)
-    	 SpellCastInnateRES("SPCL342",Player1)
-	OR(2)
-     	 TriggerOverride(Player1,Detect([ENEMY]))
-    	 ActuallyInCombat()
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(2)
+    SpellCast(Player1,2123)
+    SpellCastInnateRES("SPCL342",Player1)
+  OR(2)
+    TriggerOverride(Player1,Detect([ENEMY]))
+    ActuallyInCombat()
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayString(Myself,@69))
-        SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayString(Myself,@69))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 /////////////////////////////////////////
@@ -791,29 +791,29 @@ END
 /////////////////////////////////////////
 
 IF
-    Global("WTPFAMA1","GLOBAL",1) // The new Find Familiar spell sets this global to 1
-    OriginalClass(Player1,MAGE)
-    CheckStat(Player1,1,191)
-    !GlobalTimerNotExpired("#Gmourn","GLOBAL")
+  Global("WTPFAMA1","GLOBAL",1) // The new Find Familiar spell sets this global to 1
+  OriginalClass(Player1,MAGE)
+  CheckStat(Player1,1,191)
+  !GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
-    RESPONSE #100
-        SetGlobal("WTPFAMA1","GLOBAL",2)
-	SetGlobal("#GHARAS","GLOBAL",0)
+  RESPONSE #100
+    SetGlobal("WTPFAMA1","GLOBAL",2)
+    SetGlobal("#GHARAS","GLOBAL",0)
 END
 
 IF
-    Global("WTPFAMA1","GLOBAL",1) // The new Find Familiar spell sets this global to 1
-    OR(4)
-     Class(Player1,MAGE_ALL)
-     Class(Player1,BARD)
-     Kit(Player1,BEASTMASTER)
-     CheckStat(Player1,1,191)
-    !GlobalTimerNotExpired("#Gmourn","GLOBAL")
+  Global("WTPFAMA1","GLOBAL",1) // The new Find Familiar spell sets this global to 1
+  OR(4)
+    Class(Player1,MAGE_ALL)
+    Class(Player1,BARD)
+    Kit(Player1,BEASTMASTER)
+    CheckStat(Player1,1,191)
+  !GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
-    RESPONSE #100
-	ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
-        SetGlobal("WTPFAMA1","GLOBAL",2)
-	SetGlobal("#GHARAS","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+    SetGlobal("WTPFAMA1","GLOBAL",2)
+    SetGlobal("#GHARAS","GLOBAL",0)
 END
 
 /////////////////////////////////////////
@@ -823,15 +823,15 @@ END
 IF
   Global("#GFF12H","GLOBAL",1)
   OR(9)
-   Global("WTPFAMNG","GLOBAL",1)
-   Global("WTPFAMLE","GLOBAL",1)
-   Global("WTPFAMLN","GLOBAL",1)
-   Global("WTPFAMCN","GLOBAL",1)
-   Global("WTPFAMLG","GLOBAL",1)
-   Global("WTPFAMNE","GLOBAL",1)
-   Global("WTPFAMCG","GLOBAL",1)
-   Global("WTPFAMTN","GLOBAL",1)
-   Global("WTPFAMCE","GLOBAL",1)
+    Global("WTPFAMNG","GLOBAL",1)
+    Global("WTPFAMLE","GLOBAL",1)
+    Global("WTPFAMLN","GLOBAL",1)
+    Global("WTPFAMCN","GLOBAL",1)
+    Global("WTPFAMLG","GLOBAL",1)
+    Global("WTPFAMNE","GLOBAL",1)
+    Global("WTPFAMCG","GLOBAL",1)
+    Global("WTPFAMTN","GLOBAL",1)
+    Global("WTPFAMCE","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("#GFF12H","GLOBAL",2)
@@ -1382,143 +1382,143 @@ END
 /////////////////////////////////////////
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	ReputationLT(Player1,3)
-	OR(3)
-	 Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
-	 Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
-	 Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  ReputationLT(Player1,3)
+  OR(3)
+    Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
+    Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
+    Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayStringHead(Myself,@533))
-	SetGlobal("WTPFAMCG","GLOBAL",0)
-	SetGlobal("WTPFAMNG","GLOBAL",0)
-	SetGlobal("WTPFAMLG","GLOBAL",0)
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayStringHead(Myself,@533))
+    SetGlobal("WTPFAMCG","GLOBAL",0)
+    SetGlobal("WTPFAMNG","GLOBAL",0)
+    SetGlobal("WTPFAMLG","GLOBAL",0)
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	ReputationGT(Player1,18)
-	OR(3)
-	 Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
-	 Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
-	 Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  ReputationGT(Player1,18)
+  OR(3)
+    Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
+    Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
+    Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
 THEN
-    RESPONSE #100
-        ActionOverride(Player1,DisplayStringHead(Myself,@533))
-	SetGlobal("WTPFAMCE","GLOBAL",0)
-	SetGlobal("WTPFAMNE","GLOBAL",0)
-	SetGlobal("WTPFAMLE","GLOBAL",0)
-	SetGlobal("WTPFAMA1","GLOBAL",0)
+  RESPONSE #100
+    ActionOverride(Player1,DisplayStringHead(Myself,@533))
+    SetGlobal("WTPFAMCE","GLOBAL",0)
+    SetGlobal("WTPFAMNE","GLOBAL",0)
+    SetGlobal("WTPFAMLE","GLOBAL",0)
+    SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPseudo","SPANISUM",Player1)
-	ActionOverride("WTPseudo",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMNG","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPseudo","SPANISUM",Player1)
+    ActionOverride("WTPseudo",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMNG","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPImp","SPANISUM",Player1)
-	ActionOverride("WTPImp",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMLE","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPImp","SPANISUM",Player1)
+    ActionOverride("WTPImp",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMLE","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMLN","GLOBAL",1) // WTPFLNFE.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMLN","GLOBAL",1) // WTPFLNFE.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPFerre","SPANISUM",Player1)
-	ActionOverride("WTPFerre",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMLN","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPFerre","SPANISUM",Player1)
+    ActionOverride("WTPFerre",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMLN","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMCN","GLOBAL",1) // WTPFCNCT.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMCN","GLOBAL",1) // WTPFCNCT.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPCat","SPANISUM",Player1)
-	ActionOverride("WTPCat",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMCN","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPCat","SPANISUM",Player1)
+    ActionOverride("WTPCat",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMCN","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPRabbi","SPANISUM",Player1)
-	ActionOverride("WTPRabbi",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMLG","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPRabbi","SPANISUM",Player1)
+    ActionOverride("WTPRabbi",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMLG","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPDMeph","SPANISUM",Player1)
-	ActionOverride("WTPDMeph",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMNE","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPDMeph","SPANISUM",Player1)
+    ActionOverride("WTPDMeph",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMNE","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPFairy","SPANISUM",Player1)
-	ActionOverride("WTPFairy",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMCG","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPFairy","SPANISUM",Player1)
+    ActionOverride("WTPFairy",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMCG","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMTN","GLOBAL",1) // WTPFTNSP.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMTN","GLOBAL",1) // WTPFTNSP.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPSpide","SPANISUM",Player1)
-	ActionOverride("WTPSpide",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMTN","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPSpide","SPANISUM",Player1)
+    ActionOverride("WTPSpide",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMTN","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 IF
-	Global("#GFF12H","GLOBAL",3)
-	Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
+  Global("#GFF12H","GLOBAL",3)
+  Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
 THEN
-    RESPONSE #100
-	SetInterrupt(FALSE)
-	CreateCreatureObjectEffect("WTPQuasi","SPANISUM",Player1)
-	ActionOverride("WTPQuasi",SetGlobal("#GSUMMON","LOCALS",1))
-	SetGlobal("WTPFAMCE","GLOBAL",2)
-	SetInterrupt(TRUE)
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    CreateCreatureObjectEffect("WTPQuasi","SPANISUM",Player1)
+    ActionOverride("WTPQuasi",SetGlobal("#GSUMMON","LOCALS",1))
+    SetGlobal("WTPFAMCE","GLOBAL",2)
+    SetInterrupt(TRUE)
 END
 
 /////////////////////////////////////////
@@ -1528,15 +1528,15 @@ END
 IF
   Global("#GFF12H","GLOBAL",3)
   OR(9)
-   Global("WTPFAMNG","GLOBAL",2)
-   Global("WTPFAMCE","GLOBAL",2)
-   Global("WTPFAMTN","GLOBAL",2)
-   Global("WTPFAMCG","GLOBAL",2)
-   Global("WTPFAMNE","GLOBAL",2)
-   Global("WTPFAMLG","GLOBAL",2)
-   Global("WTPFAMCN","GLOBAL",2)
-   Global("WTPFAMLN","GLOBAL",2)
-   Global("WTPFAMLE","GLOBAL",2)
+    Global("WTPFAMNG","GLOBAL",2)
+    Global("WTPFAMCE","GLOBAL",2)
+    Global("WTPFAMTN","GLOBAL",2)
+    Global("WTPFAMCG","GLOBAL",2)
+    Global("WTPFAMNE","GLOBAL",2)
+    Global("WTPFAMLG","GLOBAL",2)
+    Global("WTPFAMCN","GLOBAL",2)
+    Global("WTPFAMLN","GLOBAL",2)
+    Global("WTPFAMLE","GLOBAL",2)
 THEN
   RESPONSE #100
     SetGlobal("WTPFAMA1","GLOBAL",0)

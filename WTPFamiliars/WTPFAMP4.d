@@ -17,7 +17,7 @@ IF ~Global("#GHARAS","GLOBAL",8)~ THEN BEGIN 47 // from:
    IF ~~ THEN DO ~ChangeEnemyAlly(Myself,NEUTRAL)SetGlobal("#GFAMGO","GLOBAL",1)~ EXIT
 END
 
-IF ~Global("#GINPACK","GLOBAL",1)~ THEN BEGIN 38 // from: 
+IF ~Global("#GINPACK","GLOBAL",1)~ THEN BEGIN 38 // from:
    SAY @27
    IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",120)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
@@ -116,27 +116,27 @@ IF ~~ THEN BEGIN 8 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 9 // from: 
+IF ~~ THEN BEGIN 9 // from:
   SAY #58369 /* ~"Let's see...the wizard is behind all your trials, yes? Then it is easy, <PRO_MANWOMAN>. Find him, kill him, and your troubles are no more. Now will you feed me, yes?"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 10 // from: 
+IF ~~ THEN BEGIN 10 // from:
   SAY @5 /* ~It looks about balefully, its hairy abdomen quivering in distress. "I do not like this place. We should leave immediately."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 11 // from: 
+IF ~~ THEN BEGIN 11 // from:
   SAY #58371 /* ~"Hmm, the elven city has the Tree of Life within, <PRO_MANWOMAN>, a wondrous thing connected to all that is natural. You must find the city and the Tree. That is my advice."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 12 // from: 
+IF ~~ THEN BEGIN 12 // from:
   SAY @6 /* ~The spider's silky voice vibrates with uncharacteristic ferocity. "There is only one solution, <PRO_MANWOMAN>. For you to survive, the wizard must die. That is how it must be."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 13 // from: 
+IF ~~ THEN BEGIN 13 // from:
   SAY @7 /* ~It looks up with its many eyes, seemingly content to just be near you. It looks away briefly. "We are connected, you and I. If you are well, so am I."~ */
   IF ~HPPercentLT(Myself,100)!HPPercentLT(Myself,50)~ THEN GOTO 14
   IF ~HPPercentLT(Myself,50)~ THEN GOTO 15
@@ -146,7 +146,7 @@ IF ~~ THEN BEGIN 13 // from:
   IF ~!HPPercentLT(Myself,100)RandomNum(5,4)~ THEN GOTO 19
 END
 
-IF ~~ THEN BEGIN 14 // from: 
+IF ~~ THEN BEGIN 14 // from:
   SAY #58375 /* ~"But I, myself, have a few insignificant injuries. I am strengthened because you are stronger than I. If you could treat my wounds, it would please me."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
@@ -161,12 +161,12 @@ IF ~~ THEN BEGIN 16 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 17 // from: 
+IF ~~ THEN BEGIN 17 // from:
   SAY #58378 /* ~"But I think you are a good enough traveling companion. I am pleased with the progress we make. Perhaps I shall remain with you for some time to come, we shall see."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 18 // from: 
+IF ~~ THEN BEGIN 18 // from:
   SAY @9 /* ~The large spider seems to ponder saying something else, but eventually its attention drifts and it finds something more interesting than you elsewhere.~ */
   IF ~~ THEN DO ~RunAwayFrom(LastTalkedToBy,10)ClearActions(Myself)~ EXIT
 END
@@ -181,7 +181,7 @@ IF ~~ THEN BEGIN 20 // from:
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 21 // from: 
+IF ~~ THEN BEGIN 21 // from:
   SAY #72593 /* ~The animal looks at you, fairly close to bewildered. "Me? I suppose I have thoughts that it would amuse me to share, but would you even regard them, <PRO_MANWOMAN>?"~ */
   IF ~True()~ THEN EXIT
   IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 22
@@ -189,27 +189,27 @@ IF ~~ THEN BEGIN 21 // from:
   IF ~Global("chapter","GLOBAL",10)~ THEN GOTO 24
 END
 
-IF ~~ THEN BEGIN 22 // from: 
+IF ~~ THEN BEGIN 22 // from:
   SAY @13 /* ~The large spider looks uninterested.  "I do not know what advice to give.  The wizard is dead, you have your soul... can you not just leave?"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 23 // from: 
+IF ~~ THEN BEGIN 23 // from:
   SAY @14 /* ~It seems to concentrate, thinking hard.  "It...seems to me that there is a reason that all the children of Bhaal are coming together.  You must end it, I think."  It continues after a short pause.  "And, of course, you must win!"~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 24 // from: 
+IF ~~ THEN BEGIN 24 // from:
   SAY @15 /* ~"The only answer must be obvious...you must find this female who has lied to you and kill her!  You must travel to the Abyss and her life must be ended!"  Its fangs twitch and pinch before your eyes.  "Or, at least, that's what I would do."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 25 // from: 
+IF ~~ THEN BEGIN 25 // from:
   SAY @11 /* ~You scrounge up some food from your pack and offer it to the creature.  It seems pleased and nibbles away contentedly. "Thank you, <PRO_MANWOMAN>."~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 26 // from: 
+IF ~~ THEN BEGIN 26 // from:
   SAY @12 /* ~Your familiar seems ravenous and digs into the food you offer immediately.  Its wounds begin to close before your eyes.  "Many thanks, <PRO_MANWOMAN>!"~ */
   IF ~~ THEN DO ~ApplySpell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)ClearActions(Myself)~ EXIT
 END
@@ -228,97 +228,97 @@ IF ~~ THEN BEGIN 27 // from:
   IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 37
 END
 
-IF ~~ THEN BEGIN 28 // from: 
+IF ~~ THEN BEGIN 28 // from:
   SAY @16 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 29 // from: 
+IF ~~ THEN BEGIN 29 // from:
   SAY @17 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 30 // from: 
+IF ~~ THEN BEGIN 30 // from:
   SAY @18 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 31 // from: 
+IF ~~ THEN BEGIN 31 // from:
   SAY @19 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 32 // from: 
+IF ~~ THEN BEGIN 32 // from:
   SAY @20 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~EXIT
 END
 
-IF ~~ THEN BEGIN 33 // from: 
+IF ~~ THEN BEGIN 33 // from:
   SAY @21 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 34 // from: 
+IF ~~ THEN BEGIN 34 // from:
   SAY @22 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 35 // from: 
+IF ~~ THEN BEGIN 35 // from:
   SAY @24 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 36 // from: 
+IF ~~ THEN BEGIN 36 // from:
   SAY @25 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 37 // from: 
+IF ~~ THEN BEGIN 37 // from:
   SAY @26 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 41 // from: 
+IF ~~ THEN BEGIN 41 // from:
   SAY @30 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 42 // from: 
+IF ~~ THEN BEGIN 42 // from:
   SAY @34 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 43 // from: 
+IF ~~ THEN BEGIN 43 // from:
   SAY @35 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)RunAwayFrom(Player1,45)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 44 // from: 
+IF ~~ THEN BEGIN 44 // from:
   SAY @37 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)SetGlobal("#GFLVUP","GLOBAL",1)ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 48 // from: 
+IF ~~ THEN BEGIN 48 // from:
   SAY @41 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 49 // from: 
+IF ~~ THEN BEGIN 49 // from:
   SAY @43 /* ~~ */
   IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()GiveItemCreate("wtpfmspd",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~~ THEN BEGIN 50 // from: 
+IF ~~ THEN BEGIN 50 // from:
   SAY @44 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 51 // from: 
+IF ~~ THEN BEGIN 51 // from:
   SAY @46 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN 52 // from: 
+IF ~~ THEN BEGIN 52 // from:
   SAY @47 /* ~~ */
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
