@@ -42,6 +42,15 @@ AT_INTERACTIVE_NOW ~WTPFamiliars/WTPFamiliaraudio.bat~
 
 // Items patch
 
+// Note: IWDEE does not have ring94 and ring99. Maybe it will after 2.5 patch.
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+  ACTION_IF NOT (FILE_EXISTS_IN_GAME ~ring94.itm~) BEGIN
+    COPY_EXISTING ~ring95.itm~ ~override/ring94.itm~
+  END
+  ACTION_IF NOT (FILE_EXISTS_IN_GAME ~ring99.itm~) BEGIN
+    COPY_EXISTING ~ring95.itm~ ~override/ring99.itm~
+  END
+END
 
 COPY_EXISTING "ring94.itm" ~override~
               "ring95.itm" ~override~
