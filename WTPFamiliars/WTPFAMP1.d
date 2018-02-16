@@ -1,6 +1,6 @@
 BEGIN ~WTPFAMP1~
 
-IF ~ReputationLT(Player1,3)~ THEN BEGIN 49 // from:
+IF ~ReputationLT(%famsummoner%,3)~ THEN BEGIN 49 // from:
    SAY @24
    IF ~~ THEN DO ~ChangeEnemyAlly(Myself,NEUTRAL)SetGlobal("#GFAMGO","GLOBAL",1)~ EXIT
 END
@@ -39,57 +39,57 @@ END
 
 IF ~!InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 0 // from:
   SAY #58296 /* ~The small dragon-like creature purrs quizzically with wide eyes. Nervously it backs away towards <CHARNAME>. Obviously it doesn't want to talk to you.~ */
-  IF ~~ THEN DO ~MoveToObject(Player1)ClearActions(Myself)~ EXIT
+  IF ~~ THEN DO ~MoveToObject(%famsummoner%)ClearActions(Myself)~ EXIT
 END
 
 IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 1 // from:
   SAY #58297 /* ~The small dragon-like creature flutters its wings happily, looking at you with almost kaleidoscopic eyes. "You wish something?" It awaits your attention, tail flicking.~ */
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 45
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58866 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 21
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 42
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(Player1,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)HPPercentGT(Myself,50)HPPercentGT(Player1,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)HPPercentGT(Myself,50)HPPercentGT(Player1,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))!InventoryFull(Player1)HPPercentGT(Myself,50)HPPercentGT(Player1,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))~ THEN REPLY #72070 /* ~(pet and play with it)~ */ GOTO 3
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!HPPercentLT(Myself,100)~ THEN REPLY #73426 /* ~(feed the familiar)~ */ GOTO 26
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))HPPercentLT(Myself,100)~ THEN REPLY #73432 /* ~(feed the familiar)~ */ GOTO 27
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 28
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 22
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))~ THEN REPLY #58307 /* ~How are you?  Everything okay down there?~ */ GOTO 13
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))Global("#GAFTER","GLOBAL",0)~ THEN REPLY @15 GOTO 43
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))Global("#GAFTER","GLOBAL",1)~ THEN REPLY @16 GOTO 44
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))ReputationGT(Player1,16)~ THEN REPLY #58304 /* ~No, it's alright.  Let's just keep going.~ */ GOTO 52
-  IF ~CombatCounterLT(1)!TriggerOverride(Player1,Detect([ENEMY]))!ReputationGT(Player1,16)~ THEN REPLY #58304 /* ~No, it's alright.  Let's just keep going.~ */ GOTO 20
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(Player1,Detect([ENEMY]))~ THEN REPLY @28 GOTO 53
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 45
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMNG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMCG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58866 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 21
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 42
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMNG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 50
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)Global("WTPFAMCG","GLOBAL",2)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 51
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @25 GOTO 54
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY #72070 /* ~(pet and play with it)~ */ GOTO 3
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!HPPercentLT(Myself,100)~ THEN REPLY #73426 /* ~(feed the familiar)~ */ GOTO 26
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))HPPercentLT(Myself,100)~ THEN REPLY #73432 /* ~(feed the familiar)~ */ GOTO 27
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 28
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 22
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY #58307 /* ~How are you?  Everything okay down there?~ */ GOTO 13
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("#GAFTER","GLOBAL",0)~ THEN REPLY @15 GOTO 43
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("#GAFTER","GLOBAL",1)~ THEN REPLY @16 GOTO 44
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))ReputationGT(%famsummoner%,16)~ THEN REPLY #58304 /* ~No, it's alright.  Let's just keep going.~ */ GOTO 52
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!ReputationGT(%famsummoner%,16)~ THEN REPLY #58304 /* ~No, it's alright.  Let's just keep going.~ */ GOTO 20
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY @28 GOTO 53
 END
 
 IF ~~ THEN BEGIN 2 // from: 3.0 1.0
   SAY #58302 /* ~Its eyes brighten, and it practically leaps into your arms, ready to be stowed amongst your belongings where it can sleep and occasionally poke its head out.~ */
-  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfamps",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfamps",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN 3 // from: 1.1
   SAY #58303 /* ~The dragon coos with delight, its multicolored eyes whirling as you pat its warm, leathery hide. "You are very kind to me, my <PRO_LADYLORD>," it purrs.~ */
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @19 GOTO 45
-  IF ~!InventoryFull(Player1)Global("WTPFAMNG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58305 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
-  IF ~!InventoryFull(Player1)Global("WTPFAMCG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #59477 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 21
-  IF ~!InventoryFull(Player1)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 42
+  IF ~!InventoryFull(%famsummoner%)Global("WTPFAMNG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58305 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
+  IF ~!InventoryFull(%famsummoner%)Global("WTPFAMCG","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #59477 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 21
+  IF ~!InventoryFull(%famsummoner%)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58298 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 42
   IF ~!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 28
   IF ~Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
   IF ~Global("INTOB","GLOBAL",1)~ THEN REPLY #58300 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 22
   IF ~~ THEN REPLY #58307 /* ~How are you?  Everything okay down there?~ */ GOTO 13
   IF ~Global("#GAFTER","GLOBAL",0)~ THEN REPLY @15 GOTO 43
   IF ~Global("#GAFTER","GLOBAL",1)~ THEN REPLY @16 GOTO 44
-  IF ~ReputationGT(Player1,16)~ THEN REPLY #58308 /* ~Let's just keep going, then.~ */ GOTO 52
-  IF ~!ReputationGT(Player1,16)~ THEN REPLY #58308 /* ~Let's just keep going, then.~ */ GOTO 20
+  IF ~ReputationGT(%famsummoner%,16)~ THEN REPLY #58308 /* ~Let's just keep going, then.~ */ GOTO 52
+  IF ~!ReputationGT(%famsummoner%,16)~ THEN REPLY #58308 /* ~Let's just keep going, then.~ */ GOTO 20
 END
 
 IF ~~ THEN BEGIN 4 // from: 3.1 1.2
@@ -191,7 +191,7 @@ END
 
 IF ~~ THEN BEGIN 21 // from: 3.4 1.5
   SAY #58867 /* ~Its eyes brighten, and it practically leaps into your arms, ready to be stowed amongst your belongings where it can sleep and occasionally poke its head out.~ */
-  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN 22 // from:
@@ -303,7 +303,7 @@ END
 
 IF ~~ THEN BEGIN 44 // from:
   SAY @18 /* ~~ */
-  IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)RunAwayFrom(Player1,45)ClearActions(Myself)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GAFTER","GLOBAL",0)RunAwayFrom(%famsummoner%,45)ClearActions(Myself)~ EXIT
 END
 
 IF ~~ THEN BEGIN 45 // from:
@@ -313,12 +313,12 @@ END
 
 IF ~~ THEN BEGIN 50 // from:
   SAY @26 /* ~~ */
-  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfamps",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfamps",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN 51 // from:
   SAY @26 /* ~~ */
-  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",Player1,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfae",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN 52 //

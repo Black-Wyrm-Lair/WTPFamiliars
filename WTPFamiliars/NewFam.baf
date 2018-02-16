@@ -4,7 +4,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPfamps","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPseudo",Player1)
+    MoveGlobalObject("WTPseudo",%famsummoner%)
 END
 
 IF
@@ -13,7 +13,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMFER","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPFerre",Player1)
+    MoveGlobalObject("WTPFerre",%famsummoner%)
 END
 
 IF
@@ -22,7 +22,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMIMP","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPImp",Player1)
+    MoveGlobalObject("WTPImp",%famsummoner%)
 END
 
 IF
@@ -31,7 +31,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMRAB","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPRabbi",Player1)
+    MoveGlobalObject("WTPRabbi",%famsummoner%)
 END
 
 IF
@@ -40,7 +40,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMMEP","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPDMeph",Player1)
+    MoveGlobalObject("WTPDMeph",%famsummoner%)
 END
 
 IF
@@ -49,7 +49,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMFAE","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPFairy",Player1)
+    MoveGlobalObject("WTPFairy",%famsummoner%)
 END
 
 IF
@@ -58,7 +58,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMCAT","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPCat",Player1)
+    MoveGlobalObject("WTPCat",%famsummoner%)
 END
 
 IF
@@ -67,7 +67,7 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMSPD","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPSpide",Player1)
+    MoveGlobalObject("WTPSpide",%famsummoner%)
 END
 
 IF
@@ -76,5 +76,5 @@ THEN
   RESPONSE #100
     SetGlobal("WTPFMQUA","GLOBAL",0)
     SetGlobal("#GINPACK", "GLOBAL", 0)
-    MoveGlobalObject("WTPQuasi",Player1)
+    MoveGlobalObject("WTPQuasi",%famsummoner%)
 END

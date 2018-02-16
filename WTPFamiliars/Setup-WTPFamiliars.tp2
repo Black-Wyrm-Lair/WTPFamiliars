@@ -3,6 +3,15 @@ AUTHOR ~Rabain&Salk~
 VERSION ~2.1~
 README ~WTPFamiliars/Readme-WTPFamiliars.html~
 
+ALWAYS
+  // Summoner
+  ACTION_IF (GAME_IS ~iwdee~) BEGIN
+    OUTER_SPRINT famsummoner ~FamiliarSummoner~
+  END ELSE BEGIN
+    OUTER_SPRINT famsummoner ~Player1~
+  END
+END
+
 /////////////////////////////////////
 ///Languages                     ////
 /////////////////////////////////////
@@ -489,41 +498,44 @@ COPY ~WTPFamiliars/wtpfamtn.spl~ ~override~
 ////compiling - Familiar Dialogs&Scripts///
 ///////////////////////////////////////////
 
-COMPILE ~WTPFamiliars/WTPFAMP1.d~
-  ~WTPFamiliars/WTPFAMP2.d~
-  ~WTPFamiliars/WTPFAMP3.d~
-  ~WTPFamiliars/WTPFAMP4.d~
-  ~WTPFamiliars/WTPWISH.d~
+COMPILE EVALUATE_BUFFER ~WTPFamiliars/WTPFAMP1.d~
+                        ~WTPFamiliars/WTPFAMP2.d~
+                        ~WTPFamiliars/WTPFAMP3.d~
+                        ~WTPFamiliars/WTPFAMP4.d~
+                        ~WTPFamiliars/WTPWISH.d~
 
 // Script compiling - script to apply Con spells to Familiar and PC
 
-COMPILE ~WTPFamiliars/WTPFSPI.baf~
-        ~WTPFamiliars/WTPFDME.baf~
-        ~WTPFamiliars/WTPFQUA.baf~
-        ~WTPFamiliars/WTPFCAT.baf~
-        ~WTPFamiliars/WTPFFER.baf~
-        ~WTPFamiliars/WTPFRAB.baf~
-        ~WTPFamiliars/WTPFIMP.baf~
-        ~WTPFamiliars/WTPFPSE.baf~
-        ~WTPFamiliars/WTPFFAE.baf~
-        ~WTPFamiliars/WTPNAG.baf~
-        ~WTPFamiliars/WTPTAU1.baf~
+COMPILE EVALUATE_BUFFER ~WTPFamiliars/WTPFSPI.baf~
+                        ~WTPFamiliars/WTPFDME.baf~
+                        ~WTPFamiliars/WTPFQUA.baf~
+                        ~WTPFamiliars/WTPFCAT.baf~
+                        ~WTPFamiliars/WTPFFER.baf~
+                        ~WTPFamiliars/WTPFRAB.baf~
+                        ~WTPFamiliars/WTPFIMP.baf~
+                        ~WTPFamiliars/WTPFPSE.baf~
+                        ~WTPFamiliars/WTPFFAE.baf~
+                        ~WTPFamiliars/WTPNAG.baf~
+                        ~WTPFamiliars/WTPTAU1.baf~
 
 // Extend Baldur.bcs and baldur25.bcs so Familiar follows PC from area to area and works for ToB Familiar summon too!
 
 COPY_EXISTING ~baldur.bcs~   ~override~
               ~baldur25.bcs~ ~override~
-  REPLACE_BCS_BLOCK ~WTPFamiliars/OldFam.baf~ ~WTPFamiliars/NewFam.baf~
+  REPLACE_BCS_BLOCK EVALUATE_BUFFER ~WTPFamiliars/OldFam.baf~ ~WTPFamiliars/NewFam.baf~
   BUT_ONLY
 
 EXTEND_BOTTOM ~baldur.bcs~   ~WTPFamiliars/FamiliartobaldurBCS.baf~
+  EVALUATE_BUFFER
 
 EXTEND_BOTTOM ~baldur25.bcs~ ~WTPFamiliars/FamiliartobaldurBCS.baf~
+  EVALUATE_BUFFER
 
 // Extend ar0602.bcs to account for the new familiars
 
 ACTION_IF GAME_IS ~bgt tob bg2ee eet~ BEGIN
   EXTEND_TOP ~ar0602.bcs~ ~WTPFamiliars/wtp0602.baf~
+    EVALUATE_BUFFER
 END
 
 // End of Script EXTENDing - Familiars have sounds!
