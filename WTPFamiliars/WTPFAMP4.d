@@ -42,18 +42,18 @@ IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN 1 // from:
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @36 GOTO 44
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58358 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58358 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 41
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 49
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 49
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 49
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,30)!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 52
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,45)Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 52
-  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,60)Global("INTOB","GLOBAL",1)~ THEN REPLY @42 GOTO 52
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,30)%IsInBG1%~ THEN REPLY @42 GOTO 49
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,45)%IsInSoA%~ THEN REPLY @42 GOTO 49
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)OR(2)HPPercentLT(Myself,50)HPPercentLT(%famsummoner%,60)%IsInToB%~ THEN REPLY @42 GOTO 49
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,30)%IsInBG1%~ THEN REPLY @42 GOTO 52
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,45)%IsInSoA%~ THEN REPLY @42 GOTO 52
+  IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,60)%IsInToB%~ THEN REPLY @42 GOTO 52
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY #58360 /* ~(pet the familiar)~ */ GOTO 3
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!HPPercentLT(Myself,100)~ THEN REPLY #73442 /* ~(feed the familiar)~ */ GOTO 25
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))HPPercentLT(Myself,100)~ THEN REPLY #73443 /* ~(feed the familiar)~ */ GOTO 26
-  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 27
-  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
-  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("INTOB","GLOBAL",1)~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 21
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))%IsInBG1%~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 27
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))%IsInSoA%~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))%IsInToB%~ THEN REPLY #58383 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 21
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY #58384 /* ~How are you?  Everything okay down there?~ */ GOTO 13
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("#GAFTER","GLOBAL",0)~ THEN REPLY @32 GOTO 42
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("#GAFTER","GLOBAL",1)~ THEN REPLY @33 GOTO 43
@@ -73,9 +73,9 @@ IF ~~ THEN BEGIN 3 // from:
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @36 GOTO 44
   IF ~!InventoryFull(%famsummoner%)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58362 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 2
   IF ~!InventoryFull(%famsummoner%)GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY #58362 /* ~Come here.  I want to pick you up and put you in my pack where it's a bit safer.~ */ GOTO 41
-  IF ~!Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 27
-  IF ~Global("ENDOFBG1","GLOBAL",2)!Global("INTOB","GLOBAL",1)~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
-  IF ~Global("INTOB","GLOBAL",1)~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 21
+  IF ~%IsInBG1%~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 27
+  IF ~%IsInSoA%~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 4
+  IF ~%IsInToB%~ THEN REPLY #58363 /* ~You wouldn't happen to have any advice, would you?~ */ GOTO 21
   IF ~~ THEN REPLY #58373 /* ~How are you?  Everything okay down there?~ */ GOTO 13
   IF ~Global("#GAFTER","GLOBAL",0)~ THEN REPLY @32 GOTO 42
   IF ~Global("#GAFTER","GLOBAL",1)~ THEN REPLY @33 GOTO 43
@@ -86,14 +86,14 @@ END
 
 IF ~~ THEN BEGIN 4 // from:
   SAY #58364 /* ~The animal looks at you, fairly close to bewildered. "Me? I suppose I have thoughts that it would amuse me to share, but would you even regard them, <PRO_MANWOMAN>?"~ */
-  IF ~Global("chapter","GLOBAL",1)AreaType(DUNGEON)~ THEN GOTO 5
-  IF ~Global("chapter","GLOBAL",1)!AreaType(DUNGEON)~ THEN GOTO 6
-  IF ~Global("chapter","GLOBAL",2)~ THEN GOTO 7
-  IF ~Global("chapter","GLOBAL",3)~ THEN GOTO 8
-  IF ~Global("chapter","GLOBAL",4)~ THEN GOTO 9
-  IF ~Global("chapter","GLOBAL",5)~ THEN GOTO 10
-  IF ~Global("chapter","GLOBAL",6)~ THEN GOTO 11
-  IF ~Global("chapter","GLOBAL",7)~ THEN GOTO 12
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_1%)AreaType(DUNGEON)~ THEN GOTO 5
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_1%)!AreaType(DUNGEON)~ THEN GOTO 6
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_2%)~ THEN GOTO 7
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_3%)~ THEN GOTO 8
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_4%)~ THEN GOTO 9
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_5%)~ THEN GOTO 10
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_6%)~ THEN GOTO 11
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_7%)~ THEN GOTO 12
 END
 
 IF ~~ THEN BEGIN 5 // from:
@@ -184,9 +184,9 @@ END
 IF ~~ THEN BEGIN 21 // from:
   SAY #72593 /* ~The animal looks at you, fairly close to bewildered. "Me? I suppose I have thoughts that it would amuse me to share, but would you even regard them, <PRO_MANWOMAN>?"~ */
   IF ~True()~ THEN EXIT
-  IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 22
-  IF ~Global("chapter","GLOBAL",9)~ THEN GOTO 23
-  IF ~Global("chapter","GLOBAL",10)~ THEN GOTO 24
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_8%)~ THEN GOTO 22
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_9%)~ THEN GOTO 23
+  IF ~Global("chapter","GLOBAL",%bg2_chapter_10%)~ THEN GOTO 24
 END
 
 IF ~~ THEN BEGIN 22 // from:
@@ -216,16 +216,16 @@ END
 
 IF ~~ THEN BEGIN 27 // from:
   SAY #58364 /* ~The animal looks at you, fairly close to bewildered. "Me? I suppose I have thoughts that it would amuse me to share, but would you even regard them, <PRO_MANWOMAN>?"~ */
-  IF ~Global("chapter","GLOBAL",1)~ THEN GOTO 28
-  IF ~Global("chapter","GLOBAL",2)~ THEN GOTO 29
-  IF ~Global("chapter","GLOBAL",3)~ THEN GOTO 30
-  IF ~Global("chapter","GLOBAL",4)~ THEN GOTO 31
-  IF ~Global("chapter","GLOBAL",5)~ THEN GOTO 32
-  IF ~Global("chapter","GLOBAL",6)OR(194)AreaCheck("AR7200")AreaCheck("AR7201")AreaCheck("AR7202")AreaCheck("AR7203")AreaCheck("AR7204")AreaCheck("AR7205")AreaCheck("AR7206")AreaCheck("AR7207")AreaCheck("AR7208")AreaCheck("AR7209")AreaCheck("AR7210")AreaCheck("AR7211")AreaCheck("AR7212")AreaCheck("AR7214")AreaCheck("AR7215")AreaCheck("AR7216")AreaCheck("AR7217")AreaCheck("AR7218")AreaCheck("AR7219")AreaCheck("AR7220")AreaCheck("AR7221")AreaCheck("AR7223")AreaCheck("AR7225")AreaCheck("AR7226")AreaCheck("AR7227")AreaCheck("AR7228")AreaCheck("AR7229")AreaCheck("AR7230")AreaCheck("AR7231")AreaCheck("AR7232")AreaCheck("AR7233")AreaCheck("AR7234")AreaCheck("AR7235")AreaCheck("AR7236")AreaCheck("AR7237")AreaCheck("AR7238")AreaCheck("AR7239")AreaCheck("AR7240")AreaCheck("AR7241")AreaCheck("AR7242")AreaCheck("AR7243")AreaCheck("AR7244")AreaCheck("AR7245")AreaCheck("AR7246")AreaCheck("AR7248")AreaCheck("AR7249")AreaCheck("AR7250")AreaCheck("AR7251")AreaCheck("AR7252")AreaCheck("AR7253")AreaCheck("AR7254")AreaCheck("AR7255")AreaCheck("AR7256")AreaCheck("AR7257")AreaCheck("AR7258")AreaCheck("AR7259")AreaCheck("AR7260")AreaCheck("AR7261")AreaCheck("AR7262")AreaCheck("AR7263")AreaCheck("AR7264")AreaCheck("AR7265")AreaCheck("AR7266")AreaCheck("AR7267")AreaCheck("AR7268")AreaCheck("AR7269")AreaCheck("AR7270")AreaCheck("AR7271")AreaCheck("AR7300")AreaCheck("AR7324")AreaCheck("AR7325")AreaCheck("AR7326")AreaCheck("AR7400")AreaCheck("AR7402")AreaCheck("AR7403")AreaCheck("AR7404")AreaCheck("AR7405")AreaCheck("AR7406")AreaCheck("AR7407")AreaCheck("AR7408")AreaCheck("AR7600")AreaCheck("AR7601")AreaCheck("AR7602")AreaCheck("AR7603")AreaCheck("AR7606")AreaCheck("AR7607")AreaCheck("AR7608")AreaCheck("AR7609")AreaCheck("AR7611")AreaCheck("AR7612")AreaCheck("AR7613")AreaCheck("AR7614")AreaCheck("AR7615")AreaCheck("AR7616")AreaCheck("AR7600")AreaCheck("AR7617")AreaCheck("AR7618")AreaCheck("AR7619")AreaCheck("AR7620")AreaCheck("AR7621")AreaCheck("AR7700")AreaCheck("AR7702")AreaCheck("AR7703")AreaCheck("AR7704")AreaCheck("AR7705")AreaCheck("AR7706")AreaCheck("AR7707")AreaCheck("AR7708")AreaCheck("AR7709")AreaCheck("AR7710")AreaCheck("AR7711")AreaCheck("AR7712")AreaCheck("AR7713")AreaCheck("AR7714")AreaCheck("AR7715")AreaCheck("AR7716")AreaCheck("AR7717")AreaCheck("AR7718")AreaCheck("AR7719")AreaCheck("AR7720")AreaCheck("AR7721")AreaCheck("AR7722")AreaCheck("AR7723")AreaCheck("AR7724")AreaCheck("AR7725")AreaCheck("AR7726")AreaCheck("AR7800")AreaCheck("AR7801")AreaCheck("AR7802")AreaCheck("AR7803")AreaCheck("AR7804")AreaCheck("AR7805")AreaCheck("AR7806")AreaCheck("AR7807")AreaCheck("AR7808")AreaCheck("AR7809")AreaCheck("AR7810")AreaCheck("AR7811")AreaCheck("AR7812")AreaCheck("AR7813")AreaCheck("AR7814")AreaCheck("AR8000")AreaCheck("AR8001")AreaCheck("AR8002")AreaCheck("AR8003")AreaCheck("AR8004")AreaCheck("AR8005")AreaCheck("AR8006")AreaCheck("AR8007")AreaCheck("AR8008")AreaCheck("AR8009")AreaCheck("AR8010")AreaCheck("AR8011")AreaCheck("AR8012")AreaCheck("AR8013")AreaCheck("AR8014")AreaCheck("AR8015")AreaCheck("AR8016")AreaCheck("AR8017")AreaCheck("AR8100")AreaCheck("AR8101")AreaCheck("AR8102")AreaCheck("AR8103")AreaCheck("AR8104")AreaCheck("AR8105")AreaCheck("AR8106")AreaCheck("AR8107")AreaCheck("AR8108")AreaCheck("AR8109")AreaCheck("AR8110")AreaCheck("AR8111")AreaCheck("AR8112")AreaCheck("AR8113")AreaCheck("AR8114")AreaCheck("AR8115")AreaCheck("AR8200")AreaCheck("AR8201")AreaCheck("AR8202")AreaCheck("AR8203")AreaCheck("AR8204")AreaCheck("AR8205")AreaCheck("AR8206")AreaCheck("AR8207")AreaCheck("AR8208")AreaCheck("AR8209")AreaCheck("AR8210")AreaCheck("AR8211")AreaCheck("AR8212")AreaCheck("AR8213")AreaCheck("AR8214")AreaCheck("AR8215")AreaCheck("AR8216")AreaCheck("AR8217")~ THEN GOTO 33
-  IF ~Global("chapter","GLOBAL",6)!AreaCheck("AR7200")!AreaCheck("AR7201")!AreaCheck("AR7202")!AreaCheck("AR7203")!AreaCheck("AR7204")!AreaCheck("AR7205")!AreaCheck("AR7206")!AreaCheck("AR7207")!AreaCheck("AR7208")!AreaCheck("AR7209")!AreaCheck("AR7210")!AreaCheck("AR7211")!AreaCheck("AR7212")!AreaCheck("AR7214")!AreaCheck("AR7215")!AreaCheck("AR7216")!AreaCheck("AR7217")!AreaCheck("AR7218")!AreaCheck("AR7219")!AreaCheck("AR7220")!AreaCheck("AR7221")!AreaCheck("AR7223")!AreaCheck("AR7225")!AreaCheck("AR7226")!AreaCheck("AR7227")!AreaCheck("AR7228")!AreaCheck("AR7229")!AreaCheck("AR7230")!AreaCheck("AR7231")!AreaCheck("AR7232")!AreaCheck("AR7233")!AreaCheck("AR7234")!AreaCheck("AR7235")!AreaCheck("AR7236")!AreaCheck("AR7237")!AreaCheck("AR7238")!AreaCheck("AR7239")!AreaCheck("AR7240")!AreaCheck("AR7241")!AreaCheck("AR7242")!AreaCheck("AR7243")!AreaCheck("AR7244")!AreaCheck("AR7245")!AreaCheck("AR7246")!AreaCheck("AR7248")!AreaCheck("AR7249")!AreaCheck("AR7250")!AreaCheck("AR7251")!AreaCheck("AR7252")!AreaCheck("AR7253")!AreaCheck("AR7254")!AreaCheck("AR7255")!AreaCheck("AR7256")!AreaCheck("AR7257")!AreaCheck("AR7258")!AreaCheck("AR7259")!AreaCheck("AR7260")!AreaCheck("AR7261")!AreaCheck("AR7262")!AreaCheck("AR7263")!AreaCheck("AR7264")!AreaCheck("AR7265")!AreaCheck("AR7266")!AreaCheck("AR7267")!AreaCheck("AR7268")!AreaCheck("AR7269")!AreaCheck("AR7270")!AreaCheck("AR7271")!AreaCheck("AR7300")!AreaCheck("AR7324")!AreaCheck("AR7325")!AreaCheck("AR7326")!AreaCheck("AR7400")!AreaCheck("AR7402")!AreaCheck("AR7403")!AreaCheck("AR7404")!AreaCheck("AR7405")!AreaCheck("AR7406")!AreaCheck("AR7407")!AreaCheck("AR7408")!AreaCheck("AR7600")!AreaCheck("AR7601")!AreaCheck("AR7602")!AreaCheck("AR7603")!AreaCheck("AR7606")!AreaCheck("AR7607")!AreaCheck("AR7608")!AreaCheck("AR7609")!AreaCheck("AR7611")!AreaCheck("AR7612")!AreaCheck("AR7613")!AreaCheck("AR7614")!AreaCheck("AR7615")!AreaCheck("AR7616")!AreaCheck("AR7600")!AreaCheck("AR7617")!AreaCheck("AR7618")!AreaCheck("AR7619")!AreaCheck("AR7620")!AreaCheck("AR7621")!AreaCheck("AR7700")!AreaCheck("AR7702")!AreaCheck("AR7703")!AreaCheck("AR7704")!AreaCheck("AR7705")!AreaCheck("AR7706")!AreaCheck("AR7707")!AreaCheck("AR7708")!AreaCheck("AR7709")!AreaCheck("AR7710")!AreaCheck("AR7711")!AreaCheck("AR7712")!AreaCheck("AR7713")!AreaCheck("AR7714")!AreaCheck("AR7715")!AreaCheck("AR7716")!AreaCheck("AR7717")!AreaCheck("AR7718")!AreaCheck("AR7719")!AreaCheck("AR7720")!AreaCheck("AR7721")!AreaCheck("AR7722")!AreaCheck("AR7723")!AreaCheck("AR7724")!AreaCheck("AR7725")!AreaCheck("AR7726")!AreaCheck("AR7800")!AreaCheck("AR7801")!AreaCheck("AR7802")!AreaCheck("AR7803")!AreaCheck("AR7804")!AreaCheck("AR7805")!AreaCheck("AR7806")!AreaCheck("AR7807")!AreaCheck("AR7808")!AreaCheck("AR7809")!AreaCheck("AR7810")!AreaCheck("AR7811")!AreaCheck("AR7812")!AreaCheck("AR7813")!AreaCheck("AR7814")!AreaCheck("AR8000")!AreaCheck("AR8001")!AreaCheck("AR8002")!AreaCheck("AR8003")!AreaCheck("AR8004")!AreaCheck("AR8005")!AreaCheck("AR8006")!AreaCheck("AR8007")!AreaCheck("AR8008")!AreaCheck("AR8009")!AreaCheck("AR8010")!AreaCheck("AR8011")!AreaCheck("AR8012")!AreaCheck("AR8013")!AreaCheck("AR8014")!AreaCheck("AR8015")!AreaCheck("AR8016")!AreaCheck("AR8017")!AreaCheck("AR8100")!AreaCheck("AR8101")!AreaCheck("AR8102")!AreaCheck("AR8103")!AreaCheck("AR8104")!AreaCheck("AR8105")!AreaCheck("AR8106")!AreaCheck("AR8107")!AreaCheck("AR8108")!AreaCheck("AR8109")!AreaCheck("AR8110")!AreaCheck("AR8111")!AreaCheck("AR8112")!AreaCheck("AR8113")!AreaCheck("AR8114")!AreaCheck("AR8115")!AreaCheck("AR8200")!AreaCheck("AR8201")!AreaCheck("AR8202")!AreaCheck("AR8203")!AreaCheck("AR8204")!AreaCheck("AR8205")!AreaCheck("AR8206")!AreaCheck("AR8207")!AreaCheck("AR8208")!AreaCheck("AR8209")!AreaCheck("AR8210")!AreaCheck("AR8211")!AreaCheck("AR8212")!AreaCheck("AR8213")!AreaCheck("AR8214")!AreaCheck("AR8215")!AreaCheck("AR8216")!AreaCheck("AR8217")~ THEN GOTO 34
-  IF ~Global("chapter","GLOBAL",7)!Global("Teth","Global",1)~ THEN GOTO 35
-  IF ~Global("chapter","GLOBAL",7)Global("Teth","Global",1)~ THEN GOTO 36
-  IF ~Global("chapter","GLOBAL",8)~ THEN GOTO 37
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_0%)~ THEN GOTO 28
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_1%)~ THEN GOTO 29
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_2%)~ THEN GOTO 30
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_3%)~ THEN GOTO 31
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_4%)~ THEN GOTO 32
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_5%)%InBGAreaCheck%~ THEN GOTO 33
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_5%)%NotInBGAreaCheck%~ THEN GOTO 34
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_6%)!Global("Teth","Global",1)~ THEN GOTO 35
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_6%)Global("Teth","Global",1)~ THEN GOTO 36
+  IF ~Global("chapter","GLOBAL",%bg1_chapter_7%)~ THEN GOTO 37
 END
 
 IF ~~ THEN BEGIN 28 // from:
