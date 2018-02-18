@@ -66,8 +66,8 @@ Improved Phasing (Lv 15)~
 @10   = ~Dust Mephit Familiar (Lv 1)~
 @11   = ~Faerie Dragon Familiar (Lv 1)~
 @12   = ~Rabbit Familiar (Lv 1)~
-@13   = ~WTP Familiars (Requires ToB, BGT, BGEE, BG2EE, IWDEE, EET)~
-@14   = ~This modification is only compatible with Baldur's Gate 2: Throne of Bhaal and Baldur's Gate Trilogy.~
+@13   = ~WTP Familiars (Requires ToB, BGT, BGEE, BG2EE, or EET)~
+@14   = ~This modification is only compatible with ToB, BGT, BGEE, BG2EE, and EET.~
 @15   = ~~
 @16   = ~Detect Good~
 @17   = ~Detect Good (Divination)
@@ -127,22 +127,22 @@ The suggestion must be worded in such a manner as to make the action sound reaso
 @30   = ~Attack: backstab multiplier x3~
 @31   = ~Attack: backstab multiplier x4~
 @32   = ~Attack: backstab multiplier x5~
-@33   = ~Armor Class (natural) improved with 1~
-@34   = ~Armor Class (natural) improved with 2~
-@35   = ~THAC0 improved with 1~
+@33   = ~Armor Class (natural) improved by 1~
+@34   = ~Armor Class (natural) improved by 2~
+@35   = ~THAC0 improved by 1~
 @36   = ~Saving Throws improved (Warrior Table)~
 @37   = ~Saving Throws improved (Rogue Table)~
 @38   = ~Saving Throws improved (Wizard Table)~
 @39   = ~Saving Throws improved (Cleric/Wizard Table)~
-@40   = ~Total Hit Points increased with 4~
-@41   = ~Total Hit Points increased with 2~
-@42   = ~Total Hit Points increased with 1~
-@43   = ~Magic Resistance increased with 6~
-@44   = ~Magic Resistance increased with 8~
+@40   = ~Total Hit Points increased by 4~
+@41   = ~Total Hit Points increased by 2~
+@42   = ~Total Hit Points increased by 1~
+@43   = ~Magic Resistance increased by 6~
+@44   = ~Magic Resistance increased by 8~
 @45   = ~Thieving skills increased (Thief Table)~
 @46   = ~Attack: +0.5 attacks per round~
-@47   = ~Fire, Cold and Electric Resistance increased with 5~
-@48   = ~Fire Resistance increased with 5~
+@47   = ~Fire, Cold and Electric Resistance increased by 5~
+@48   = ~Fire Resistance increased by 5~
 @49   = ~Gate Dust Mephit~
 @50   = ~Gate Dust Mephit
 Level: 2
@@ -361,7 +361,7 @@ Weapon enchantment: +1 (Lv 5, 12, 20)
 Saving Throws improvements at level 5, 9, 13, 17, 21
 Backstab multiplier: +1 (Lv 5, 9, 13)
 Special: Keen Sense (Lv 12) (dispels non-detection)~
-@59   = ~Poison Resistance increased with 2~
+@59   = ~Poison Resistance increased by 2~
 @60   = ~War Dance~
 @61   = ~Keen Sense acquired (dispels non-detection)~
 @62   = ~Camouflage~
