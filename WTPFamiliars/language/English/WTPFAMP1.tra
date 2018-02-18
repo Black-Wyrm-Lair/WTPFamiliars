@@ -1,31 +1,101 @@
-@0    = ~The little dragon's eyes seem to sparkle as he speaks. "Your father is waiting for you, isn't he?"~
-@1    = ~The dragon's wings flutter nervously. "It's going to be hard without the wise direction of your father, my <PRO_LADYLORD>. You must be careful."~
-@2    = ~"Let's go and take a look at the carnival!" The dragon flaps excitedly around your head. "I'm sure there is always some fun to be had there, my <PRO_LADYLORD>!"~
-@3    = ~The little dragon settles on your shoulder, peering around. "I enjoy the open air, my <PRO_LADYLORD>. Let's stay away from the underground, shall we?"~
-@4    = ~"That name in the letter... Davaeorn. If we find him, we might get some answers."~
-@5    = ~"Baldur's Gate is a truly imposing sight but I prefer the wilderness, my <PRO_LADYLORD>. Ultimate beauty lies in the heart of a forest, with its majestic trees..." Your familiar sighs longingly and continues after a brief pause: "You might find inner peace as a forest dweller, <CHARNAME>. Will you give it a thought once this adventure is over, my <PRO_LADYLORD>?"~
-@6    = ~"I've never seen the big city of Baldur's Gate before, my <PRO_LADYLORD>." The familiar rubs its nose with one claw. "The Iron Throne is somewhere there, isn't it?"~
-@7    = ~The familiar looks at you with its solemn draconic eyes. "I think we must hurry and expose the Iron Throne's machinations, my <PRO_LADYLORD>."~
-@8    = ~The little dragon hops gingerly from foot to foot. "There is an evil presence in these ancient catacombs, my <PRO_LADYLORD>. We should resurface at the very first opportunity."~
-@9    = ~The familiar spreads its wings as wide as they go. "It's imperative we confront Sarevok and clear your good name, <CHARNAME>. But be careful because we are now fugitives and wanted by the Flaming Fist."~
-@10   = ~"I'm sure you understand my aversion to going back in there again so soon. Perhaps later, my <PRO_LADYLORD>?"~
-@11   = ~It ponders for a long moment, flicking its tail absently, before turning back again. "We must stop this wizard. Save you, and the little sister. That is my advice."~
-@12   = ~"I'd like a breath of fresh air now, my <PRO_LADYLORD>. Will you let me out?"~
-@13   = ~"This is becoming really uncomfortable, my <PRO_LADYLORD>. I'd appreciate leaving the confinement of your backpack."~
-@14   = ~"I beg you to release me from this imprisonment, my <PRO_LADYLORD>. I don't want to believe you capable of cruelty."~
-@15   = ~Stay close to me, all right?~
-@16   = ~You may leave my side and roam freely.~
-@17   = ~The dragon's eyes brighten. "I will, my <PRO_LADYLORD>."~
-@18   = ~"Thank you, my <PRO_LADYLORD>." The little dragon looks around, ready to explore.~
-@19   = ~Show me what you have learned.~
-@20   = ~"All right, my <PRO_LADYLORD>."~
-@21   = ~"That was very unpleasant, my <PRO_LADYLORD>. I thought you cared about my wellbeing. Please do not make me doubt you."~
-@22   = ~"I don't deserve being mistreated like this, my <PRO_LADYLORD>. I trust it will not happen again."~
-@23   = ~"It saddens me that it's come to this. It's time to part ways, my <PRO_LADYLORD>."~
-@24   = ~The little dragon looks at you with sad eyes, full of disappointment. "All this cruelty... All this evil... I do not intend to be an accomplice to your repeated atrocities, <CHARNAME>. I hope for your redemption, but it will have to be without me. Farewell.~
-@25   = ~It is too dangerous now, little friend. Hop in!~
-@26   = ~The familiar seems pleased with your concern and swiftly makes its way into the bag, poking its head out to speak a few words of encouragement before disappearing. "Good luck, my <PRO_LADYLORD>."~
-@27   = ~The small creature spreads and flutters his wings around you in a joyful dance. "I am lucky I have met you, my <PRO_LADYLORD>. And I am proud of who you became."~
-@28   = ~I count on your assistance in this battle.~
-@29   = ~"I will do all I can to be of help, my <PRO_LADYLORD>."~
-@30   = ~A slightly defiant expression appears on the little creature's face. "I believe there is no real reason for me to desert the fight, my <PRO_LADYLORD>. Please, allow me to help."~
+@0    = ~"I'm sure you understand my aversion to going back in there again so soon. Perhaps later, my <PRO_LADYLORD>?"~
+@2    = ~"I'd like a breath of fresh air now, my <PRO_LADYLORD>. Will you let me out?"~
+@3    = ~"This is becoming really uncomfortable, my <PRO_LADYLORD>. I'd appreciate leaving the confinement of your backpack."~
+@4    = ~"I beg you to release me from this imprisonment, my <PRO_LADYLORD>. I don't want to believe you capable of cruelty."~
+@5    = ~Stay close to me, all right?~
+@6    = ~You may leave my side and roam freely.~
+@7    = ~The dragon's eyes brighten. "I will, my <PRO_LADYLORD>."~
+@8    = ~"Thank you, my <PRO_LADYLORD>." The little dragon looks around, ready to explore.~
+@9    = ~Show me what you have learned.~
+@10   = ~"All right, my <PRO_LADYLORD>."~
+@11   = ~"That was very unpleasant, my <PRO_LADYLORD>. I thought you cared about my wellbeing. Please do not make me doubt you."~
+@12   = ~"I don't deserve being mistreated like this, my <PRO_LADYLORD>. I trust it will not happen again."~
+@13   = ~"It saddens me that it's come to this. It's time to part ways, my <PRO_LADYLORD>."~
+@14   = ~The little dragon looks at you with sad eyes, full of disappointment. "All this cruelty... All this evil... I do not intend to be an accomplice to your repeated atrocities, <CHARNAME>. I hope for your redemption, but it will have to be without me. Farewell.~
+@15   = ~It is too dangerous now, little friend. Hop in!~
+@16   = ~The familiar seems pleased with your concern and swiftly makes its way into the bag, poking its head out to speak a few words of encouragement before disappearing. "Good luck, my <PRO_LADYLORD>."~
+@17   = ~The small creature spreads and flutters his wings around you in a joyful dance. "I am lucky I have met you, my <PRO_LADYLORD>. And I am proud of who you became."~
+@18   = ~I count on your assistance in this battle.~
+@19   = ~"I will do all I can to be of help, my <PRO_LADYLORD>."~
+@20   = ~A slightly defiant expression appears on the little creature's face. "I believe there is no real reason for me to desert the fight, my <PRO_LADYLORD>. Please, allow me to help."~
+
+// Base strings present in different locations in the games
+@27   = ~No, it's all right. Let's just keep going.~
+@28   = ~You offer the little dragon some nuts and berries that you have stored, and the dragon nibbles on a few of them but doesn't really seem all that hungry.~
+@29   = ~The dragon's eyes swirl with pleasure as it noisily gulps down a large quantity of nuts and berries that you have collected. Its wounds visibly start healing immediately.~
+@30   = ~Its eyes brighten, and it practically leaps into your arms, ready to be stowed amongst your belongings, where it can sleep and occasionally poke its head out.~
+@31   = ~The dragon coos with delight, its multicolored eyes whirling as you pat its warm, leathery hide. "You are very kind to me, my <PRO_LADYLORD>," it purrs.~
+@32   = ~The dragon flicks its tail with pleasure and gazes up at you with colorful eyes. "So long as you are well, my <PRO_LADYLORD>, then I am well."~
+@33   = ~"I... I am a little hurt, though, my <PRO_LADYLORD>. The cuts sting, and I am bleeding. It... it is not pleasant."~
+@34   = ~"I... I am hurt badly, my <PRO_LADYLORD>. I don't want to die, my <PRO_LADYLORD>. I want to stay with you." The dragon whimpers a little and curls its tail around your leg.~
+@35   = ~"But since you are asking, I could use a snack. Perhaps a nice gopher. Or some pie... ooooh, yes, I *like* pie!"~
+@36   = ~"I do like traveling with you. Very much, my <PRO_LADYLORD>. Do you have an apple? I could roast the apple a little and then eat it down. Apples are good!"~
+@37   = ~"I am amazed at all the new places I see with you. Everything is so wonderful and so colorful! Is all of the world like this, my <PRO_LADYLORD>?"~
+@38   = ~"I feel wonderful myself, my <PRO_LADYLORD>. My hide is clean, and I stand ready to aid you against danger!"~
+@39   = ~The dragon flicks its tail contentedly and then turns its eyes back to the path before you. "As you wish, my <PRO_LADYLORD>."~
+@40   = ~The small dragon-like creature purrs quizzically with wide eyes. Nervously, it backs away towards <CHARNAME>. Obviously, it doesn't want to talk to you.~
+@41   = ~The small dragon-like creature flutters its wings happily, looking at you with almost kaleidoscopic eyes. "You wish something?" It awaits your attention, tail flicking.~
+@42   = ~Come here. I want to pick you up and put you in my pack, where it's a bit safer.~
+@43   = ~*pet and play with it*~
+@44   = ~*feed the familiar*~
+@45   = ~You wouldn't happen to have any advice, would you?~
+@46   = ~The familiar cranes its neck back and looks up at you with a slightly bewildered expression. "You wish to ask *me* for advice, my <PRO_LADYLORD>?"~
+@47   = ~How are you? Everything okay down there?~
+@48   = ~Let's just keep going, then.~
+
+// Advice for BG1 in BGT
+@50   = ~The little dragon's eyes seem to sparkle as he speaks. "Your father is waiting for you, isn't he?"~
+@51   = ~The dragon's wings flutter nervously. "It's going to be hard without the wise direction of your father, my <PRO_LADYLORD>. You must be careful."~
+@52   = ~"Let's go and take a look at the carnival!" The dragon flaps excitedly around your head. "I'm sure there is always some fun to be had there, my <PRO_LADYLORD>!"~
+@53   = ~The little dragon settles on your shoulder, peering around. "I enjoy the open air, my <PRO_LADYLORD>. Let's stay away from the underground, shall we?"~
+@54   = ~"That name in the letter... Davaeorn. If we find him, we might get some answers."~
+@55   = ~"Baldur's Gate is a truly imposing sight but I prefer the wilderness, my <PRO_LADYLORD>. Ultimate beauty lies in the heart of a forest, with its majestic trees..." Your familiar sighs longingly and continues after a brief pause: "You might find inner peace as a forest dweller, <CHARNAME>. Will you give it a thought once this adventure is over, my <PRO_LADYLORD>?"~
+@56   = ~"I've never seen the big city of Baldur's Gate before, my <PRO_LADYLORD>." The familiar rubs its nose with one claw. "The Iron Throne is somewhere there, isn't it?"~
+@57   = ~The familiar looks at you with its solemn draconic eyes. "I think we must hurry and expose the Iron Throne's machinations, my <PRO_LADYLORD>."~
+@58   = ~The little dragon hops gingerly from foot to foot. "There is an evil presence in these ancient catacombs, my <PRO_LADYLORD>. We should resurface at the very first opportunity."~
+@59   = ~The familiar spreads its wings as wide as they go. "It's imperative we confront Sarevok and clear your good name, <CHARNAME>. But be careful because we are now fugitives and wanted by the Flaming Fist."~
+
+// Advice for BG1EE
+@60   = ~You can feel the excitement growing in the small dragon. "It is good we leave this place, my <PRO_LADYLORD>," it says. "Beyond these walls a new world awaits."~
+@61   = ~The little dragon's tail coils around its body. "Your path is clear, my <PRO_LADYLORD>. You must bear the burden of the past and press on into the future."~
+@62   = ~Your familiar's tail coils protectively around your neck. "We enter dangerous territory, my <PRO_LADYLORD>. If we are to leave it safely, we must take care."~
+@63   = ~The dragon cranes its neck, head swaying from side to side. "There is danger here, my <PRO_LADYLORD>. Not just for us, but all who pass this way."~
+@64   = ~Your familiar's tail coils protectively around your neck. "We enter dangerous territory, my <PRO_LADYLORD>. If we are to leave it safely, we must take care."~
+@65   = ~The dragon's tail flicks back and forth through the air. "Be mindful, my <PRO_LADYLORD>. We know not what peril awaits us here."~
+@66   = ~"You were safe here once, but no longer," your dragon says. "The Iron Throne must be purged from this place."~
+@67   = ~When asked for advice, the dragon is uncharacteristically evasive. "You have done well to survive thus far, my <PRO_LADYLORD>," is all it will say, ignoring any request for clarification.~
+@68   = ~The dragon's head darts from side to side, its eyes never leaving the shadows. "Be mindful of our surroundings, my <PRO_LADYLORD>. The dead are the least of our worries here."~
+@69   = ~After some consideration, the dragon says, "Caelar will be a dangerous adversary. Battling her alone would be unwise—but not so unwise as doing so with allies who cannot be trusted."~
+@70   = ~The dragon's claws tighten on your shoulder. "Caelar's crusade has taken the lands north of the Winding Water. Once we cross it, we are on our own."~
+@71   = ~Your familiar clearly dislikes the idea of using Boareskyr Bridge. "What lies beyond the river worries me less than the crossing of it. This bridge is an ill-starred place."~
+@72   = ~When asked about the crusade, your familiar says simply, "It is too easy to be both righteous and wrong."~
+@73   = ~The dragon returns to your shoulder. Crusader blood rims its mouth. "We can slay countless pawns, but it means nothing if we do not find their queen."~
+@74   = ~The dragon's eyes scan the horizon, searching for Caelar. "Those who live here will not welcome us, my <PRO_LADYLORD>. We must find Caelar—and quickly."~
+@75   = ~Asked for advice, the diminutive dragon reflects for a moment before saying, "Justice will not be denied. This is not over."~
+
+// Advice for SoA
+@76   = ~It looks at the darkness for a long moment before turning its colorful eyes back at you. "Let us be away from this dark place, my <PRO_LADYLORD>. That is my advice."~
+@77   = ~The dragon looks about quizzically before turning its multifaceted eyes back upon you. "We go to the place of the poor? The slums, my <PRO_LADYLORD>? I do not know."~
+@78   = ~The little dragon chuckles to itself musically. "You must collect gold, my <PRO_LADYLORD>. Coins and coins enough to find your answers."~
+@79   = ~It almost seems to frown, its whirling eyes settling on a baleful yellow before continuing. "I do not know, my <PRO_LADYLORD>. You must continue these tasks, no?"~
+@80   = ~It ponders for a long moment, flicking its tail absently, before turning back again. "We must stop this wizard. Save you and the little sister. That is my advice."~
+@81   = ~It looks around for a moment, its eyes dimming with fear as its tail curls up under its belly. "We must be away from this place soon, my <PRO_LADYLORD>. Please?"~
+@82   = ~It thinks for a moment and then its eyes brighten dramatically. "We must find the sacred elven city, my <PRO_LADYLORD>. Your wizard lies therein, I am certain."~
+@83   = ~It growls menacingly, but not at you. It flicks its tail wickedly several times. "The wizard, my <PRO_LADYLORD>. He must die, and you must live."~
+
+// Advice for ToB
+@84   = ~The little dragon looks up at you for a moment, its eyes shimmering. "You must survive, my <PRO_LADYLORD>. Your heritage places you in great danger!" It whips its tail about agitatedly.~
+@85   = ~Its bright eyes look piercingly into yours. "There has been so much death, my <PRO_LADYLORD>. So much destruction. But I trust you will find the way to do what is right."~
+@86   = ~For a moment, the dragon growls fiercely. "The imposter must die, my <PRO_LADYLORD>! You must somehow go into the Throne of Bhaal and confront her!"~
+
+// Advice for IWDEE
+@87   = ~The little dragon chuckles to itself musically. "If you seek adventure, my <LADYLORD>, join the caravan."~
+@88   = ~It looks around for a moment, its eyes dimming with fear as its tail curls up under its belly. "We need aid, my <LADYLORD>. We must press on."~
+@89   = ~The little dragon chuckles to itself musically. "We should help the Great Druid, my <LADYLORD>. He seeks the same answers."~
+@90   = ~It ponders for a long moment, flicking its tail absently, before turning back again. "Strange things are afoot in the Eye. We should investigate, my <LADYLORD>."~
+@91   = ~It thinks for a moment and then its eyes brighten dramatically. "I do not know, my <LADYLORD>. Perhaps the skeletal mage can help."~
+@92   = ~It ponders for a long moment, flicking its tail absently, before turning back again. "There is so much to investigate, my <LADYLORD>. I do not know where to start."~
+@93   = ~The dragon looks about quizzically before turning its multifaceted eyes back upon you. "These badges seem important, my <LADYLORD>. Perhaps there are more."~
+@94   = ~It growls menacingly, but not at you. It flicks its tail wickedly several times. "We know the source of evil, my <LADYLORD>. Now we must end it."~
+@95   = ~It almost seems to frown, its whirling eyes settling on a baleful yellow before continuing. "I do not know, my <LADYLORD>. We must find a way to broker peace with the tribes."~
+@96   = ~It looks at the surroundings for a long moment before turning its colorful eyes back at you. "We must find a way to escape this place, my <LADYLORD>. That is my advice."~

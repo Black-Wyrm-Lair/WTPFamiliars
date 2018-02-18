@@ -8,9 +8,9 @@ END
 
 IF ~~ THEN BEGIN 2
   SAY @4
-  IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY #58562 GOTO 4
-  IF ~CheckStatGT(LastTalkedToBy,11,WIS)~ THEN REPLY #58566 GOTO 5
-  IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY #58569 GOTO 6
+  IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY @7 GOTO 4
+  IF ~CheckStatGT(LastTalkedToBy,11,WIS)~ THEN REPLY @8 GOTO 5
+  IF ~CheckStatGT(LastTalkedToBy,9,WIS)~ THEN REPLY @9 GOTO 6
   IF ~~ THEN REPLY @5 GOTO 7
 END
 
@@ -21,14 +21,14 @@ ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
 IF ~~ THEN BEGIN 4
-  SAY #58573
+  SAY @10
   IF ~~ THEN DO ~ActionOverride(LastTalkedToBy,ReallyForceSpellRES("WTPWIS1",Myself))
 SetInterrupt(FALSE)
 ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
 IF ~~ THEN BEGIN 5
-  SAY #58577
+  SAY @11
   IF ~~ THEN DO ~ActionOverride(LastTalkedToBy,ReallyForceSpell(Myself,WISH_GLOBE))
 ActionOverride(Player1,ReallyForceSpell(Myself,WISH_GLOBE))
 ActionOverride(Player2,ReallyForceSpell(Myself,WISH_GLOBE))
@@ -41,7 +41,7 @@ ForceSpell(Myself,DRYAD_TELEPORT)~ EXIT
 END
 
 IF ~~ THEN BEGIN 6
-  SAY #58580
+  SAY @12
   IF ~~ THEN DO ~ActionOverride(LastTalkedToBy,ReallyForceSpell(Myself,CLERIC_NEGATIVE_PLANE_PROTECTION))
 ActionOverride(Player1,ReallyForceSpell(Myself,CLERIC_NEGATIVE_PLANE_PROTECTION))
 ActionOverride(Player2,ReallyForceSpell(Myself,CLERIC_NEGATIVE_PLANE_PROTECTION))
