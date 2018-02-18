@@ -32,12 +32,12 @@ IF ~Global("#GINPACK","GLOBAL",5)~ THEN BEGIN faminpack3
    IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",60)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
 END
 
-IF ~!InPartySlot(LastTalkedToBy,0)~ THEN BEGIN famshy
+IF ~!IsGabber(%famsummoner%)~ THEN BEGIN famshy
   SAY @40
   IF ~~ THEN DO ~MoveToObject(%famsummoner%)ClearActions(Myself)~ EXIT
 END
 
-IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN famtalk
+IF ~IsGabber(%famsummoner%)~ THEN BEGIN famtalk
   SAY @41
   // Level up familiar
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @9 GOTO famlevelup
