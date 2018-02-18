@@ -56,7 +56,7 @@ IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN famtalk
   IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,60)%IsInToB%~ THEN REPLY @15 GOTO famhurt_notpack
   IF ~OR(2)!CombatCounterLT(1)TriggerOverride(%famsummoner%,Detect([ENEMY]))!InventoryFull(%famsummoner%)HPPercentGT(Myself,50)HPPercentGT(%famsummoner%,45)%IsInIWD%~ THEN REPLY @15 GOTO famhurt_notpack
   // Pet familiar
-  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))~ THEN REPLY @43 GOTO fampet
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Range(LastTalkedToBy,3)~ THEN REPLY @43 GOTO fampet
   // Feed familiar
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!HPPercentLT(Myself,100)~ THEN REPLY @44 GOTO famfeed_full
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))HPPercentLT(Myself,100)~ THEN REPLY @44 GOTO famfeed_hurt
@@ -72,7 +72,7 @@ IF ~InPartySlot(LastTalkedToBy,0)~ THEN BEGIN famtalk
   // Tell familiar that he can roam freely
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))Global("#GAFTER","GLOBAL",1)~ THEN REPLY @6 GOTO famroam
   // Say goodbye
-  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))OR(2)ReputationGT(%famsummoner%,16)ReputationLT(%famsummoner%,5)~ THEN REPLY @27 GOTO fam1complain
+  IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))OR(2)ReputationGT(%famsummoner%,16)ReputationLT(%famsummoner%,5)~ THEN REPLY @27 GOTO famcomplain
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))ReputationLT(%famsummoner%,12)ReputationGT(%famsummoner%,8)~ THEN REPLY @27 GOTO fam1happy
   IF ~CombatCounterLT(1)!TriggerOverride(%famsummoner%,Detect([ENEMY]))!ReputationGT(%famsummoner%,16)!ReputationLT(%famsummoner%,5)!Reputation(%famsummoner%,9)!Reputation(%famsummoner%,10)!Reputation(%famsummoner%,11)~ THEN REPLY @27 GOTO famneutral
   // Ask help for fight
@@ -99,7 +99,7 @@ IF ~~ THEN BEGIN fampet
   // Tell familiar that he can roam freely
   IF ~Global("#GAFTER","GLOBAL",1)~ THEN REPLY @6 GOTO famroam
   // Say goodbye
-  IF ~OR(2)ReputationGT(%famsummoner%,16)ReputationLT(%famsummoner%,5)~ THEN REPLY @48 GOTO fam1complain
+  IF ~OR(2)ReputationGT(%famsummoner%,16)ReputationLT(%famsummoner%,5)~ THEN REPLY @48 GOTO famcomplain
   IF ~ReputationLT(%famsummoner%,12)ReputationGT(%famsummoner%,8)~ THEN REPLY @48 GOTO fam1happy
   IF ~!ReputationGT(%famsummoner%,16)!ReputationLT(%famsummoner%,5)!Reputation(%famsummoner%,9)!Reputation(%famsummoner%,10)!Reputation(%famsummoner%,11)~ THEN REPLY @48 GOTO famneutral
 END
@@ -204,7 +204,7 @@ IF ~~ THEN BEGIN famhurt_notpack
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN fam1complain
+IF ~~ THEN BEGIN famcomplain
   SAY @23
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
