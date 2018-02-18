@@ -300,23 +300,23 @@ IF ~~ THEN BEGIN bg1_advice
   IF ~%IsBGT%Global("chapter","GLOBAL",%bg1_chapter_6%)Global("Teth","Global",1)~ THEN GOTO bgt1_advice_ch6teth
   IF ~%IsBGT%Global("chapter","GLOBAL",%bg1_chapter_7%)~ THEN GOTO bgt1_advice_ch7
   // SoD
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",0)GlobalLT("bd_plot","GLOBAL",50)~ THEN GOTO bg1ee_advice_ch7b
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",51)~ THEN GOTO bg1ee_advice_ch7c
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",8)~ THEN GOTO bg1ee_advice_ch8
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",9)~ THEN GOTO bg1ee_advice_ch9
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",10)GlobalGT("bd_plot","global",304)~ THEN GOTO bg1ee_advice_ch10
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",11)~ THEN GOTO bg1ee_advice_ch11
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",12)~ THEN GOTO bg1ee_advice_ch12
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",13)~ THEN GOTO bg1ee_advice_ch13
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",0)GlobalLT("bd_plot","GLOBAL",50)~ THEN GOTO bg1ee_advice_ch7b
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",51)~ THEN GOTO bg1ee_advice_ch7c
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",8)~ THEN GOTO bg1ee_advice_ch8
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",9)~ THEN GOTO bg1ee_advice_ch9
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",10)GlobalGT("bd_plot","global",304)~ THEN GOTO bg1ee_advice_ch10
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",11)~ THEN GOTO bg1ee_advice_ch11
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",12)~ THEN GOTO bg1ee_advice_ch12
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",13)~ THEN GOTO bg1ee_advice_ch13
   // BG1 in EET or BGEE
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",0)~ THEN GOTO bg1ee_advice_prologue
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",1)~ THEN GOTO bg1ee_advice_ch1
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",2)~ THEN GOTO bg1ee_advice_ch2
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",3)~ THEN GOTO bg1ee_advice_ch3
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",4)~ THEN GOTO bg1ee_advice_ch4
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",5)~ THEN GOTO bg1ee_advice_ch5
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",6)~ THEN GOTO bg1ee_advice_ch6
-  IF ~!%IsBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",0)GlobalLT("bd_plot","GLOBAL",50)~ THEN GOTO bg1ee_advice_ch7a
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",0)~ THEN GOTO bg1ee_advice_prologue
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",1)~ THEN GOTO bg1ee_advice_ch1
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",2)~ THEN GOTO bg1ee_advice_ch2
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",3)~ THEN GOTO bg1ee_advice_ch3
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",4)~ THEN GOTO bg1ee_advice_ch4
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",5)~ THEN GOTO bg1ee_advice_ch5
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",6)~ THEN GOTO bg1ee_advice_ch6
+  IF ~%NotBGT%Global("CHAPTER","GLOBAL",7)GlobalGT("bd_plot","GLOBAL",0)GlobalLT("bd_plot","GLOBAL",50)~ THEN GOTO bg1ee_advice_ch7a
 END
 
 IF ~~ THEN BEGIN bgt1_advice_prologue

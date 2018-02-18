@@ -34,9 +34,11 @@ ALWAYS
   END
   // Game portion triggers
   ACTION_IF (GAME_IS ~bgt~) BEGIN
-    OUTER_SPRINT IsBGT ~True()~
+    OUTER_SPRINT IsBGT ~~
+    OUTER_SPRINT NotBGT ~False()~
   END ELSE BEGIN
     OUTER_SPRINT IsBGT ~False()~
+    OUTER_SPRINT NotBGT ~~
   END
   ACTION_MATCH ~%bg2_chapter%~
   WITH
@@ -54,12 +56,12 @@ ALWAYS
     END
     ANY GAME_IS ~bg2~ BEGIN
       OUTER_SPRINT IsInBG1 ~False()~
-      OUTER_SPRINT IsInSoA ~True()~
+      OUTER_SPRINT IsInSoA ~~
       OUTER_SPRINT IsInToB ~False()~
       OUTER_SPRINT IsInIWD ~False()~
     END
     ANY GAME_IS ~bgee~ BEGIN
-      OUTER_SPRINT IsInBG1 ~True()~
+      OUTER_SPRINT IsInBG1 ~~
       OUTER_SPRINT IsInSoA ~False()~
       OUTER_SPRINT IsInToB ~False()~
       OUTER_SPRINT IsInIWD ~False()~
@@ -68,7 +70,7 @@ ALWAYS
       OUTER_SPRINT IsInBG1 ~False()~
       OUTER_SPRINT IsInSoA ~False()~
       OUTER_SPRINT IsInToB ~False()~
-      OUTER_SPRINT IsInIWD ~True()~
+      OUTER_SPRINT IsInIWD ~~
     END
     DEFAULT
       OUTER_SPRINT IsInBG1 ~False()~
