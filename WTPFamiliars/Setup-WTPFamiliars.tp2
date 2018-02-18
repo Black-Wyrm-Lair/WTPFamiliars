@@ -34,9 +34,9 @@ ALWAYS
   END
   // Game portion triggers
   ACTION_IF (GAME_IS ~bgt~) BEGIN
-    OUTER_SPRINT IsInBGT ~True()~
+    OUTER_SPRINT IsBGT ~True()~
   END ELSE BEGIN
-    OUTER_SPRINT IsInBGT ~False()~
+    OUTER_SPRINT IsBGT ~False()~
   END
   ACTION_MATCH ~%bg2_chapter%~
   WITH
