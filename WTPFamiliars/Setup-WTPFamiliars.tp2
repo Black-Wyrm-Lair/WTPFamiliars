@@ -75,7 +75,6 @@ ALWAYS
       OUTER_SPRINT IsInSoA ~False()~
       OUTER_SPRINT IsInToB ~False()~
       OUTER_SPRINT IsInIWD ~False()~
-    END
   END
   // Area triggers
   ACTION_MATCH ~%bg2_chapter%~
@@ -95,7 +94,7 @@ ALWAYS
     DEFAULT
       OUTER_SPRINT InBGAreaCheck ~False()~
       OUTER_SPRINT NotInBGAreaCheck ~False()~
-    END
+  END
 END
 
 /////////////////////////////////////

@@ -313,7 +313,7 @@ IF ~~ THEN BEGIN famslap3
   // Level up familiar
   IF ~!GlobalsEqual("#GFAMLVL","#GPLALVL")~ THEN REPLY @9 GOTO famlevelup
   // Ask familiar to go into backpack, familiar accepts
-  IF ~!InventoryFull(%famsummoner%)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY @41012 GOTO fam1intopack
+  IF ~!InventoryFull(%famsummoner%)Global("WTPFAMLE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY @101 GOTO fam1intopack
   IF ~!InventoryFull(%famsummoner%)Global("WTPFAMNE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY @101 GOTO fam2intopack
   IF ~!InventoryFull(%famsummoner%)Global("WTPFAMCE","GLOBAL",2)!GlobalTimerNotExpired("#GSTAOUT","GLOBAL")~ THEN REPLY @101 GOTO fam3intopack
   // Ask hurt familiar to seek safety into backpack, familiar rejects

@@ -116,7 +116,7 @@ IF ~~ THEN BEGIN fampet
   // Ask familiar how it is
   IF ~~ THEN REPLY @47 GOTO famstatus
   // Ask familiar to obtain what it has pickpocketed
-  IF ~~ THEN REPLY @100 GOTO famloot_pet
+  IF ~~ THEN REPLY @100 GOTO fampet_loot
   // Ask familiar to stay close
   IF ~Global("#GAFTER","GLOBAL",0)~ THEN REPLY @5 GOTO famclose
   // Tell familiar that he can roam freely
@@ -281,7 +281,7 @@ IF ~~ THEN BEGIN famloot_bye
   IF ~~ THEN DO ~ClearActions(Myself)~ EXIT
 END
 
-IF ~~ THEN BEGIN famloot_pet
+IF ~~ THEN BEGIN fampet_loot
   SAY @108
   IF ~~ THEN DO ~GivePartyAllEquipment()ClearActions(Myself)~ EXIT
 END
