@@ -109,7 +109,7 @@ IF
     Class(%famsummoner%,MAGE_ALL)
     Class(%famsummoner%,BARD)
     Kit(%famsummoner%,BEASTMASTER)
-    CheckStat(%famsummoner%,1,191)
+    CheckStat(%famsummoner%,1,USE_ANY_ITEM)
 THEN
   RESPONSE #100
     SetGlobal("#GMAGECLASS","LOCALS",1)
@@ -134,7 +134,7 @@ END
 IF
   Global("#GMAGECLASS","LOCALS",1)
   TriggerOverride(%famsummoner%,Global("#GSCRFAI","LOCALS",1))	// this covers the unique case where a dual M/T with UAI uses the Find Familiar scroll
-  CheckStat(%famsummoner%,1,191)
+  CheckStat(%famsummoner%,1,USE_ANY_ITEM)
 THEN
   RESPONSE #100
     SetGlobal("#GMAGECLASS","LOCALS",2)
@@ -1054,7 +1054,7 @@ IF
 THEN
   RESPONSE #100
     IncrementGlobal("#GMIRPEN","GLOBAL",-1)
-    SetGlobalTimer("#GFAMHAR","GLOBAL",7200)
+    SetGlobalTimer("#GFAMHAR","GLOBAL",ONE_DAY)
 END
 
 IF
@@ -1255,7 +1255,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
     SetGlobal("WTPFAMLE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1281,7 +1281,7 @@ THEN
     ActionOverride(%famsummoner%,ApplySpellRES("WTPDESP1",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
     SetGlobal("WTPFAMLE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1309,7 +1309,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
     SetGlobal("WTPFAMLE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1337,7 +1337,7 @@ THEN
     ActionOverride(%famsummoner%,ReallyForceSpellRES("WTPFCOND",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
     SetGlobal("WTPFAMLE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1358,7 +1358,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag7",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", 21600)
+    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
     SetGlobal("WTPFAMLE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1401,7 +1401,7 @@ IF
   Global("WTPSTAT","LOCALS",0)
   !StateCheck(Myself,STATE_BLIND)
   HPPercentLT(Myself,25)
-  See(LastAttackerOf())
+  See(LastAttackerOf(Myself))
   !InventoryFull(%famsummoner%)
   Range(%famsummoner%,25)
 THEN
@@ -1409,8 +1409,8 @@ THEN
     MoveToObject(%famsummoner%)
     GiveItemCreate("wtpfmimp",%famsummoner%,0,0,0)
     DisplayStringHead(Myself,@524)
-    SetGlobalTimer("#GWANOUT","GLOBAL",300)
-    SetGlobalTimer("#GSTAOUT","GLOBAL",1200)
+    SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)
+    SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)
     DestroySelf()
 END
 

@@ -4,6 +4,24 @@ VERSION ~2.2~
 README ~WTPFamiliars/Readme-WTPFamiliars.html~
 
 ALWAYS
+  // IDS entries
+  ACTION_IF (GAME_IS ~bgt tob~) BEGIN
+    APPEND ~gtimes.ids~ ~12 TWO_ROUNDS~       UNLESS ~TWO_ROUNDS~
+    APPEND ~gtimes.ids~ ~24 FOUR_ROUNDS~      UNLESS ~FOUR_ROUNDS~
+    APPEND ~gtimes.ids~ ~36 SIX_ROUNDS~       UNLESS ~SIX_ROUNDS~
+    APPEND ~gtimes.ids~ ~48 EIGHT_ROUNDS~     UNLESS ~EIGHT_ROUNDS~
+    APPEND ~gtimes.ids~ ~60 TEN_ROUNDS~       UNLESS ~TEN_ROUNDS~
+    APPEND ~gtimes.ids~ ~90 EIGHTEEN_MINUTES~ UNLESS ~EIGHTEEN_MINUTES~
+    APPEND ~gtimes.ids~ ~120 TWO_TURNS~       UNLESS ~TWO_TURNS~
+    APPEND ~gtimes.ids~ ~300 ONE_HOUR~        UNLESS ~ONE_HOUR~
+    APPEND ~gtimes.ids~ ~1200 FOUR_HOURS~     UNLESS ~FOUR_HOURS~
+
+    APPEND ~stats.ids~ ~191 USE_ANY_ITEM~ UNLESS ~USE_ANY_ITEM~
+
+    APPEND ~spell.ids~ ~4342 BEASTMASTER_FIND_FAMILIAR~ UNLESS ~BEASTMASTER_FIND_FAMILIAR~
+
+    CLEAR_IDS_MAP
+  END
   // Summoner
   ACTION_IF (GAME_IS ~iwdee~) BEGIN
     OUTER_SPRINT famsummoner ~FamiliarSummoner~

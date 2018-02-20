@@ -7,14 +7,14 @@ END
 
 IF ~Global("#GHARAS","GLOBAL",2)~ THEN BEGIN famharas1
    SAY @11
-   IF ~Global("#GMIRPEN","GLOBAL",0)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobal("#GMIRPEN","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",7200)~ EXIT
-   IF ~GlobalGT("#GMIRPEN","GLOBAL",0)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",7200)~ EXIT
+   IF ~Global("#GMIRPEN","GLOBAL",0)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobal("#GMIRPEN","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",ONE_DAY)~ EXIT
+   IF ~GlobalGT("#GMIRPEN","GLOBAL",0)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",ONE_DAY)~ EXIT
 END
 
 IF ~Global("#GHARAS","GLOBAL",5)~ THEN BEGIN famharas2
    SAY @12
-   IF ~GlobalLT("#GMIRPEN","GLOBAL",2)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobal("#GMIRPEN","GLOBAL",2)SetGlobalTimer("#GFAMHAR","GLOBAL",14400)~ EXIT
-   IF ~Global("#GMIRPEN","GLOBAL",2)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",14400)~ EXIT
+   IF ~GlobalLT("#GMIRPEN","GLOBAL",2)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobal("#GMIRPEN","GLOBAL",2)SetGlobalTimer("#GFAMHAR","GLOBAL",TWO_DAYS)~ EXIT
+   IF ~Global("#GMIRPEN","GLOBAL",2)~ THEN DO ~IncrementGlobal("#GHARAS","GLOBAL",1)SetGlobalTimer("#GFAMHAR","GLOBAL",TWO_DAYS)~ EXIT
 END
 
 IF ~Global("#GHARAS","GLOBAL",8)~ THEN BEGIN famgo_haras
@@ -24,17 +24,17 @@ END
 
 IF ~Global("#GINPACK","GLOBAL",1)~ THEN BEGIN faminpack1
    SAY @2
-   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",120)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",TWO_TURNS)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~Global("#GINPACK","GLOBAL",3)~ THEN BEGIN faminpack2
    SAY @3
-   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",90)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",EIGHTEEN_MINUTES)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~Global("#GINPACK","GLOBAL",5)~ THEN BEGIN faminpack3
    SAY @4
-   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",60)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+   IF ~~ THEN DO ~IncrementGlobal("#GINPACK","GLOBAL",1)SetGlobalTimer("#GWANOUT","GLOBAL",TEN_ROUNDS)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~!IsGabber(%famsummoner%)~ THEN BEGIN famshy
@@ -176,17 +176,17 @@ END
 
 IF ~~ THEN BEGIN fam1intopack
   SAY @30
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfer",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfer",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN fam2intopack
   SAY @30
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmrab",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmrab",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN fam3intopack
   SAY @30
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmcat",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmcat",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN famfeed_full
@@ -221,17 +221,17 @@ END
 
 IF ~~ THEN BEGIN fam1hurt_intopack
   SAY @16
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfer",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmfer",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN fam2hurt_intopack
   SAY @16
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmrab",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmrab",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN fam3hurt_intopack
   SAY @16
-  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmcat",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",300)SetGlobalTimer("#GSTAOUT","GLOBAL",1200)DestroySelf()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("#GEMPCHA","GLOBAL",1)SetGlobal("#GSKIRES","GLOBAL",1)GivePartyAllEquipment()ReallyForceSpellRES("wtpclear",Myself)Wait(1)GiveItemCreate("wtpfmcat",%famsummoner%,0,0,0)SetGlobalTimer("#GWANOUT","GLOBAL",ONE_HOUR)SetGlobalTimer("#GSTAOUT","GLOBAL",FOUR_HOURS)DestroySelf()~ EXIT
 END
 
 IF ~~ THEN BEGIN fam1happy

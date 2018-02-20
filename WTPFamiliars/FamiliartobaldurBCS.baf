@@ -651,11 +651,11 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1)
   OR(5)
-    SpellCast(Player2,2123)
-    SpellCast(Player3,2123)
-    SpellCast(Player4,2123)
-    SpellCast(Player5,2123)
-    SpellCast(Player6,2123)
+    SpellCast(Player2,WIZARD_FIND_FAMILAR)
+    SpellCast(Player3,WIZARD_FIND_FAMILAR)
+    SpellCast(Player4,WIZARD_FIND_FAMILAR)
+    SpellCast(Player5,WIZARD_FIND_FAMILAR)
+    SpellCast(Player6,WIZARD_FIND_FAMILAR)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,DisplayString(Myself,8538))
@@ -665,11 +665,11 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1)
   OR(5)
-    SpellCastInnateRES("SPCL342",Player2)
-    SpellCastInnateRES("SPCL342",Player3)
-    SpellCastInnateRES("SPCL342",Player4)
-    SpellCastInnateRES("SPCL342",Player5)
-    SpellCastInnateRES("SPCL342",Player6)
+    SpellCast(Player2,BEASTMASTER_FIND_FAMILIAR)
+    SpellCast(Player3,BEASTMASTER_FIND_FAMILIAR)
+    SpellCast(Player4,BEASTMASTER_FIND_FAMILIAR)
+    SpellCast(Player5,BEASTMASTER_FIND_FAMILIAR)
+    SpellCast(Player6,BEASTMASTER_FIND_FAMILIAR)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,DisplayString(Myself,8538))
@@ -718,8 +718,8 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1)
   OR(2)
-    SpellCast(%famsummoner%,2123)
-    SpellCastInnateRES("SPCL342",%famsummoner%)
+    SpellCast(%famsummoner%,WIZARD_FIND_FAMILAR)
+    SpellCast(%famsummoner%,BEASTMASTER_FIND_FAMILIAR)
   OR(9)
     Global("WTPFAMNG","GLOBAL",2)
     Global("WTPFAMCE","GLOBAL",2)
@@ -763,8 +763,8 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1)
   OR(2)
-    SpellCast(%famsummoner%,2123)
-    SpellCastInnateRES("SPCL342",%famsummoner%)
+    SpellCast(%famsummoner%,WIZARD_FIND_FAMILAR)
+    SpellCast(%famsummoner%,BEASTMASTER_FIND_FAMILIAR)
   GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
   RESPONSE #100
@@ -775,8 +775,8 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1)
   OR(2)
-    SpellCast(%famsummoner%,2123)
-    SpellCastInnateRES("SPCL342",%famsummoner%)
+    SpellCast(%famsummoner%,WIZARD_FIND_FAMILAR)
+    SpellCast(%famsummoner%,BEASTMASTER_FIND_FAMILIAR)
   OR(2)
     TriggerOverride(%famsummoner%,Detect([ENEMY]))
     ActuallyInCombat()
@@ -793,7 +793,7 @@ END
 IF
   Global("WTPFAMA1","GLOBAL",1) // The new Find Familiar spell sets this global to 1
   OriginalClass(%famsummoner%,MAGE)
-  CheckStat(%famsummoner%,1,191)
+  CheckStat(%famsummoner%,1,USE_ANY_ITEM)
   !GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
   RESPONSE #100
@@ -807,7 +807,7 @@ IF
     Class(%famsummoner%,MAGE_ALL)
     Class(%famsummoner%,BARD)
     Kit(%famsummoner%,BEASTMASTER)
-    CheckStat(%famsummoner%,1,191)
+    CheckStat(%famsummoner%,1,USE_ANY_ITEM)
   !GlobalTimerNotExpired("#Gmourn","GLOBAL")
 THEN
   RESPONSE #100
@@ -839,7 +839,7 @@ END
 
 
 IF
-  Time(0)
+  Time(MIDNIGHT)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -854,7 +854,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(12)
+    DayNight(NOON)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -971,7 +971,7 @@ THEN
 END
 
 IF
-  Time(6)
+  Time(DAWN_START)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -993,7 +993,7 @@ THEN
 END
 
 IF
-  Time(7)
+  Time(DAWN_END)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -1052,7 +1052,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(21)
+    DayNight(DUSK_START)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -1074,7 +1074,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(22)
+    DayNight(DUSK_END)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -1103,7 +1103,7 @@ THEN
 END
 
 IF
-  Time(12)
+  Time(NOON)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -1118,7 +1118,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(0)
+    DayNight(MIDNIGHT)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -1250,7 +1250,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(6)
+    DayNight(DAWN_START)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -1272,7 +1272,7 @@ THEN
     ActionOverride(Player6,MakeUnselectable(14))
     Wait(2)
     FadeFromColor([40.0],0)
-    DayNight(7)
+    DayNight(DAWN_END)
     Wait(4)
     UnhideGUI()
     SetGlobal("#GFF12H","GLOBAL",3)
@@ -1301,7 +1301,7 @@ THEN
 END
 
 IF
-  Time(21)
+  Time(DUSK_START)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -1323,7 +1323,7 @@ THEN
 END
 
 IF
-  Time(22)
+  Time(DUSK_END)
   Global("#GFF12H","GLOBAL",2)
 THEN
   RESPONSE #100

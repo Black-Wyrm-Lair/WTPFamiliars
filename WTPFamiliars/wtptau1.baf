@@ -8,7 +8,7 @@ THEN
     ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
     ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",360)
     SetGlobal("#GTAUNT","GLOBAL",0)
-    SetGlobalTimer("#GTAUEND","LOCALS",12)
+    SetGlobalTimer("#GTAUEND","LOCALS",TWO_ROUNDS)
 END
 
 IF
@@ -18,7 +18,7 @@ THEN
     ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
     ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",540))
     SetGlobal("#GTAUNT","GLOBAL",0)
-    SetGlobalTimer("#GTAUEND","LOCALS",24)
+    SetGlobalTimer("#GTAUEND","LOCALS",FOUR_ROUNDS)
 END
 
 IF
@@ -28,7 +28,7 @@ THEN
     ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
     ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",720))
     SetGlobal("#GTAUNT","GLOBAL",0)
-    SetGlobalTimer("#GTAUEND","LOCALS",36)
+    SetGlobalTimer("#GTAUEND","LOCALS",SIX_ROUNDS)
 END
 
 IF
@@ -38,7 +38,7 @@ THEN
     ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
     ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",900))
     SetGlobal("#GTAUNT","GLOBAL",0)
-    SetGlobalTimer("#GTAUEND","LOCALS",48)
+    SetGlobalTimer("#GTAUEND","LOCALS",EIGHT_ROUNDS)
 END
 
 IF
@@ -48,7 +48,7 @@ THEN
     ActionOverride(LastSummonerOf(Myself), EquipMostDamagingMelee())
     ActionOverride(LastSummonerOf(Myself), AttackReevaluate("WTPFERRE",1080))
     SetGlobal("#GTAUNT","GLOBAL",0)
-    SetGlobalTimer("#GTAUEND","LOCALS",60)
+    SetGlobalTimer("#GTAUEND","LOCALS",TEN_ROUNDS)
 END
 
 // The next blocks interrupt the AttackReevaluate if the familiar is farther than 10 feet and the spell has not expired
