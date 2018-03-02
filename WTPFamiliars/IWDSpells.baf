@@ -1,0 +1,455 @@
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  Global("#GREPUT","LOCALS",16)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #90
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #10
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",15)
+    Global("#GREPUT","LOCALS",13)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #75
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #25
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",14)
+    Global("#GREPUT","LOCALS",12)
+    Global("#GREPUT","LOCALS",10)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #60
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #40
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",11)
+    Global("#GREPUT","LOCALS",9)
+    Global("#GREPUT","LOCALS",7)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #45
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #55
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",8)
+    Global("#GREPUT","LOCALS",6)
+    Global("#GREPUT","LOCALS",4)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #30
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #70
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",5)
+    Global("#GREPUT","LOCALS",3)
+    Global("#GREPUT","LOCALS",2)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #15
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #85
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",1)
+    Global("#GREPUT","LOCALS",17)
+  SpellCast(%famsummoner%,WIZARD_ANTIMAGIC_SHELL)
+THEN
+  RESPONSE #10
+    ReallyForceSpell(Myself,WIZARD_ANTIMAGIC_SHELL)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #90
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  Global("#GREPUT","LOCALS",16)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #90
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #10
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",15)
+    Global("#GREPUT","LOCALS",13)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #75
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #25
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",14)
+    Global("#GREPUT","LOCALS",12)
+    Global("#GREPUT","LOCALS",10)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #60
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #40
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",11)
+    Global("#GREPUT","LOCALS",9)
+    Global("#GREPUT","LOCALS",7)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #45
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #55
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",8)
+    Global("#GREPUT","LOCALS",6)
+    Global("#GREPUT","LOCALS",4)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #30
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #70
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",5)
+    Global("#GREPUT","LOCALS",3)
+    Global("#GREPUT","LOCALS",2)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #15
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #85
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",1)
+    Global("#GREPUT","LOCALS",17)
+  SpellCast(%famsummoner%,WIZARD_SEVEN_EYES)
+THEN
+  RESPONSE #10
+    ReallyForceSpell(Myself,WIZARD_SEVEN_EYES)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #90
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  Global("#GREPUT","LOCALS",16)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #90
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #10
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",15)
+    Global("#GREPUT","LOCALS",13)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #75
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #25
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",14)
+    Global("#GREPUT","LOCALS",12)
+    Global("#GREPUT","LOCALS",10)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #60
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #40
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",11)
+    Global("#GREPUT","LOCALS",9)
+    Global("#GREPUT","LOCALS",7)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #45
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #55
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",8)
+    Global("#GREPUT","LOCALS",6)
+    Global("#GREPUT","LOCALS",4)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #30
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #70
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",5)
+    Global("#GREPUT","LOCALS",3)
+    Global("#GREPUT","LOCALS",2)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #15
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #85
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",1)
+    Global("#GREPUT","LOCALS",17)
+  SpellCast(%famsummoner%,WIZARD_MIND_BLANK)
+THEN
+  RESPONSE #10
+    ReallyForceSpell(Myself,WIZARD_MIND_BLANK)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #90
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  Global("#GREPUT","LOCALS",16)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #90
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #10
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",15)
+    Global("#GREPUT","LOCALS",13)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #75
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #25
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",14)
+    Global("#GREPUT","LOCALS",12)
+    Global("#GREPUT","LOCALS",10)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #60
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #40
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",11)
+    Global("#GREPUT","LOCALS",9)
+    Global("#GREPUT","LOCALS",7)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #45
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #55
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",8)
+    Global("#GREPUT","LOCALS",6)
+    Global("#GREPUT","LOCALS",4)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #30
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #70
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(3)
+    Global("#GREPUT","LOCALS",5)
+    Global("#GREPUT","LOCALS",3)
+    Global("#GREPUT","LOCALS",2)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #15
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #85
+    DisplayStringHead(Myself,@529)
+END
+
+IF
+  Range(%famsummoner%,15)
+  Allegiance(Myself,FAMILIAR)
+  Global("WTPSTAT","LOCALS",0)
+  OR(2)
+    Global("#GREPUT","LOCALS",1)
+    Global("#GREPUT","LOCALS",17)
+  SpellCast(%famsummoner%,WIZARD_IRON_BODY)
+THEN
+  RESPONSE #10
+    ReallyForceSpell(Myself,WIZARD_IRON_BODY)
+    DisplayStringHead(Myself,@528)
+  RESPONSE #90
+    DisplayStringHead(Myself,@529)
+END

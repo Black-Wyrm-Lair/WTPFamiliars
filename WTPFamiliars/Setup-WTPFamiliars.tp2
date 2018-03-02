@@ -632,6 +632,14 @@ COMPILE EVALUATE_BUFFER ~WTPFamiliars/WTPFSPI.baf~
                         ~WTPFamiliars/WTPNAG.baf~
                         ~WTPFamiliars/WTPTAU1.baf~
 
+ACTION_IF (IDS_OF_SYMBOL (~spell~ ~WIZARD_ANTIMAGIC_SHELL~) >= 0) BEGIN
+  COPY_EXISTING ~WTPFIMP.bcs~ ~override~
+                ~WTPFPSE.bcs~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+      APPEND_FILE_EVALUATE ~WTPFamiliars/IWDSpells.baf~
+    END
+END
+
 // Extend Baldur.bcs and baldur25.bcs so Familiar follows PC from area to area and works for ToB Familiar summon too!
 
 COPY_EXISTING ~baldur.bcs~   ~override~
