@@ -55,22 +55,9 @@ END
 
 IF
   Global("WTPSTAT","LOCALS",0)
-  OR(15)
-    StateCheck(Myself,STATE_PANIC)
-    StateCheck(Myself,STATE_HELPLESS)
-    StateCheck(Myself,STATE_SLEEPING)
-    StateCheck(Myself,STATE_BERSERK)
-    StateCheck(Myself,STATE_CHARMED)
-    StateCheck(Myself,STATE_FEEBLEMINDED)
-    StateCheck(Myself,STATE_CONFUSED)
-    StateCheck(Myself,STATE_STONE_DEATH)
-    StateCheck(%famsummoner%,STATE_PANIC)
-    StateCheck(%famsummoner%,STATE_HELPLESS)
-    StateCheck(%famsummoner%,STATE_SLEEPING)
-    StateCheck(%famsummoner%,STATE_BERSERK)
-    StateCheck(%famsummoner%,STATE_CHARMED)
-    StateCheck(%famsummoner%,STATE_FEEBLEMINDED)
-    StateCheck(%famsummoner%,STATE_CONFUSED)
+  OR(2)
+    StateCheck(Myself,WTP_STATE_INVALID_OR_STONE)
+    StateCheck(%famsummoner%,WTP_STATE_INVALID_ALIVE)
 THEN
   RESPONSE #100
     SetGlobal("WTPSTAT","LOCALS",1)
@@ -78,21 +65,8 @@ END
 
 IF
   Global("WTPSTAT","LOCALS",1)
-  !StateCheck(Myself,STATE_PANIC)
-  !StateCheck(Myself,STATE_HELPLESS)
-  !StateCheck(Myself,STATE_SLEEPING)
-  !StateCheck(Myself,STATE_BERSERK)
-  !StateCheck(Myself,STATE_CHARMED)
-  !StateCheck(Myself,STATE_FEEBLEMINDED)
-  !StateCheck(Myself,STATE_CONFUSED)
-  !StateCheck(Myself,STATE_STONE_DEATH)
-  !StateCheck(%famsummoner%,STATE_PANIC)
-  !StateCheck(%famsummoner%,STATE_HELPLESS)
-  !StateCheck(%famsummoner%,STATE_SLEEPING)
-  !StateCheck(%famsummoner%,STATE_BERSERK)
-  !StateCheck(%famsummoner%,STATE_CHARMED)
-  !StateCheck(%famsummoner%,STATE_FEEBLEMINDED)
-  !StateCheck(%famsummoner%,STATE_CONFUSED)
+  !StateCheck(Myself,WTP_STATE_INVALID_OR_STONE)
+  !StateCheck(%famsummoner%,WTP_STATE_INVALID_ALIVE)
 THEN
   RESPONSE #100
     SetGlobal("WTPSTAT","LOCALS",0)
@@ -1405,8 +1379,7 @@ END
 
 IF
   AttackedBy(%famsummoner%,DEFAULT)
-  !StateCheck(%famsummoner%,STATE_BERSERK)
-  !StateCheck(%famsummoner%,STATE_CONFUSED)
+  !StateCheck(%famsummoner%,WTP_STATE_SUMMONER_CRAZY)
   !TriggerOverride(%famsummoner%,Detect([ENEMY]))
   Allegiance(Myself,FAMILIAR)
 THEN
