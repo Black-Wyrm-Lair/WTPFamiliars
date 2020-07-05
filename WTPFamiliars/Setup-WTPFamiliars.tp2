@@ -128,7 +128,7 @@ LANGUAGE ~English~ ~English~ ~WTPFamiliars/language/English/Setup-WTPFamiliars.t
 //README ~WTPFamiliars/Readme-WTPFamiliars.html~
 
 BEGIN @13
-REQUIRE_PREDICATE GAME_IS ~bgt tob bgee bg2ee eet~ @14
+REQUIRE_PREDICATE GAME_IS ~bgt tob bgee bg2ee iwdee eet~ @14
 
 ACTION_IF GAME_IS ~bgt tob~ BEGIN
   OUTER_SPRINT ~TOBEX_MOD_DIRECTORY~ ~WTPFamiliars~
