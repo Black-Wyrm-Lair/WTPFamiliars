@@ -1,5 +1,5 @@
 ////////////////////////////////////////////
-///DUST MEPHIT				 ///
+///DUST MEPHIT                           ///
 ////////////////////////////////////////////
 
 /////////////////
@@ -1067,7 +1067,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",1)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
   Global("#GEMPOW","LOCALS",0)
 THEN
   RESPONSE #100
@@ -1080,7 +1080,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",4)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
   Global("#GEMPOW","LOCALS",0)
 THEN
   RESPONSE #100
@@ -1093,7 +1093,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",7)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
   Global("#GEMPOW","LOCALS",0)
 THEN
   RESPONSE #100
@@ -1124,7 +1124,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag8",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1150,7 +1150,7 @@ THEN
     ActionOverride(%famsummoner%,ApplySpellRES("WTPDESP1",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1178,7 +1178,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag8",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1206,7 +1206,7 @@ THEN
     ActionOverride(%famsummoner%,ReallyForceSpellRES("WTPFCOND",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1227,7 +1227,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag8",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNE","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1321,7 +1321,7 @@ IF
   AttackedBy(%famsummoner%,DEFAULT)
   !StateCheck(%famsummoner%,STATE_BERSERK)
   !StateCheck(%famsummoner%,STATE_CONFUSED)
-  !TriggerOverride(%famsummoner%, Detect([ENEMY]))
+  !TriggerOverride(%famsummoner%,Detect([ENEMY]))
   Allegiance(Myself,FAMILIAR)
 THEN
   RESPONSE #100
@@ -1357,7 +1357,7 @@ END
 ///////////////////////
 
 IF
-  GlobalGT("#GEMPOW","LOCALS", 0)
+  GlobalGT("#GEMPOW","LOCALS",0)
   OR(3)
     Global("#GREPCHK","LOCALS",1)
     Global("#GREPCHK","LOCALS",3)
@@ -1370,7 +1370,7 @@ THEN
 END
 
 IF
-  GlobalGT("#GEMPOW","LOCALS", 0)
+  GlobalGT("#GEMPOW","LOCALS",0)
   OR(3)
     Global("#GREPCHK","LOCALS",2)
     Global("#GREPCHK","LOCALS",5)
@@ -1385,7 +1385,7 @@ THEN
 END
 
 IF
-  GlobalGT("#GEMPOW","LOCALS", 0)
+  GlobalGT("#GEMPOW","LOCALS",0)
   OR(3)
     Global("#GREPCHK","LOCALS",4)
     Global("#GREPCHK","LOCALS",7)
@@ -1424,6 +1424,7 @@ IF
     ActionListEmpty()
     Detect([ENEMY])
   Global("#GEMPCHK","LOCALS",1)
+  Global("#GEMPLUP","LOCALS",0)
   Range(%famsummoner%,15)
   Global("WTPSTAT","LOCALS",0)
   Global("#GEMPCHA","GLOBAL",0)
@@ -1440,72 +1441,78 @@ END
 ///////////////
 
 IF
-  Global("#GEMPOW","LOCALS", 1)
+  Global("#GEMPOW","LOCALS",1)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 2)
+  Global("#GEMPOW","LOCALS",2)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 3)
+  Global("#GEMPOW","LOCALS",3)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 4)
+  Global("#GEMPOW","LOCALS",4)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ4",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 5)
+  Global("#GEMPOW","LOCALS",5)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ6",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 6)
+  Global("#GEMPOW","LOCALS",6)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1514,12 +1521,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 7)
+  Global("#GEMPOW","LOCALS",7)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1528,24 +1536,26 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 8)
+  Global("#GEMPOW","LOCALS",8)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 9)
+  Global("#GEMPOW","LOCALS",9)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ5",Myself)
     ReallyForceSpellRES("WTPFLVQ6",Myself)
@@ -1553,24 +1563,26 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 10)
+  Global("#GEMPOW","LOCALS",10)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
     SetInterrupt(TRUE)
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 11)
+  Global("#GEMPOW","LOCALS",11)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1580,12 +1592,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 12)
+  Global("#GEMPOW","LOCALS",12)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
@@ -1595,12 +1608,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 13)
+  Global("#GEMPOW","LOCALS",13)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1608,12 +1622,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 14)
+  Global("#GEMPOW","LOCALS",14)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ4",Myself)
@@ -1621,12 +1636,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 15)
+  Global("#GEMPOW","LOCALS",15)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ6",Myself)
@@ -1634,12 +1650,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 16)
+  Global("#GEMPOW","LOCALS",16)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ7",Myself)
@@ -1648,12 +1665,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 17)
+  Global("#GEMPOW","LOCALS",17)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
@@ -1664,12 +1682,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 18)
+  Global("#GEMPOW","LOCALS",18)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1678,12 +1697,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 19)
+  Global("#GEMPOW","LOCALS",19)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ5",Myself)
@@ -1693,12 +1713,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 20)
+  Global("#GEMPOW","LOCALS",20)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1707,12 +1728,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 21)
+  Global("#GEMPOW","LOCALS",21)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1721,12 +1743,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 22)
+  Global("#GEMPOW","LOCALS",22)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1737,12 +1760,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 23)
+  Global("#GEMPOW","LOCALS",23)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1752,12 +1776,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 24)
+  Global("#GEMPOW","LOCALS",24)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
     ReallyForceSpellRES("WTPFLVQ5",Myself)
@@ -1767,12 +1792,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 25)
+  Global("#GEMPOW","LOCALS",25)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1782,12 +1808,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 26)
+  Global("#GEMPOW","LOCALS",26)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1797,12 +1824,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 27)
+  Global("#GEMPOW","LOCALS",27)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
@@ -1812,12 +1840,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 28)
+  Global("#GEMPOW","LOCALS",28)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1826,12 +1855,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 29)
+  Global("#GEMPOW","LOCALS",29)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ4",Myself)
@@ -1840,12 +1870,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 30)
+  Global("#GEMPOW","LOCALS",30)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ7",Myself)
@@ -1854,12 +1885,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 31)
+  Global("#GEMPOW","LOCALS",31)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1871,12 +1903,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 32)
+  Global("#GEMPOW","LOCALS",32)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ2",Myself)
@@ -1887,12 +1920,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 33)
+  Global("#GEMPOW","LOCALS",33)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1901,12 +1935,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 34)
+  Global("#GEMPOW","LOCALS",34)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ5",Myself)
@@ -1916,12 +1951,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 35)
+  Global("#GEMPOW","LOCALS",35)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1930,12 +1966,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 36)
+  Global("#GEMPOW","LOCALS",36)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1946,12 +1983,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 37)
+  Global("#GEMPOW","LOCALS",37)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1962,12 +2000,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 38)
+  Global("#GEMPOW","LOCALS",38)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -1978,12 +2017,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 39)
+  Global("#GEMPOW","LOCALS",39)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ3",Myself)
@@ -1994,12 +2034,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 40)
+  Global("#GEMPOW","LOCALS",40)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -2009,12 +2050,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 41)
+  Global("#GEMPOW","LOCALS",41)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQE",Myself)
@@ -2024,12 +2066,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 42)
+  Global("#GEMPOW","LOCALS",42)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -2041,12 +2084,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 43)
+  Global("#GEMPOW","LOCALS",43)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -2058,12 +2102,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 44)
+  Global("#GEMPOW","LOCALS",44)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -2074,12 +2119,13 @@ THEN
 END
 
 IF
-  Global("#GEMPOW","LOCALS", 45)
+  Global("#GEMPOW","LOCALS",45)
   Global("#GEMPCHK","LOCALS",1)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetGlobal("#GEMPOW","LOCALS",0)
+    SetGlobal("#GEMPLUP","LOCALS",0)
     SetGlobal("#GEMPCHA","GLOBAL",0)
     ReallyForceSpellRES("WTPFLVQE",Myself)
     ReallyForceSpellRES("WTPFLVQ1",Myself)
@@ -2150,7 +2196,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2167,7 +2213,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2183,7 +2229,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2199,7 +2245,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2216,7 +2262,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2232,7 +2278,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2248,7 +2294,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2265,7 +2311,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2281,7 +2327,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",6)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -2299,7 +2345,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2319,7 +2365,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2338,7 +2384,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2357,7 +2403,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2375,7 +2421,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2392,7 +2438,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2409,7 +2455,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2428,7 +2474,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2446,7 +2492,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",12)
   GlobalGT("#GPLALVL","GLOBAL",5)
   Global("#GFLVUP","GLOBAL",0)
@@ -2465,7 +2511,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2486,7 +2532,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2506,7 +2552,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2526,7 +2572,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2545,7 +2591,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2563,7 +2609,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2581,7 +2627,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2600,7 +2646,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2618,7 +2664,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",18)
   GlobalGT("#GPLALVL","GLOBAL",11)
   Global("#GFLVUP","GLOBAL",0)
@@ -2638,7 +2684,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2658,7 +2704,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2679,7 +2725,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2700,7 +2746,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2720,7 +2766,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2739,7 +2785,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2758,7 +2804,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2779,7 +2825,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2799,7 +2845,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",24)
   GlobalGT("#GPLALVL","GLOBAL",17)
   Global("#GFLVUP","GLOBAL",0)
@@ -2820,7 +2866,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2840,7 +2886,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2861,7 +2907,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2882,7 +2928,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2903,7 +2949,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2923,7 +2969,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2943,7 +2989,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2964,7 +3010,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -2984,7 +3030,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",30)
   GlobalGT("#GPLALVL","GLOBAL",23)
   Global("#GFLVUP","GLOBAL",0)
@@ -3006,7 +3052,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3027,7 +3073,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3047,7 +3093,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3067,7 +3113,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3087,7 +3133,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3106,7 +3152,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3125,7 +3171,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3145,7 +3191,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3164,7 +3210,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",36)
   GlobalGT("#GPLALVL","GLOBAL",29)
   Global("#GFLVUP","GLOBAL",0)
@@ -3185,7 +3231,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3208,7 +3254,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3229,7 +3275,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3250,7 +3296,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3270,7 +3316,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3289,7 +3335,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3308,7 +3354,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3329,7 +3375,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3349,7 +3395,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",42)
   GlobalGT("#GPLALVL","GLOBAL",35)
   Global("#GFLVUP","GLOBAL",0)
@@ -3370,7 +3416,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3392,7 +3438,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3413,7 +3459,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3434,7 +3480,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3456,7 +3502,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3477,7 +3523,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3498,7 +3544,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3520,7 +3566,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3541,7 +3587,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalLT("#GPLALVL","GLOBAL",48)
   GlobalGT("#GPLALVL","GLOBAL",41)
   Global("#GFLVUP","GLOBAL",0)
@@ -3563,7 +3609,7 @@ IF										// BLOCK1
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 0 REP 1-7
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3583,7 +3629,7 @@ IF										// BLOCK2A
   ReputationLT(%famsummoner%,15)						// MIRPEN 0 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3604,7 +3650,7 @@ IF										// BLOCK2B
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 1 REP 1-7
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3625,7 +3671,7 @@ IF										// BLOCK3A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 0 REP 15-20
   Global("#GMIRPEN","GLOBAL",0)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3647,7 +3693,7 @@ IF										// BLOCK3B
   ReputationLT(%famsummoner%,15)						// MIRPEN 1 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3668,7 +3714,7 @@ IF										// BLOCK3C
   Global("#GEMPCHK","LOCALS",0)
   ReputationLT(%famsummoner%,8)							// MIRPEN 2 REP 1-7
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3689,7 +3735,7 @@ IF										// BLOCK4A
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 1 REP 15-20
   Global("#GMIRPEN","GLOBAL",1)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3710,7 +3756,7 @@ IF										// BLOCK4B
   ReputationLT(%famsummoner%,15)						// MIRPEN 2 REP 8-14
   ReputationGT(%famsummoner%,7)
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3730,7 +3776,7 @@ IF										// BLOCK5
   Global("#GEMPCHK","LOCALS",0)
   ReputationGT(%famsummoner%,14)						// MIRPEN 2 REP 15-20
   Global("#GMIRPEN","GLOBAL",2)
-  Global("#GEMPOW","LOCALS", 0)
+  Global("#GEMPOW","LOCALS",0)
   GlobalGT("#GPLALVL","GLOBAL",47)
   Global("#GFLVUP","GLOBAL",0)
 THEN
@@ -3760,6 +3806,7 @@ THEN
     MoveViewObject(Myself,INSTANT)
     LockScroll()
     SetGlobal("#GFLVUP","GLOBAL",2)
+    AddGlobals("#GFLVUP","#GFAMLVL")
 END
 
 IF
@@ -3769,6 +3816,9 @@ THEN
   RESPONSE #100
     UnlockScroll()
     SetGlobal("#GFLVUP","GLOBAL",0)
+    SetGlobal("#GEMPCHK","LOCALS",1)
+    SetGlobal("#GEMPLUP","LOCALS",1)
+    SetGlobal("#GNAMCHG","LOCALS",0)
 END
 
 IF
@@ -3791,6 +3841,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@462)
+    AddXPObject(Myself,2000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLVF",Myself) // FR up
@@ -3812,6 +3863,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@463)
+    AddXPObject(Myself,2000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLV9",Myself)
@@ -3840,6 +3892,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@464)
+    AddXPObject(Myself,4000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLV1",Myself)  // AC +1
@@ -3863,6 +3916,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@465)
+    AddXPObject(Myself,8000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
@@ -3901,6 +3955,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@466)
+    AddXPObject(Myself,16000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
@@ -3925,6 +3980,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@467)
+    AddXPObject(Myself,32000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
@@ -3954,6 +4010,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@468)
+    AddXPObject(Myself,61000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
@@ -3977,6 +4034,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@469)
+    AddXPObject(Myself,125000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
@@ -4012,6 +4070,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@470)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4037,6 +4096,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@471)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4068,6 +4128,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@472)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4093,6 +4154,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@473)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4128,6 +4190,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@474)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4149,6 +4212,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@475)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4176,6 +4240,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@476)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4197,6 +4262,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@477)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4223,6 +4289,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@478)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4244,6 +4311,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@479)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
@@ -4267,6 +4335,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@480)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
@@ -4290,6 +4359,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@481)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
@@ -4311,6 +4381,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@482)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4329,6 +4400,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@483)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4348,6 +4420,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@484)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4366,6 +4439,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@485)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4385,6 +4459,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@486)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4403,6 +4478,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@487)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4422,6 +4498,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@488)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4440,6 +4517,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@489)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4459,6 +4537,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@490)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4477,6 +4556,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@491)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4496,6 +4576,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@492)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     ApplySpellRES("WTPFMLV1",Myself)  // AC +1
@@ -4516,6 +4597,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@493)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4535,6 +4617,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@494)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4553,6 +4636,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@495)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4572,6 +4656,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@496)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4590,6 +4675,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@497)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4609,6 +4695,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@498)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4627,6 +4714,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@499)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4646,6 +4734,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@500)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4664,6 +4753,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@501)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4683,6 +4773,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@502)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4701,6 +4792,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@503)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4720,6 +4812,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@504)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4738,6 +4831,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@505)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4757,6 +4851,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@506)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4775,6 +4870,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@507)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4794,6 +4890,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@508)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4812,6 +4909,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@509)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4831,6 +4929,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@510)
+    AddXPObject(Myself,250000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -4847,7 +4946,7 @@ IF
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
-    ActionOverride(%famsummoner%,MakeUnselectable(6))
+    ActionOverride(Player1,MakeUnselectable(6))
     ActionOverride(Player2,MakeUnselectable(6))
     ActionOverride(Player3,MakeUnselectable(6))
     ActionOverride(Player4,MakeUnselectable(6))

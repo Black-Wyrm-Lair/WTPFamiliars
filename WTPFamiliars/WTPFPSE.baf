@@ -1,5 +1,5 @@
 ////////////////////////////////////////////
-///PSEUDODRAGON				 ///
+///PSEUDODRAGON                          ///
 ////////////////////////////////////////////
 
 /////////////////
@@ -1067,7 +1067,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",1)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1079,7 +1079,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",4)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1091,7 +1091,7 @@ END
 
 IF
   Global("#GHARAS","GLOBAL",7)
-  Global("#GINPACK", "GLOBAL", 0)
+  Global("#GINPACK","GLOBAL",0)
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1109,7 +1109,7 @@ IF
   OR(2)
     Die()
     Global("#GFAMGO","GLOBAL",2)
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
   CheckStatLT(%famsummoner%,3,RESISTMAGIC)
 THEN
   RESPONSE #100
@@ -1121,11 +1121,11 @@ IF
   OR(2)
     Die()
     Global("#GFAMGO","GLOBAL",2)
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCON9",Myself))
-    SetGlobal("#GMR_Active", "LOCALS", 0)
+    SetGlobal("#GMR_Active","LOCALS",0)
     Continue()
 END
 
@@ -1136,7 +1136,7 @@ END
 IF
   Die()
   Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
   CheckStatLT(%famsummoner%,3,RESISTMAGIC)
 THEN
   RESPONSE #100
@@ -1147,11 +1147,11 @@ END
 IF
   Die()
   Global("#GBhaalHP1","GLOBAL",2) // GOooPD compatibility check
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCON9",Myself))
-    SetGlobal("#GMR_Active", "LOCALS", 0)
+    SetGlobal("#GMR_Active","LOCALS",0)
     Continue()
 END
 
@@ -1171,7 +1171,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag1",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNG","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1197,7 +1197,7 @@ THEN
     ActionOverride(%famsummoner%,ApplySpellRES("WTPDESP1",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNG","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1225,7 +1225,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag1",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNG","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1253,7 +1253,7 @@ THEN
     ActionOverride(%famsummoner%,ReallyForceSpellRES("WTPFCOND",Myself))
     ActionOverride(%famsummoner%,MakeUnselectable(4))
     DisplayString(%famsummoner%,@522)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNG","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1274,7 +1274,7 @@ THEN
     DisplayString(%famsummoner%,8536)
     DisplayString(%famsummoner%,21004)
     CreateCreatureObjectOffScreen("wtpnag1",Myself,0,0,0)
-    SetGlobalTimer("#Gmourn","GLOBAL", THREE_DAYS)
+    SetGlobalTimer("#Gmourn","GLOBAL",THREE_DAYS)
     SetGlobal("WTPFAMNG","GLOBAL",0)
     SetGlobal("#GAFTER","GLOBAL",0)
     SetGlobal("#GFLVUP","GLOBAL",0)
@@ -1368,7 +1368,7 @@ IF
   AttackedBy(%famsummoner%,DEFAULT)
   !StateCheck(%famsummoner%,STATE_BERSERK)
   !StateCheck(%famsummoner%,STATE_CONFUSED)
-  !TriggerOverride(%famsummoner%, Detect([ENEMY]))
+  !TriggerOverride(%famsummoner%,Detect([ENEMY]))
   Allegiance(Myself,FAMILIAR)
 THEN
   RESPONSE #100
@@ -1408,13 +1408,13 @@ IF
   OR(2)
     ObjectActionListEmpty(%famsummoner%)
     TriggerOverride(%famsummoner%,Detect([ENEMY]))
-  Global("#GMR_Active", "LOCALS", 0)
+  Global("#GMR_Active","LOCALS",0)
   !Global("#GFAMGO","GLOBAL",2)
   Range(%famsummoner%,15)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCON8",Myself))
-    SetGlobal("#GMR_Active", "LOCALS", 1)
+    SetGlobal("#GMR_Active","LOCALS",1)
 END
 
 IF
@@ -1422,14 +1422,14 @@ IF
   OR(2)
     ObjectActionListEmpty(%famsummoner%)
     TriggerOverride(%famsummoner%,Detect([ENEMY]))
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
   !Global("#GFAMGO","GLOBAL",2)
   !Range(%famsummoner%,15)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCON9",Myself))
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCO10",Myself))
-    SetGlobal("#GMR_Active", "LOCALS", 0)
+    SetGlobal("#GMR_Active","LOCALS",0)
 END
 
 IF
@@ -1437,13 +1437,13 @@ IF
   OR(2)
     ObjectActionListEmpty(%famsummoner%)
     TriggerOverride(%famsummoner%,Detect([ENEMY]))
-  Global("#GMR_Active", "LOCALS", 1)
+  Global("#GMR_Active","LOCALS",1)
   !Global("#GFAMGO","GLOBAL",2)
   !Range(%famsummoner%,15)
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,ApplySpellRES("WTPFCON9",Myself))
-    SetGlobal("#GMR_Active", "LOCALS", 0)
+    SetGlobal("#GMR_Active","LOCALS",0)
 END
 
 //////////////////////////////
@@ -1664,6 +1664,7 @@ THEN
     MoveViewObject(Myself,INSTANT)
     LockScroll()
     SetGlobal("#GFLVUP","GLOBAL",2)
+    AddGlobals("#GFLVUP","#GFAMLVL")
 END
 
 IF
@@ -1695,6 +1696,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@168)
+    AddXPObject(Myself,2500)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     Wait(1)
@@ -1714,6 +1716,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@169)
+    AddXPObject(Myself,2500)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     AddSpecialAbility("WTPIN04")  // Detect Invisibility
@@ -1734,6 +1737,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@170)
+    AddXPObject(Myself,5000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLV1",Myself)  // AC +1
@@ -1755,6 +1759,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@171)
+    AddXPObject(Myself,10000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFPSDA",Myself) // +1
@@ -1777,6 +1782,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@172)
+    AddXPObject(Myself,20000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLV9",Myself)
@@ -1807,6 +1813,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@173)
+    AddXPObject(Myself,20000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -1828,6 +1835,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@174)
+    AddXPObject(Myself,30000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     Wait(1)
@@ -1847,6 +1855,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@175)
+    AddXPObject(Myself,45000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLVL",Myself)
     AddSpecialAbility("WTPIN04")  // Detect Invisibility
@@ -1867,6 +1876,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@176)
+    AddXPObject(Myself,115000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -1888,6 +1898,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@177)
+    AddXPObject(Myself,125000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFMLV9",Myself)
@@ -1920,6 +1931,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@178)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFPSDB",Myself) // +2
@@ -1943,6 +1955,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@179)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -1964,6 +1977,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@180)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     Wait(1)
@@ -1983,6 +1997,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@181)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     AddSpecialAbility("WTPIN08")  // Improved Camouflage
@@ -2003,6 +2018,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@182)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -2034,6 +2050,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@183)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     Wait(1)
@@ -2053,6 +2070,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@184)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     Wait(1)
@@ -2072,6 +2090,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@185)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV2",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -2095,6 +2114,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@186)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     ApplySpellRES("WTPFPSDC",Myself) // +3
@@ -2116,6 +2136,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@187)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     ApplySpellRES("WTPFMLV9",Myself)
@@ -2146,6 +2167,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@188)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     ApplySpellRES("WTPFMLV4",Myself)
@@ -2166,6 +2188,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@189)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2185,6 +2208,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@190)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2203,6 +2227,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@191)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2222,6 +2247,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@192)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2240,6 +2266,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@193)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2259,6 +2286,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@194)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2277,6 +2305,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@195)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2296,6 +2325,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@196)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2314,6 +2344,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@197)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2333,6 +2364,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@198)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     ApplySpellRES("WTPFMLV1",Myself)  // AC +1
@@ -2353,6 +2385,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@199)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2372,6 +2405,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@200)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2390,6 +2424,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@201)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2409,6 +2444,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@202)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2427,6 +2463,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@203)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2446,6 +2483,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@204)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2464,6 +2502,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@205)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2483,6 +2522,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@206)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2501,6 +2541,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@207)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2520,6 +2561,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@208)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2537,6 +2579,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@209)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2556,6 +2599,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@210)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2574,6 +2618,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@211)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2593,6 +2638,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@212)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2611,6 +2657,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@213)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2630,6 +2677,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@214)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2648,6 +2696,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@215)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2667,6 +2716,7 @@ THEN
   RESPONSE #100
     SetInterrupt(FALSE)
     SetName(@216)
+    AddXPObject(Myself,375000)
     ApplySpellRES("WTPFMLV0",Myself)
     ApplySpellRES("WTPFMLV3",Myself)
     Wait(1)
@@ -2683,7 +2733,7 @@ IF
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
-    ActionOverride(%famsummoner%,MakeUnselectable(6))
+    ActionOverride(Player1,MakeUnselectable(6))
     ActionOverride(Player2,MakeUnselectable(6))
     ActionOverride(Player3,MakeUnselectable(6))
     ActionOverride(Player4,MakeUnselectable(6))

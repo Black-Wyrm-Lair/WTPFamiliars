@@ -3,7 +3,7 @@
 ///////////////////////////////
 
 IF
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",0))
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",0))
   !ObjectActionListEmpty(%famsummoner%)
   CombatCounterLT(1)
   !TriggerOverride(%famsummoner%,Detect([ENEMY]))
@@ -14,8 +14,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfamps",%famsummoner%)
 THEN
@@ -28,8 +28,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfamps",%famsummoner%)
 THEN
@@ -43,8 +43,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfamps",%famsummoner%)
 THEN
@@ -58,8 +58,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfamps",%famsummoner%)
 THEN
@@ -73,8 +73,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfae",%famsummoner%)
 THEN
@@ -87,8 +87,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfae",%famsummoner%)
 THEN
@@ -102,8 +102,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfae",%famsummoner%)
 THEN
@@ -117,8 +117,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfae",%famsummoner%)
 THEN
@@ -132,8 +132,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfer",%famsummoner%)
 THEN
@@ -146,8 +146,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfer",%famsummoner%)
 THEN
@@ -162,8 +162,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfer",%famsummoner%)
 THEN
@@ -178,8 +178,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmfer",%famsummoner%)
 THEN
@@ -194,8 +194,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmcat",%famsummoner%)
 THEN
@@ -208,8 +208,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmcat",%famsummoner%)
 THEN
@@ -224,8 +224,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmcat",%famsummoner%)
 THEN
@@ -240,8 +240,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmcat",%famsummoner%)
 THEN
@@ -256,8 +256,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmrab",%famsummoner%)
 THEN
@@ -270,8 +270,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmrab",%famsummoner%)
 THEN
@@ -286,8 +286,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmrab",%famsummoner%)
 THEN
@@ -302,8 +302,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmrab",%famsummoner%)
 THEN
@@ -318,8 +318,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmspd",%famsummoner%)
 THEN
@@ -332,8 +332,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmspd",%famsummoner%)
 THEN
@@ -348,8 +348,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmspd",%famsummoner%)
 THEN
@@ -364,8 +364,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmspd",%famsummoner%)
 THEN
@@ -380,8 +380,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmimp",%famsummoner%)
 THEN
@@ -394,8 +394,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmimp",%famsummoner%)
 THEN
@@ -409,8 +409,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmimp",%famsummoner%)
 THEN
@@ -424,8 +424,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmimp",%famsummoner%)
 THEN
@@ -439,8 +439,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmmep",%famsummoner%)
 THEN
@@ -453,8 +453,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmmep",%famsummoner%)
 THEN
@@ -469,8 +469,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmmep",%famsummoner%)
 THEN
@@ -485,8 +485,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmmep",%famsummoner%)
 THEN
@@ -501,8 +501,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 0)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",0)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmqua",%famsummoner%)
 THEN
@@ -515,8 +515,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 2)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",2)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmqua",%famsummoner%)
 THEN
@@ -531,8 +531,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 4)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",4)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmqua",%famsummoner%)
 THEN
@@ -547,8 +547,8 @@ THEN
 END
 
 IF
-  Global("#GINPACK", "GLOBAL", 6)
-  TriggerOverride(%famsummoner%, Global("#GFAMINT","LOCALS",1))
+  Global("#GINPACK","GLOBAL",6)
+  TriggerOverride(%famsummoner%,Global("#GFAMINT","LOCALS",1))
   GlobalTimerExpired("#GWANOUT","GLOBAL")
   HasItem("wtpfmqua",%famsummoner%)
 THEN
@@ -567,24 +567,26 @@ END
 /////////////////////////////////////////
 
 IF
-  !TriggerOverride("WTPRABBI",AreaType(DUNGEON))
-  !TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
+  Exists("WTPRABBI")
+  !TriggerOverride(%famsummoner%,AreaType(DUNGEON))
+  !TriggerOverride(%famsummoner%,AreaType(OUTDOOR))
   TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",0))
 THEN
   RESPONSE #100
     ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",1))
-    ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12F",Myself))
+    ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12F",Myself))
 END
 
 IF
+  Exists("WTPRABBI")
   OR(2)
-    TriggerOverride("WTPRABBI",AreaType(DUNGEON))
-    TriggerOverride("WTPRABBI",AreaType(OUTDOOR))
+    TriggerOverride(%famsummoner%,AreaType(DUNGEON))
+    TriggerOverride(%famsummoner%,AreaType(OUTDOOR))
   TriggerOverride("WTPRABBI",Global("WTPBURSP","LOCALS",1))
 THEN
   RESPONSE #100
     ActionOverride("WTPRABBI",SetGlobal("WTPBURSP","LOCALS",0))
-    ActionOverride("WTPRABBI",ReallyForceSpellRES("WTPIN12G",Myself))
+    ActionOverride("WTPRABBI",ApplySpellRES("WTPIN12G",Myself))
 END
 
 IF
@@ -846,7 +848,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -868,7 +870,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -890,7 +892,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -912,7 +914,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -934,7 +936,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -956,7 +958,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -978,7 +980,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1000,7 +1002,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1022,7 +1024,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1044,7 +1046,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1066,7 +1068,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1088,7 +1090,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1110,7 +1112,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1132,7 +1134,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1154,7 +1156,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1176,7 +1178,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1198,7 +1200,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1220,7 +1222,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1242,7 +1244,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1264,7 +1266,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1286,7 +1288,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1308,7 +1310,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1330,7 +1332,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
@@ -1352,7 +1354,7 @@ THEN
     HideGUI()
     FadeToColor([40.0],0)
     Wait(4)
-    ActionOverride(%famsummoner%,MakeUnselectable(14))
+    ActionOverride(Player1,MakeUnselectable(14))
     ActionOverride(Player2,MakeUnselectable(14))
     ActionOverride(Player3,MakeUnselectable(14))
     ActionOverride(Player4,MakeUnselectable(14))
