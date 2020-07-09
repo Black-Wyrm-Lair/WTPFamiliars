@@ -142,8 +142,7 @@ END
 /// Copy portraits/effs/2da's/bams/Call 2da spell/Con modifier spells
 
 COPY ~WTPFamiliars/simplecopy~ ~override~
-COPY ~WTPFamiliars/sounds~ ~override~
-AT_INTERACTIVE_NOW ~WTPFamiliars/wtpfamiliaraudio.bat~
+LAF HANDLE_AUDIO STR_VAR audio_path = ~WTPFamiliars/sounds~ END
 
 // Items patch
 
@@ -676,9 +675,3 @@ ACTION_IF GAME_IS ~bgt tob bg2ee eet~ BEGIN
 END
 
 // End of Script EXTENDing - Familiars have sounds!
-
-//COPY ~WTPFamiliars/wtpfamiliaraudio.bat~ ~wtpfamiliaraudio.bat~
-//COPY ~WTPFamiliars/wtpfamiliaraudiouninstall.bat~ ~wtpfamiliaraudiouninstall.bat~
-
-// Audio
-AT_INTERACTIVE_UNINSTALL ~wtpfamiliars/wtpfamiliaraudiouninstall.bat~
