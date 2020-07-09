@@ -1,7 +1,7 @@
-BACKUP ~WTPFamiliars/Backup~
+BACKUP ~WTPFamiliars/backup~
 AUTHOR ~Rabain&Salk~
 VERSION ~2.5~
-README ~WTPFamiliars/Readme-WTPFamiliars.html~
+README ~WTPFamiliars/readme-wtpfamiliars.html~
 
 ALWAYS
   // IDS entries
@@ -123,9 +123,9 @@ END
 
 AUTO_TRA ~WTPFamiliars/language/%s~
 //Uncomment this if the mod gets traified
-LANGUAGE ~English~ ~English~ ~WTPFamiliars/language/English/Setup-WTPFamiliars.tra~
+LANGUAGE ~English~ ~English~ ~WTPFamiliars/language/english/setup-wtpfamiliars.tra~
 
-//README ~WTPFamiliars/Readme-WTPFamiliars.html~
+//README ~WTPFamiliars/readme-wtpfamiliars.html~
 
 BEGIN @13
 REQUIRE_PREDICATE GAME_IS ~bgt tob bgee bg2ee iwdee eet~ @14
@@ -141,9 +141,9 @@ END
 
 /// Copy portraits/effs/2da's/bams/Call 2da spell/Con modifier spells
 
-COPY ~WTPFamiliars/SimpleCopy~ ~override~
+COPY ~WTPFamiliars/simplecopy~ ~override~
 COPY ~WTPFamiliars/sounds~ ~override~
-AT_INTERACTIVE_NOW ~WTPFamiliars/WTPFamiliaraudio.bat~
+AT_INTERACTIVE_NOW ~WTPFamiliars/wtpfamiliaraudio.bat~
 
 // Items patch
 
@@ -158,17 +158,17 @@ ACTION_IF GAME_IS ~iwdee~ BEGIN
 END
 
 // Adds custom familiar state
-APPEND ~STATE.IDS~
+APPEND ~state.ids~
   ~0x801020A7 WTP_STATE_INVALID_OR_STONE~ // STATE_PANIC, STATE_HELPLESS, STATE_SLEEPING, STATE_BERSERK
   UNLESS ~WTP_STATE_INVALID_OR_STONE~     // STATE_CHARMED, STATE_FEEBLEMINDED, STATE_CONFUSED, STATE_STONE_DEATH
 
 // Adds custom summoner state
-APPEND ~STATE.IDS~
+APPEND ~state.ids~
   ~0x80102027 WTP_STATE_INVALID_ALIVE~ // STATE_PANIC, STATE_HELPLESS, STATE_SLEEPING, STATE_BERSERK
   UNLESS ~WTP_STATE_INVALID_ALIVE~     // STATE_CHARMED, STATE_FEEBLEMINDED, STATE_CONFUSED
 
 // Adds another custom summoner state
-APPEND ~STATE.IDS~
+APPEND ~state.ids~
   ~0x80002002 WTP_STATE_SUMMONER_CRAZY~ // STATE_CONFUSED, STATE_BERSERK, STATE_CHARMED
   UNLESS ~WTP_STATE_SUMMONER_CRAZY~
 
@@ -251,283 +251,283 @@ COPY ~WTPFamiliars/wtpin16.spl~ ~override~
 ///cre and items
 
 
-/*  WTPCAT.CRE
+/*  wtpcat.cre
   Cat           */
 COPY ~WTPFamiliars/wtpcat.cre~ ~override~
   SAY NAME1 @5
   SAY NAME2 @5
-  SAY BORED ~~ [WTPCAT01]
-  SAY BATTLE_CRY1 ~~ [WTPCAT02]
-  SAY BATTLE_CRY2 ~~ [WTPCAT03]
-  SAY BATTLE_CRY3 ~~ [WTPCAT04]
-  SAY BATTLE_CRY4 ~~ [WTPCAT05]
-  SAY BATTLE_CRY5 ~~ [WTPCAT06]
-  SAY DAMAGE ~~ [WTPCAT07]
-  SAY DYING ~~ [WTPCAT08]
-  SAY HURT ~~ [WTPCAT09]
-  SAY SELECT_COMMON1 ~~ [WTPCAT10]
-  SAY SELECT_COMMON2 ~~ [WTPCAT11]
-  SAY SELECT_ACTION1 ~~ [WTPCAT12]
-  SAY SELECT_ACTION2 ~~ [WTPCAT13]
-  SAY SELECT_RARE1 ~~ [WTPCAT14]
-  SAY SELECT_RARE2 ~~ [WTPCAT15]
+  SAY BORED ~~ [wtpcat01]
+  SAY BATTLE_CRY1 ~~ [wtpcat02]
+  SAY BATTLE_CRY2 ~~ [wtpcat03]
+  SAY BATTLE_CRY3 ~~ [wtpcat04]
+  SAY BATTLE_CRY4 ~~ [wtpcat05]
+  SAY BATTLE_CRY5 ~~ [wtpcat06]
+  SAY DAMAGE ~~ [wtpcat07]
+  SAY DYING ~~ [wtpcat08]
+  SAY HURT ~~ [wtpcat09]
+  SAY SELECT_COMMON1 ~~ [wtpcat10]
+  SAY SELECT_COMMON2 ~~ [wtpcat11]
+  SAY SELECT_ACTION1 ~~ [wtpcat12]
+  SAY SELECT_ACTION2 ~~ [wtpcat13]
+  SAY SELECT_RARE1 ~~ [wtpcat14]
+  SAY SELECT_RARE2 ~~ [wtpcat15]
 
-/*  WTPDMEPH.CRE
+/*  wtpdmeph.cre
   Dust Mephit     */
 COPY ~WTPFamiliars/wtpdmeph.cre~ ~override~
   SAY NAME1 @10
   SAY NAME2 @10
-  SAY BORED ~~ [WTPMEP02]
-  SAY BATTLE_CRY1 ~~ [WTPMEP02]
-  SAY BATTLE_CRY2 ~~ [WTPMEP03]
-  SAY BATTLE_CRY3 ~~ [WTPMEP04]
-  SAY BATTLE_CRY4 ~~ [WTPMEP05]
-  SAY BATTLE_CRY5 ~~ [WTPMEP06]
-  SAY DAMAGE ~~ [WTPMEP07]
-  SAY DYING ~~ [WTPMEP08]
-  SAY HURT ~~ [WTPMEP09]
-  SAY SELECT_COMMON1 ~~ [WTPMEP10]
-  SAY SELECT_COMMON2 ~~ [WTPMEP10]
-  SAY SELECT_ACTION1 ~~ [WTPMEP11]
-  SAY SELECT_ACTION2 ~~ [WTPMEP11]
-  SAY SELECT_RARE1 ~~ [WTPMEP12]
-  SAY SELECT_RARE2 ~~ [WTPMEP12]
+  SAY BORED ~~ [wtpmep02]
+  SAY BATTLE_CRY1 ~~ [wtpmep02]
+  SAY BATTLE_CRY2 ~~ [wtpmep03]
+  SAY BATTLE_CRY3 ~~ [wtpmep04]
+  SAY BATTLE_CRY4 ~~ [wtpmep05]
+  SAY BATTLE_CRY5 ~~ [wtpmep06]
+  SAY DAMAGE ~~ [wtpmep07]
+  SAY DYING ~~ [wtpmep08]
+  SAY HURT ~~ [wtpmep09]
+  SAY SELECT_COMMON1 ~~ [wtpmep10]
+  SAY SELECT_COMMON2 ~~ [wtpmep10]
+  SAY SELECT_ACTION1 ~~ [wtpmep11]
+  SAY SELECT_ACTION2 ~~ [wtpmep11]
+  SAY SELECT_RARE1 ~~ [wtpmep12]
+  SAY SELECT_RARE2 ~~ [wtpmep12]
 
-/*  WTPFAIRY.CRE
+/*  wtpfairy.cre
   Fairy Dragon    */
 COPY ~WTPFamiliars/wtpfairy.cre~ ~override~
   SAY NAME1 @11
   SAY NAME2 @11
-  SAY BORED ~~ [WTPFAE01]
-  SAY BATTLE_CRY1 ~~ [WTPFAE02]
-  SAY BATTLE_CRY2 ~~ [WTPFAE03]
-  SAY BATTLE_CRY3 ~~ [WTPFAE04]
-  SAY BATTLE_CRY4 ~~ [WTPFAE05]
-  SAY BATTLE_CRY5 ~~ [WTPFAE06]
-  SAY DAMAGE ~~ [WTPFAE07]
-  SAY DYING ~~ [WTPFAE08]
-  SAY HURT ~~ [WTPFAE09]
-  SAY SELECT_COMMON1 ~~ [WTPFAE10]
-  SAY SELECT_COMMON2 ~~ [WTPFAE10]
-  SAY SELECT_ACTION1 ~~ [WTPFAE11]
-  SAY SELECT_ACTION2 ~~ [WTPFAE11]
-  SAY SELECT_RARE1 ~~ [WTPFAE01]
-  SAY SELECT_RARE2 ~~ [WTPFAE01]
+  SAY BORED ~~ [wtpfae01]
+  SAY BATTLE_CRY1 ~~ [wtpfae02]
+  SAY BATTLE_CRY2 ~~ [wtpfae03]
+  SAY BATTLE_CRY3 ~~ [wtpfae04]
+  SAY BATTLE_CRY4 ~~ [wtpfae05]
+  SAY BATTLE_CRY5 ~~ [wtpfae06]
+  SAY DAMAGE ~~ [wtpfae07]
+  SAY DYING ~~ [wtpfae08]
+  SAY HURT ~~ [wtpfae09]
+  SAY SELECT_COMMON1 ~~ [wtpfae10]
+  SAY SELECT_COMMON2 ~~ [wtpfae10]
+  SAY SELECT_ACTION1 ~~ [wtpfae11]
+  SAY SELECT_ACTION2 ~~ [wtpfae11]
+  SAY SELECT_RARE1 ~~ [wtpfae01]
+  SAY SELECT_RARE2 ~~ [wtpfae01]
 
-/*  WTPFERRE.CRE
+/*  wtpferre.cre
   Ferret          */
 COPY ~WTPFamiliars/wtpferre.cre~ ~override~
   SAY NAME1 @9
   SAY NAME2 @9
-  SAY BORED ~~ [WTPFER01]
-  SAY BATTLE_CRY1 ~~ [WTPFER02]
-  SAY BATTLE_CRY2 ~~ [WTPFER03]
-  SAY BATTLE_CRY3 ~~ [WTPFER04]
-  SAY BATTLE_CRY4 ~~ [WTPFER05]
-  SAY BATTLE_CRY5 ~~ [WTPFER06]
-  SAY DAMAGE ~~ [WTPFER07]
-  SAY DYING ~~ [WTPFER08]
-  SAY HURT ~~ [WTPFER09]
-  SAY SELECT_COMMON1 ~~ [WTPFER10]
-  SAY SELECT_COMMON2 ~~ [WTPFER10]
-  SAY SELECT_ACTION1 ~~ [WTPFER11]
-  SAY SELECT_ACTION2 ~~ [WTPFER11]
-  SAY SELECT_RARE1 ~~ [WTPFER10]
-  SAY SELECT_RARE2 ~~ [WTPFER11]
+  SAY BORED ~~ [wtpfer01]
+  SAY BATTLE_CRY1 ~~ [wtpfer02]
+  SAY BATTLE_CRY2 ~~ [wtpfer03]
+  SAY BATTLE_CRY3 ~~ [wtpfer04]
+  SAY BATTLE_CRY4 ~~ [wtpfer05]
+  SAY BATTLE_CRY5 ~~ [wtpfer06]
+  SAY DAMAGE ~~ [wtpfer07]
+  SAY DYING ~~ [wtpfer08]
+  SAY HURT ~~ [wtpfer09]
+  SAY SELECT_COMMON1 ~~ [wtpfer10]
+  SAY SELECT_COMMON2 ~~ [wtpfer10]
+  SAY SELECT_ACTION1 ~~ [wtpfer11]
+  SAY SELECT_ACTION2 ~~ [wtpfer11]
+  SAY SELECT_RARE1 ~~ [wtpfer10]
+  SAY SELECT_RARE2 ~~ [wtpfer11]
 
-/*  WTPIMP.CRE
+/*  wtpimp.cre
   Imp           */
 COPY ~WTPFamiliars/wtpimp.cre~ ~override~
   SAY NAME1 @7
   SAY NAME2 @7
-  SAY BORED ~~ [WTPIMP01]
-  SAY BATTLE_CRY1 ~~ [WTPIMP02]
-  SAY BATTLE_CRY2 ~~ [WTPIMP03]
-  SAY BATTLE_CRY3 ~~ [WTPIMP04]
-  SAY BATTLE_CRY4 ~~ [WTPIMP05]
-  SAY BATTLE_CRY5 ~~ [WTPIMP06]
-  SAY DAMAGE ~~ [WTPIMP07]
-  SAY DYING ~~ [WTPIMP08]
-  SAY HURT ~~ [WTPIMP09]
-  SAY SELECT_COMMON1 ~~ [WTPIMP10]
-  SAY SELECT_COMMON2 ~~ [WTPIMP10]
-  SAY SELECT_ACTION1 ~~ [WTPIMP10]
-  SAY SELECT_ACTION2 ~~ [WTPIMP10]
-  SAY SELECT_RARE1 ~~ [WTPIMP12]
-  SAY SELECT_RARE2 ~~ [WTPIMP13]
+  SAY BORED ~~ [wtpimp01]
+  SAY BATTLE_CRY1 ~~ [wtpimp02]
+  SAY BATTLE_CRY2 ~~ [wtpimp03]
+  SAY BATTLE_CRY3 ~~ [wtpimp04]
+  SAY BATTLE_CRY4 ~~ [wtpimp05]
+  SAY BATTLE_CRY5 ~~ [wtpimp06]
+  SAY DAMAGE ~~ [wtpimp07]
+  SAY DYING ~~ [wtpimp08]
+  SAY HURT ~~ [wtpimp09]
+  SAY SELECT_COMMON1 ~~ [wtpimp10]
+  SAY SELECT_COMMON2 ~~ [wtpimp10]
+  SAY SELECT_ACTION1 ~~ [wtpimp10]
+  SAY SELECT_ACTION2 ~~ [wtpimp10]
+  SAY SELECT_RARE1 ~~ [wtpimp12]
+  SAY SELECT_RARE2 ~~ [wtpimp13]
 
-/*  WTPQUASI.CRE
+/*  wtpquasi.cre
   Quasit          */
 COPY ~WTPFamiliars/wtpquasi.cre~ ~override~
   SAY NAME1 @4
   SAY NAME2 @4
-  SAY BORED ~~ [WTPIMP01]
-  SAY BATTLE_CRY1 ~~ [WTPIMP02]
-  SAY BATTLE_CRY2 ~~ [WTPIMP03]
-  SAY BATTLE_CRY3 ~~ [WTPIMP04]
-  SAY BATTLE_CRY4 ~~ [WTPIMP05]
-  SAY BATTLE_CRY5 ~~ [WTPIMP06]
-  SAY DAMAGE ~~ [WTPIMP07]
-  SAY DYING ~~ [WTPIMP08]
-  SAY HURT ~~ [WTPIMP09]
-  SAY SELECT_COMMON1 ~~ [WTPIMP10]
-  SAY SELECT_COMMON2 ~~ [WTPIMP10]
-  SAY SELECT_ACTION1 ~~ [WTPIMP10]
-  SAY SELECT_ACTION2 ~~ [WTPIMP10]
-  SAY SELECT_RARE1 ~~ [WTPIMP12]
-  SAY SELECT_RARE2 ~~ [WTPIMP13]
+  SAY BORED ~~ [wtpimp01]
+  SAY BATTLE_CRY1 ~~ [wtpimp02]
+  SAY BATTLE_CRY2 ~~ [wtpimp03]
+  SAY BATTLE_CRY3 ~~ [wtpimp04]
+  SAY BATTLE_CRY4 ~~ [wtpimp05]
+  SAY BATTLE_CRY5 ~~ [wtpimp06]
+  SAY DAMAGE ~~ [wtpimp07]
+  SAY DYING ~~ [wtpimp08]
+  SAY HURT ~~ [wtpimp09]
+  SAY SELECT_COMMON1 ~~ [wtpimp10]
+  SAY SELECT_COMMON2 ~~ [wtpimp10]
+  SAY SELECT_ACTION1 ~~ [wtpimp10]
+  SAY SELECT_ACTION2 ~~ [wtpimp10]
+  SAY SELECT_RARE1 ~~ [wtpimp12]
+  SAY SELECT_RARE2 ~~ [wtpimp13]
 
-/*  WTPRABBI.CRE
+/*  wtprabbi.cre
   Rabbit          */
 COPY ~WTPFamiliars/wtprabbi.cre~ ~override~
   SAY NAME1 @12
   SAY NAME2 @12
-  SAY BORED ~~ [WTPRAB01]
-  SAY BATTLE_CRY1 ~~ [WTPRAB02]
-  SAY BATTLE_CRY2 ~~ [WTPRAB03]
-  SAY BATTLE_CRY3 ~~ [WTPRAB04]
-  SAY BATTLE_CRY4 ~~ [WTPRAB05]
-  SAY BATTLE_CRY5 ~~ [WTPRAB06]
-  SAY DAMAGE ~~ [WTPRAB07]
-  SAY DYING ~~ [WTPRAB08]
-  SAY HURT ~~ [WTPRAB09]
-  SAY SELECT_COMMON1 ~~ [WTPRAB10]
-  SAY SELECT_COMMON2 ~~ [WTPRAB11]
-  SAY SELECT_ACTION1 ~~ [WTPRAB12]
-  SAY SELECT_ACTION2 ~~ [WTPRAB13]
-  SAY SELECT_RARE1 ~~ [WTPRAB14]
-  SAY SELECT_RARE2 ~~ [WTPRAB15]
+  SAY BORED ~~ [wtprab01]
+  SAY BATTLE_CRY1 ~~ [wtprab02]
+  SAY BATTLE_CRY2 ~~ [wtprab03]
+  SAY BATTLE_CRY3 ~~ [wtprab04]
+  SAY BATTLE_CRY4 ~~ [wtprab05]
+  SAY BATTLE_CRY5 ~~ [wtprab06]
+  SAY DAMAGE ~~ [wtprab07]
+  SAY DYING ~~ [wtprab08]
+  SAY HURT ~~ [wtprab09]
+  SAY SELECT_COMMON1 ~~ [wtprab10]
+  SAY SELECT_COMMON2 ~~ [wtprab11]
+  SAY SELECT_ACTION1 ~~ [wtprab12]
+  SAY SELECT_ACTION2 ~~ [wtprab13]
+  SAY SELECT_RARE1 ~~ [wtprab14]
+  SAY SELECT_RARE2 ~~ [wtprab15]
 
-/*  WTPSEUDO.CRE
+/*  wtpseudo.cre
   Pseudo Dragon   */
 COPY ~WTPFamiliars/wtpseudo.cre~ ~override~
   SAY NAME1 @8
   SAY NAME2 @8
-  SAY BORED ~~ [WTPFAE01]
-  SAY BATTLE_CRY1 ~~ [WTPFAE02]
-  SAY BATTLE_CRY2 ~~ [WTPFAE03]
-  SAY BATTLE_CRY3 ~~ [WTPFAE04]
-  SAY BATTLE_CRY4 ~~ [WTPFAE05]
-  SAY BATTLE_CRY5 ~~ [WTPFAE06]
-  SAY DAMAGE ~~ [WTPFAE07]
-  SAY DYING ~~ [WTPFAE08]
-  SAY HURT ~~ [WTPFAE09]
-  SAY SELECT_COMMON1 ~~ [WTPFAE10]
-  SAY SELECT_COMMON2 ~~ [WTPFAE10]
-  SAY SELECT_ACTION1 ~~ [WTPFAE11]
-  SAY SELECT_ACTION2 ~~ [WTPFAE11]
-  SAY SELECT_RARE1 ~~ [WTPFAE01]
-  SAY SELECT_RARE2 ~~ [WTPFAE01]
+  SAY BORED ~~ [wtpfae01]
+  SAY BATTLE_CRY1 ~~ [wtpfae02]
+  SAY BATTLE_CRY2 ~~ [wtpfae03]
+  SAY BATTLE_CRY3 ~~ [wtpfae04]
+  SAY BATTLE_CRY4 ~~ [wtpfae05]
+  SAY BATTLE_CRY5 ~~ [wtpfae06]
+  SAY DAMAGE ~~ [wtpfae07]
+  SAY DYING ~~ [wtpfae08]
+  SAY HURT ~~ [wtpfae09]
+  SAY SELECT_COMMON1 ~~ [wtpfae10]
+  SAY SELECT_COMMON2 ~~ [wtpfae10]
+  SAY SELECT_ACTION1 ~~ [wtpfae11]
+  SAY SELECT_ACTION2 ~~ [wtpfae11]
+  SAY SELECT_RARE1 ~~ [wtpfae01]
+  SAY SELECT_RARE2 ~~ [wtpfae01]
 
-/*  WTPSPIDE.CRE
+/*  wtpspide.cre
   Small Spider    */
 COPY ~WTPFamiliars/wtpspide.cre~ ~override~
   SAY NAME1 @6
   SAY NAME2 @6
-  SAY BORED ~~ [WTPSPD01]
-  SAY BATTLE_CRY1 ~~ [WTPSPD02]
-  SAY BATTLE_CRY2 ~~ [WTPSPD03]
-  SAY BATTLE_CRY3 ~~ [WTPSPD04]
-  SAY BATTLE_CRY4 ~~ [WTPSPD05]
-  SAY BATTLE_CRY5 ~~ [WTPSPD06]
-  SAY DAMAGE ~~ [WTPSPD07]
-  SAY DYING ~~ [WTPSPD08]
-  SAY HURT ~~ [WTPSPD09]
-  SAY SELECT_COMMON1 ~~ [WTPSPD10]
-  SAY SELECT_COMMON2 ~~ [WTPSPD10]
-  SAY SELECT_ACTION1 ~~ [WTPSPD11]
-  SAY SELECT_ACTION2 ~~ [WTPSPD11]
-  SAY SELECT_RARE1 ~~ [WTPSPD12]
-  SAY SELECT_RARE2 ~~ [WTPSPD13]
+  SAY BORED ~~ [wtpspd01]
+  SAY BATTLE_CRY1 ~~ [wtpspd02]
+  SAY BATTLE_CRY2 ~~ [wtpspd03]
+  SAY BATTLE_CRY3 ~~ [wtpspd04]
+  SAY BATTLE_CRY4 ~~ [wtpspd05]
+  SAY BATTLE_CRY5 ~~ [wtpspd06]
+  SAY DAMAGE ~~ [wtpspd07]
+  SAY DYING ~~ [wtpspd08]
+  SAY HURT ~~ [wtpspd09]
+  SAY SELECT_COMMON1 ~~ [wtpspd10]
+  SAY SELECT_COMMON2 ~~ [wtpspd10]
+  SAY SELECT_ACTION1 ~~ [wtpspd11]
+  SAY SELECT_ACTION2 ~~ [wtpspd11]
+  SAY SELECT_RARE1 ~~ [wtpspd12]
+  SAY SELECT_RARE2 ~~ [wtpspd13]
 
 /*  Invisible Creatures  */
 
 COPY ~WTPFamiliars/wtpnag1.cre~ ~override~
-  SAY BORED ~~ [WTPFAE01]
+  SAY BORED ~~ [wtpfae01]
 
 COPY ~WTPFamiliars/wtpnag2.cre~ ~override~
-  SAY BORED ~~ [WTPFAE01]
+  SAY BORED ~~ [wtpfae01]
 
 COPY ~WTPFamiliars/wtpnag3.cre~ ~override~
-  SAY BORED ~~ [WTPFER01]
+  SAY BORED ~~ [wtpfer01]
 
 COPY ~WTPFamiliars/wtpnag4.cre~ ~override~
-  SAY BORED ~~ [WTPCAT01]
+  SAY BORED ~~ [wtpcat01]
 
 COPY ~WTPFamiliars/wtpnag5.cre~ ~override~
-  SAY BORED ~~ [WTPRAB01]
+  SAY BORED ~~ [wtprab01]
 
 COPY ~WTPFamiliars/wtpnag6.cre~ ~override~
-  SAY BORED ~~ [WTPSPD01]
+  SAY BORED ~~ [wtpspd01]
 
 COPY ~WTPFamiliars/wtpnag7.cre~ ~override~
-  SAY BORED ~~ [WTPIMP01]
+  SAY BORED ~~ [wtpimp01]
 
 COPY ~WTPFamiliars/wtpnag8.cre~ ~override~
-  SAY BORED ~~ [WTPMEP02]
+  SAY BORED ~~ [wtpmep02]
 
 COPY ~WTPFamiliars/wtpnag9.cre~ ~override~
-  SAY BORED ~~ [WTPIMP01]
+  SAY BORED ~~ [wtpimp01]
 
-COPY ~WTPFamiliars/WTPTAUN.cre~ ~override~
+COPY ~WTPFamiliars/wtptaun.cre~ ~override~
 
-/*  WTPFAMPS.ITM
+/*  wtpfamps.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfamps.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @56
 
-/*  WTPFMCAT.ITM
+/*  wtpfmcat.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmcat.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @58
 
-/*  WTPFMFAE.ITM
+/*  wtpfmfae.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmfae.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @52
 
-/*  WTPFMFER.ITM
+/*  wtpfmfer.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmfer.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @53
 
-/*  WTPFMIMP.ITM
+/*  wtpfmimp.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmimp.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @54
 
-/*  WTPFMMEP.ITM
+/*  wtpfmmep.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmmep.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @51
 
-/*  WTPFMQUA.ITM
+/*  wtpfmqua.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmqua.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @55
 
-/*  WTPFMRAB.ITM
+/*  wtpfmrab.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmrab.itm~ ~override~
   SAY 0x8 @1
   SAY 0xC @1
   SAY 0x54 @57
 
-/*  WTPFMSPD.ITM
+/*  wtpfmspd.itm
   Familiar        */
 COPY ~WTPFamiliars/wtpfmspd.itm~ ~override~
   SAY 0x8 @1
@@ -538,13 +538,13 @@ COPY ~WTPFamiliars/wtpfmspd.itm~ ~override~
 ///Find Familiar Replacement spell///
 /////////////////////////////////////
 
-/*  WTPFAMA.SPL
+/*  wtpfama.spl
   Find Familiar  */
-COPY ~WTPFamiliars/wtpfama.spl~ ~override/SPWI123.spl~
+COPY ~WTPFamiliars/wtpfama.spl~ ~override/spwi123.spl~
   SAY 0x8 @0
   SAY 0x50 @2
 
-COPY ~WTPFamiliars/wtpfamab.spl~ ~override/SPCL342.spl~
+COPY ~WTPFamiliars/wtpfamab.spl~ ~override/spcl342.spl~
   SAY 0x8 @0
   SAY 0x50 @2
 
@@ -556,39 +556,39 @@ COPY_EXISTING ~scrl6d.itm~ ~override~
 ///Select Familiar spells - appear on screen when cast Find Familiar///
 ///////////////////////////////////////////////////////////////////////
 
-/* WTPFCEQU.SPL */
+/* wtpfcequ.spl */
 COPY ~WTPFamiliars/wtpfcequ.spl~ ~override~
   SAY 0x8 @511
 
-/* WTPFCNCT.SPL */
+/* wtpfcnct.spl */
 COPY ~WTPFamiliars/wtpfcnct.spl~ ~override~
   SAY 0x8 @512
 
-/* WTPFTNSP.SPL */
+/* wtpftnsp.spl */
 COPY ~WTPFamiliars/wtpftnsp.spl~ ~override~
   SAY 0x8 @513
 
-/* WTPFLEIM.SPL */
+/* wtpfleim.spl */
 COPY ~WTPFamiliars/wtpfleim.spl~ ~override~
   SAY 0x8 @514
 
-/* WTPFNGPD.SPL */
+/* wtpfngpd.spl */
 COPY ~WTPFamiliars/wtpfngpd.spl~ ~override~
   SAY 0x8 @515
 
-/* WTPFLNFE.SPL */
+/* wtpflnfe.spl */
 COPY ~WTPFamiliars/wtpflnfe.spl~ ~override~
   SAY 0x8 @516
 
-/* WTPFNEME.SPL */
+/* wtpfneme.spl */
 COPY ~WTPFamiliars/wtpfneme.spl~ ~override~
   SAY 0x8 @517
 
-/* WTPFCGFD.SPL */
+/* wtpfcgfd.spl */
 COPY ~WTPFamiliars/wtpfcgfd.spl~ ~override~
   SAY 0x8 @518
 
-/* WTPFLGRA.SPL */
+/* wtpflgra.spl */
 COPY ~WTPFamiliars/wtpflgra.spl~ ~override~
   SAY 0x8 @519
 
@@ -627,31 +627,31 @@ COPY ~WTPFamiliars/wtpfamtn.spl~ ~override~
 ////compiling - Familiar Dialogs&Scripts///
 ///////////////////////////////////////////
 
-COMPILE EVALUATE_BUFFER ~WTPFamiliars/WTPFAMP1.d~
-                        ~WTPFamiliars/WTPFAMP2.d~
-                        ~WTPFamiliars/WTPFAMP3.d~
-                        ~WTPFamiliars/WTPFAMP4.d~
-                        ~WTPFamiliars/WTPWISH.d~
+COMPILE EVALUATE_BUFFER ~WTPFamiliars/wtpfamp1.d~
+                        ~WTPFamiliars/wtpfamp2.d~
+                        ~WTPFamiliars/wtpfamp3.d~
+                        ~WTPFamiliars/wtpfamp4.d~
+                        ~WTPFamiliars/wtpwish.d~
 
 // Script compiling - script to apply Con spells to Familiar and PC
 
-COMPILE EVALUATE_BUFFER ~WTPFamiliars/WTPFSPI.baf~
-                        ~WTPFamiliars/WTPFDME.baf~
-                        ~WTPFamiliars/WTPFQUA.baf~
-                        ~WTPFamiliars/WTPFCAT.baf~
-                        ~WTPFamiliars/WTPFFER.baf~
-                        ~WTPFamiliars/WTPFRAB.baf~
-                        ~WTPFamiliars/WTPFIMP.baf~
-                        ~WTPFamiliars/WTPFPSE.baf~
-                        ~WTPFamiliars/WTPFFAE.baf~
-                        ~WTPFamiliars/WTPNAG.baf~
-                        ~WTPFamiliars/WTPTAU1.baf~
+COMPILE EVALUATE_BUFFER ~WTPFamiliars/wtpfspi.baf~
+                        ~WTPFamiliars/wtpfdme.baf~
+                        ~WTPFamiliars/wtpfqua.baf~
+                        ~WTPFamiliars/wtpfcat.baf~
+                        ~WTPFamiliars/wtpffer.baf~
+                        ~WTPFamiliars/wtpfrab.baf~
+                        ~WTPFamiliars/wtpfimp.baf~
+                        ~WTPFamiliars/wtpfpse.baf~
+                        ~WTPFamiliars/wtpffae.baf~
+                        ~WTPFamiliars/wtpnag.baf~
+                        ~WTPFamiliars/wtptau1.baf~
 
 ACTION_IF (IDS_OF_SYMBOL (~spell~ ~WIZARD_ANTIMAGIC_SHELL~) >= 0) BEGIN
-  COPY_EXISTING ~WTPFIMP.bcs~ ~override~
-                ~WTPFPSE.bcs~ ~override~
+  COPY_EXISTING ~wtpfimp.bcs~ ~override~
+                ~wtpfpse.bcs~ ~override~
     DECOMPILE_AND_PATCH BEGIN
-      APPEND_FILE_EVALUATE ~WTPFamiliars/IWDSpells.baf~
+      APPEND_FILE_EVALUATE ~WTPFamiliars/iwdspells.baf~
     END
 END
 
@@ -659,13 +659,13 @@ END
 
 COPY_EXISTING ~baldur.bcs~   ~override~
               ~baldur25.bcs~ ~override~
-  REPLACE_BCS_BLOCK EVALUATE_BUFFER ~WTPFamiliars/OldFam.baf~ ~WTPFamiliars/NewFam.baf~
+  REPLACE_BCS_BLOCK EVALUATE_BUFFER ~WTPFamiliars/oldfam.baf~ ~WTPFamiliars/newfam.baf~
   BUT_ONLY
 
-EXTEND_BOTTOM ~baldur.bcs~   ~WTPFamiliars/FamiliartobaldurBCS.baf~
+EXTEND_BOTTOM ~baldur.bcs~   ~WTPFamiliars/familiartobaldurbcs.baf~
   EVALUATE_BUFFER
 
-EXTEND_BOTTOM ~baldur25.bcs~ ~WTPFamiliars/FamiliartobaldurBCS.baf~
+EXTEND_BOTTOM ~baldur25.bcs~ ~WTPFamiliars/familiartobaldurbcs.baf~
   EVALUATE_BUFFER
 
 // Extend ar0602.bcs to account for the new familiars
@@ -677,8 +677,8 @@ END
 
 // End of Script EXTENDing - Familiars have sounds!
 
-//COPY ~WTPFamiliars/WTPFamiliaraudio.bat~ ~WTPFamiliaraudio.bat~
-//COPY ~WTPFamiliars/WTPFamiliaraudiouninstall.bat~ ~WTPFamiliaraudiouninstall.bat~
+//COPY ~WTPFamiliars/wtpfamiliaraudio.bat~ ~wtpfamiliaraudio.bat~
+//COPY ~WTPFamiliars/wtpfamiliaraudiouninstall.bat~ ~wtpfamiliaraudiouninstall.bat~
 
 // Audio
-AT_INTERACTIVE_UNINSTALL ~WTPFamiliars/WTPFamiliaraudiouninstall.bat~
+AT_INTERACTIVE_UNINSTALL ~wtpfamiliars/wtpfamiliaraudiouninstall.bat~

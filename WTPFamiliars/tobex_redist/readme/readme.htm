@@ -371,12 +371,12 @@
           <p>You are free to include this redistributable package in your modifications. Please give credit where it is due.</p>
           <p>In order to install TobEx as part of your modification:</p>
           <ol>
-            <li>Place the entire ./TobEx_redist directory within your mod directory.</li>
+            <li>Place the entire ./tobex_redist directory within your mod directory.</li>
             <li>Insert the following code into your mod's main .tp2 file. Replace &lt;your mod directory&gt; with the directory that your mod uses. Please note that TOBEX_ is used as a prefix to make the variable unique. It should not point to the TobEx mod directory, but to your mod's directory.</li>
             <div class="important">
               <p>OUTER_SPRINT TOBEX_MOD_DIRECTORY "./&lt;your mod directory&gt;"<br />
-              LOAD_TRA "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tra"<br />
-              ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/TobEx_redist/TobEx.tpa"</p>
+              LOAD_TRA "%TOBEX_MOD_DIRECTORY%/tobex_redist/TobEx.tra"<br />
+              ACTION_INCLUDE "%TOBEX_MOD_DIRECTORY%/tobex_redist/TobEx.tpa"</p>
             </div>
             <li>Once installed, existing tweak settings are kept and all new tweak settings are disabled by default. In order to activate tweaks, use REPLACE_TEXTUALLY on TobEx_ini/TobExTweak.ini. For example:</p>
             <div class="important">
@@ -393,10 +393,10 @@
           <h3>Notes</h3>
           <br />
           <ol>
-            <li>If another mod has installed TobEx_redist, the installation will check the user's current TobEx_redist version and update accordingly if required. There is no need to manually check the user's current TobEx_redist version.</li>
-            <li>Core tweak settings are not kept. If your mod installs a new version of TobEx_redist, the existing settings in TobEx_ini/TobExCore.ini are overwritten.</li>
-            <li>Existing tweak settings are kept. If your mod installs a new version of TobEx_redist, the existing settings in TobEx_ini/TobExTweak.ini are kept.</li>
-            <li>There is no need to, although you can, install TobEx_redist as a separate component in your modification. If required, check for the presence of an existing TobEx_redist version by using FILE_EXISTS "TobEx_ini/TobExVer.txt".</li>
+            <li>If another mod has installed tobex_redist, the installation will check the user's current tobex_redist version and update accordingly if required. There is no need to manually check the user's current tobex_redist version.</li>
+            <li>Core tweak settings are not kept. If your mod installs a new version of tobex_redist, the existing settings in TobEx_ini/TobExCore.ini are overwritten.</li>
+            <li>Existing tweak settings are kept. If your mod installs a new version of tobex_redist, the existing settings in TobEx_ini/TobExTweak.ini are kept.</li>
+            <li>There is no need to, although you can, install tobex_redist as a separate component in your modification. If required, check for the presence of an existing tobex_redist version by using FILE_EXISTS "TobEx_ini/TobExVer.txt".</li>
             <li>TobEx translation strings occupy references starting from @-10000 and going lower (more negative). Avoid using these strings in your modification because TobEx will overwrite them.</li>
             <li>In order to load TobEx.dll on game startup, the following BGMain.exe executable addresses are used:</li>
             <div class="important">
@@ -410,8 +410,8 @@
           <h3>Upgrading</h3>
           <br />
           <ol>
-            <li>Remove the entire existing ./TobEx_redist directory within your mod directory.</li>
-            <li>Place the entire new ./TobEx_redist directory within your mod directory.</li>
+            <li>Remove the entire existing ./tobex_redist directory within your mod directory.</li>
+            <li>Place the entire new ./tobex_redist directory within your mod directory.</li>
           </ol>
           <address>
             <span class="footer">TobEx &gt; Usage</span> <a href="#top">BACK TO TOP</a>

@@ -1387,9 +1387,9 @@ IF
   Global("#GFF12H","GLOBAL",3)
   ReputationLT(%famsummoner%,3)
   OR(3)
-    Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
-    Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
-    Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
+    Global("WTPFAMCG","GLOBAL",1) // wtpfcgfd.spl sets variable to 1
+    Global("WTPFAMNG","GLOBAL",1) // wtpfngpd.spl sets variable to 1
+    Global("WTPFAMLG","GLOBAL",1) // wtpflgra.spl sets variable to 1
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,DisplayStringHead(Myself,@533))
@@ -1403,9 +1403,9 @@ IF
   Global("#GFF12H","GLOBAL",3)
   ReputationGT(%famsummoner%,18)
   OR(3)
-    Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
-    Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
-    Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
+    Global("WTPFAMCE","GLOBAL",1) // wtpfcequ.spl sets variable to 1
+    Global("WTPFAMNE","GLOBAL",1) // wtpfneme.spl sets variable to 1
+    Global("WTPFAMLE","GLOBAL",1) // wtpfleim.spl sets variable to 1
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,DisplayStringHead(Myself,@533))
@@ -1417,7 +1417,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMNG","GLOBAL",1) // WTPFNGPD.SPL sets variable to 1
+  Global("WTPFAMNG","GLOBAL",1) // wtpfngpd.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1429,7 +1429,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMLE","GLOBAL",1) // WTPFLEIM.SPL sets variable to 1
+  Global("WTPFAMLE","GLOBAL",1) // wtpfleim.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1441,7 +1441,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMLN","GLOBAL",1) // WTPFLNFE.SPL sets variable to 1
+  Global("WTPFAMLN","GLOBAL",1) // wtpflnfe.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1453,7 +1453,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMCN","GLOBAL",1) // WTPFCNCT.SPL sets variable to 1
+  Global("WTPFAMCN","GLOBAL",1) // wtpfcnct.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1465,7 +1465,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMLG","GLOBAL",1) // WTPFLGRA.SPL sets variable to 1
+  Global("WTPFAMLG","GLOBAL",1) // wtpflgra.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1477,7 +1477,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMNE","GLOBAL",1) // WTPFNEME.SPL sets variable to 1
+  Global("WTPFAMNE","GLOBAL",1) // wtpfneme.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1489,7 +1489,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMCG","GLOBAL",1) // WTPFCGFD.SPL sets variable to 1
+  Global("WTPFAMCG","GLOBAL",1) // wtpfcgfd.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1501,7 +1501,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMTN","GLOBAL",1) // WTPFTNSP.SPL sets variable to 1
+  Global("WTPFAMTN","GLOBAL",1) // wtpftnsp.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
@@ -1513,7 +1513,7 @@ END
 
 IF
   Global("#GFF12H","GLOBAL",3)
-  Global("WTPFAMCE","GLOBAL",1) // WTPFCEQU.SPL sets variable to 1
+  Global("WTPFAMCE","GLOBAL",1) // wtpfcequ.spl sets variable to 1
 THEN
   RESPONSE #100
     SetInterrupt(FALSE)
