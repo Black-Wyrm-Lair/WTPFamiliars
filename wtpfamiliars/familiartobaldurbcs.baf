@@ -651,53 +651,6 @@ END
 /////////////////////////////////////////
 
 IF
-  Global("WTPFAMA1","GLOBAL",1)
-  OR(5)
-    SpellCast(Player2,WIZARD_FIND_FAMILAR)
-    SpellCast(Player3,WIZARD_FIND_FAMILAR)
-    SpellCast(Player4,WIZARD_FIND_FAMILAR)
-    SpellCast(Player5,WIZARD_FIND_FAMILAR)
-    SpellCast(Player6,WIZARD_FIND_FAMILAR)
-THEN
-  RESPONSE #100
-    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
-    SetGlobal("WTPFAMA1","GLOBAL",0)
-END
-
-IF
-  Global("WTPFAMA1","GLOBAL",1)
-  OR(5)
-    SpellCast(Player2,BEASTMASTER_FIND_FAMILIAR)
-    SpellCast(Player3,BEASTMASTER_FIND_FAMILIAR)
-    SpellCast(Player4,BEASTMASTER_FIND_FAMILIAR)
-    SpellCast(Player5,BEASTMASTER_FIND_FAMILIAR)
-    SpellCast(Player6,BEASTMASTER_FIND_FAMILIAR)
-THEN
-  RESPONSE #100
-    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
-    SetGlobal("WTPFAMA1","GLOBAL",0)
-END
-
-IF
-  Global("WTPFAMA1","GLOBAL",1)
-  OR(5)
-    TriggerOverride(Player2,Global("#GSCRFAI","LOCALS",1))
-    TriggerOverride(Player3,Global("#GSCRFAI","LOCALS",1))
-    TriggerOverride(Player4,Global("#GSCRFAI","LOCALS",1))
-    TriggerOverride(Player5,Global("#GSCRFAI","LOCALS",1))
-    TriggerOverride(Player6,Global("#GSCRFAI","LOCALS",1))
-THEN
-  RESPONSE #100
-    ActionOverride(Player2,SetGlobal("#GSCRFAI","LOCALS",0))
-    ActionOverride(Player3,SetGlobal("#GSCRFAI","LOCALS",0))
-    ActionOverride(Player4,SetGlobal("#GSCRFAI","LOCALS",0))
-    ActionOverride(Player5,SetGlobal("#GSCRFAI","LOCALS",0))
-    ActionOverride(Player6,SetGlobal("#GSCRFAI","LOCALS",0))
-    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
-    SetGlobal("WTPFAMA1","GLOBAL",0)
-END
-
-IF
   TriggerOverride(%famsummoner%,Global("#GSCRFAI","LOCALS",1))
   Global("WTPFAMA1","GLOBAL",1)
   OR(9)
@@ -735,6 +688,47 @@ IF
 THEN
   RESPONSE #100
     ActionOverride(%famsummoner%,DisplayString(Myself,8537))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
+END
+
+IF
+  Global("WTPFAMA1","GLOBAL",1)
+  SpellCast([PC],WIZARD_FIND_FAMILAR)
+  !SpellCast(%famsummoner%,WIZARD_FIND_FAMILAR)
+THEN
+  RESPONSE #100
+    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
+END
+
+IF
+  Global("WTPFAMA1","GLOBAL",1)
+  SpellCast([PC],BEASTMASTER_FIND_FAMILIAR)
+  !SpellCast(%famsummoner%,BEASTMASTER_FIND_FAMILIAR)
+THEN
+  RESPONSE #100
+    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
+    SetGlobal("WTPFAMA1","GLOBAL",0)
+END
+
+IF
+  Global("WTPFAMA1","GLOBAL",1)
+  OR(5)
+    TriggerOverride(Player1,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player2,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player3,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player4,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player5,Global("#GSCRFAI","LOCALS",1))
+    TriggerOverride(Player6,Global("#GSCRFAI","LOCALS",1))
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player2,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player3,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player4,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player5,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(Player6,SetGlobal("#GSCRFAI","LOCALS",0))
+    ActionOverride(%famsummoner%,DisplayString(Myself,8538))
     SetGlobal("WTPFAMA1","GLOBAL",0)
 END
 
