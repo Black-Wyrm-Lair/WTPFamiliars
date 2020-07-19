@@ -665,6 +665,7 @@ COPY_EXISTING ~wtpffae.bcs~ ~override~
                                         ~WIZARD_ANTIMAGIC_SHELL~
                                         ~WIZARD_PROTECTION_FROM_MAGIC_WEAPONS~
                                         ~WIZARD_SPELL_DEFLECTION~
+                                        ~WIZARD_TROLLISH_FORTITUDE~
                                         ~WIZARD_SPELL_TURNING~
                                         ~WIZARD_PROJECT_IMAGE~
                                         ~WIZARD_MANTLE~
